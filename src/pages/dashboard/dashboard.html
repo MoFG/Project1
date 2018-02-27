@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Assets
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item *ngFor="let property of properties">
+      <ion-thumbnail item-start>
+        <img src="{{dashboard.thumbnail}}" alt="">
+      </ion-thumbnail>
+      <h2>{{property.model}}</h2>
+      <p>{{property.category}}</p>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

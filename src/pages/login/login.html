@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Asset Management</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="content">
+  <form (ngSubmit)="login()" #loginForm="ngForm">
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-12>
+          <ion-icon ios="ios-contact-outline" md="md-contact"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          <ion-list insert>
+            <ion-item>
+              <ion-input class="txtEmail" type="text" placeholder="Your Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input class="txtPass" type="password" placeholder="Your Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+          </ion-list>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12 class="signup-col">
+        <button ion-button full color="secondary" class="submit-btn" type="submit" >Login</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</form>
+</ion-content>
