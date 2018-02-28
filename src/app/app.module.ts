@@ -1,3 +1,4 @@
+import { PropertyPage } from './../pages/property/property';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -9,11 +10,13 @@ import { MyApp } from './app.component';
 import { LoginPage } from './../pages/login/login';
 import { DashboardPage } from './../pages/dashboard/dashboard';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { PropertyService } from '../providers/properties.service';
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
-    DashboardPage
+    DashboardPage,
+    PropertyPage
   ],
   imports: [
     BrowserModule,
@@ -23,13 +26,15 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   entryComponents: [
     MyApp,
     LoginPage,
-    DashboardPage
+    DashboardPage,
+    PropertyPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    PropertyService
   ]
 })
 export class AppModule {}

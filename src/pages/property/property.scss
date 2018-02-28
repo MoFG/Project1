@@ -1,0 +1,26 @@
+page-property {
+    .btnBack{
+        background: #f8f8f8;
+    }
+    .content{
+        border-bottom:2px solid #00b894;
+      }
+      p.state{
+          color:#00b894;
+          font-weight: bold;
+      }
+      h2.name{
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      ion-searchbar.search{
+          width: 70%;
+          border-radius:0.3em;
+          margin-bottom: 0.6em;
+      }
+      button.btnAdd{
+        padding: 1.6em 1em;
+        margin-top: 0em;
+        background: #00b894;
+      }
+}

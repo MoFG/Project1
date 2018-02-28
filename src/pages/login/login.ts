@@ -1,3 +1,4 @@
+import { PropertyPage } from './../property/property';
 import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
 import { DashboardPage } from './../dashboard/dashboard';
 import { Component } from '@angular/core';
@@ -49,8 +50,5 @@ export class LoginPage {
     });
     alert.present(alert);
   }
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad LoginPage');
-  // }
 
 }

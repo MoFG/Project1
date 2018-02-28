@@ -1,22 +1,70 @@
+<!-- start ion-header -->
 <ion-header>
   <ion-navbar>
+
     <ion-title>
-      Assets
+      Your Dashboard
     </ion-title>
+
   </ion-navbar>
 </ion-header>
+<!-- end ion-header -->
 
-<ion-content padding>
-  <ion-list>
+<!-- start ion-content -->
+<ion-content class="content">
 
-    <ion-item *ngFor="let property of properties">
-      <ion-thumbnail item-start>
-        <img src="{{dashboard.thumbnail}}" alt="">
-      </ion-thumbnail>
-      <h2>{{property.model}}</h2>
-      <p>{{property.category}}</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
+  <ion-card class="card-wallpaper">
+    <div class="info">
+      <img src="/assets/imgs/ava1.jpg" alt="" class="avatar">
+      <div class="userinfo">
+        <h2 class="name">Donal J.Trump</h2>
+        <p>trumpd@dxc.com</p>
+      </div>
+    </div>
+  </ion-card>
+  <!-- end ion-card -->
 
-  </ion-list>
+  <!-- start option -->
+  <div class="option">
+    <ion-grid>
+
+      <ion-row class="ionrow-list">
+        <ion-col col-12 class="ioncol-list">
+          <h2 (click)="pushAssets()" class="assets">
+            <ion-icon ios="ios-list-outline" md="md-list" class="ioncol-icon"></ion-icon>
+            Assets
+          </h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ionrow-list">
+        <ion-col col-12 class="ioncol-list">
+          <h2 class="assets">
+            <ion-icon ios="ios-folder-open-outline" md="md-list" class="ioncol-icon"></ion-icon>
+            Category
+          </h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-col col-12 class="ioncol-list">
+        <h2 class="assets">
+          <ion-icon ios="ios-settings-outline" md="md-list" class="ioncol-icon"></ion-icon>
+          Settings
+        </h2>
+      </ion-col>
+
+    </ion-grid>
+  </div>
+  <!-- end option -->
+
+  <div class="logout">
+    <ion-grid>
+      <ion-col col-12 class="ioncol-list">
+        <h2 class="assets" (click)="goLogin()">
+          <ion-icon ios="ios-log-out" md="md-log-out" class="ioncol-icon"></ion-icon>
+          Log out
+        </h2>
+      </ion-col>
+    </ion-grid>
+  </div>
 </ion-content>
