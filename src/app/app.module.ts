@@ -1,3 +1,5 @@
+import { DetailPage } from './../pages/detail/detail';
+
 import { PropertyPage } from './../pages/property/property';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +18,8 @@ import { PropertyService } from '../providers/properties.service';
     MyApp,
     LoginPage,
     DashboardPage,
-    PropertyPage
+    PropertyPage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { PropertyService } from '../providers/properties.service';
     MyApp,
     LoginPage,
     DashboardPage,
-    PropertyPage
+    PropertyPage,
+    DetailPage
   ],
   providers: [
     StatusBar,

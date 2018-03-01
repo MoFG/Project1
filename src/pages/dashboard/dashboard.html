@@ -46,25 +46,26 @@
         </ion-col>
       </ion-row>
 
-      <ion-col col-12 class="ioncol-list">
-        <h2 class="assets">
-          <ion-icon ios="ios-settings-outline" md="md-list" class="ioncol-icon"></ion-icon>
-          Settings
-        </h2>
-      </ion-col>
+      <ion-row class="ionrow-list">
+        <ion-col col-12 class="ioncol-list">
+          <h2 class="assets">
+            <ion-icon ios="ios-settings-outline" md="md-list" class="ioncol-icon"></ion-icon>
+            Settings
+          </h2>
+        </ion-col>
+      </ion-row>
 
     </ion-grid>
   </div>
   <!-- end option -->
 
-  <div class="logout">
-    <ion-grid>
-      <ion-col col-12 class="ioncol-list">
-        <h2 class="assets" (click)="goLogin()">
-          <ion-icon ios="ios-log-out" md="md-log-out" class="ioncol-icon"></ion-icon>
-          Log out
-        </h2>
-      </ion-col>
-    </ion-grid>
-  </div>
+  <ion-row class="ionrow-list">
+    <ion-col col-12 class="ioncol-list">
+      <h2 class="assets" (click)="goLogin()">
+        <ion-icon ios="ios-log-out" md="md-log-out" class="ioncol-icon"></ion-icon>
+        Log out
+      </h2>
+    </ion-col>
+  </ion-row>
+
 </ion-content>

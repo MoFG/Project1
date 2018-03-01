@@ -1,3 +1,4 @@
+
 import { PropertyPage } from './../property/property';
 import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
 import { DashboardPage } from './../dashboard/dashboard';
@@ -22,7 +23,7 @@ export class LoginPage {
     this.auth.login(this.registerCredentials).subscribe(allowed =>{
       if(allowed){
         //login success -> DashBoard Page
-        this.navCtrl.setRoot(DashboardPage);
+        this.navCtrl.setRoot(PropertyPage);
       }else{
         this.showError('Access Denied!')
       }

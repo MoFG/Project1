@@ -1,0 +1,90 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="content">
+  <ion-card *ngIf="property.id">
+    <img src="{{property.picture}}" alt="">
+    <ion-card-content class="ioncard-content">
+      <h2 class="card-title">{{property.model}}</h2>
+      <p class="discription">{{property.discription}}</p>
+    </ion-card-content>
+
+    <ion-list class="ionlist">
+
+      <ion-item class="iconitem">
+        <ion-icon ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
+        <h3 item-start class="iconitem-text">State</h3>
+        <ion-note item-end class="iconitem-end">{{property.status}}</ion-note>
+      </ion-item>
+
+      <ion-item class="iconitem">
+        <ion-icon ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
+        <h3 item-start class="iconitem-text">Quantity</h3>
+        <ion-note item-end class="iconitem-end">{{property.quantity}}</ion-note>
+      </ion-item>
+
+      <ion-item class="iconitem-state">
+        <button ion-button icon-left clear item-left class="item-button" (click)="goForm()">
+          <ion-icon ios="ios-build-outline" md="md-build"></ion-icon>
+          Edit
+        </button>
+        <button ion-button icon-left clear item-right class="item-button">
+          <ion-icon ios="ios-trash-outline" md="md-trash"></ion-icon>
+          Remove
+        </button>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+
+  <ion-card class="ioncard-img">
+    <img src="/assets/imgs/saleoff.jpg" alt="">
+  </ion-card>
+
+
+  <!-- Form create & edit, display:none -->
+  <form class="createForm">
+    <ion-col>
+      <ion-list insert>
+        <h3 class="ion-title">Asset Infomation</h3>
+
+        <ion-item class="ionitem-form">
+          <p item-start>Name</p>
+          <input type="text" placeholder="Asset name" name="model" item-end required>
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <p item-start>Quantity</p>
+          <input type="number" placeholder="Asset quantity" name="model" item-end required>
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <p item-start>Description</p>
+          <input type="text" placeholder="Asset discription" item-end name="model">
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <p item-start>Thumbnail</p>
+          <input type="text" placeholder="Asset thumbnail" item-end name="model">
+        </ion-item>
+        <hr>
+        <ion-item class="ionitem-form">
+          <button ion-button item-start class="btnClear">Clear</button>
+          <button ion-button item-end class="btnOk">OK</button>
+        </ion-item>
+
+      </ion-list>
+    </ion-col>
+
+  </form>
+
+  <!--hide form -->
+  <div class="wrapper" (click)="outForm()"></div>
+</ion-content>
+
+

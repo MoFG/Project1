@@ -1,15 +1,16 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button item start color="light" class="btnMenu" (click)="goMenu()">
+        <ion-icon ios="ios-menu-outline" md="md-menu"></ion-icon>
+    </button>
     <ion-title item-end>Asset List</ion-title>
   </ion-navbar>
   
 </ion-header>
 
-
 <ion-content padding>
-  
-  <ion-row>
+  <ion-row class="ionrow-topcontent">
       <ion-searchbar class="search" [(ngModel)]="searchKey" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
       <button ion-button ouline small class="btnAdd">Add New Asset</button>
   </ion-row>
@@ -22,7 +23,7 @@
       <h2 class="name">{{property.model}}</h2>
       <p>Category: {{property.category}}</p>
       <p class="state">State: {{property.status}}</p>
-      <button ion-button outline small item-end color="dark">Detail</button>
+      <button ion-button outline small item-end color="dark" (click)="goDetail(property)">Detail</button>
     </ion-item>
   </ion-list>
 </ion-content>

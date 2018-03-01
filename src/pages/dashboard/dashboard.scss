@@ -49,14 +49,13 @@ page-dashboard {
     color: #2d3436;
   }
 
-  .ioncol-icon.logout{
-    margin-top: 3em;
-  }
-  
-  .logout{
-    margin-top: 9em;
-  }
   .content{
     border-bottom:2px solid #00b894;
+  }
+  .back-button.show-back-button{
+    transition: 1s;
+  }
+  ion-row.ionrow-list{
+    border-bottom: 1px gray solid;
   }
 }

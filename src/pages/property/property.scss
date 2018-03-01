@@ -19,8 +19,21 @@ page-property {
           margin-bottom: 0.6em;
       }
       button.btnAdd{
-        padding: 1.6em 1em;
+        padding: 1.6em 0.5em;
         margin-top: 0em;
         background: #00b894;
+      }
+      .btnMenu{
+          background: #f8f8f8;
+      }
+      .btnMenu:hover{
+          color: #00b894;
+          background: #f8f8f8;
+      }
+      .back-button.show-back-button{
+          display: none;
+      }
+      .ionrow-topcontent{
+          text-align: center;
       }
 }
