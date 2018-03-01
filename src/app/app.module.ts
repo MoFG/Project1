@@ -13,6 +13,21 @@ import { LoginPage } from './../pages/login/login';
 import { DashboardPage } from './../pages/dashboard/dashboard';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { PropertyService } from '../providers/properties.service';
+import { FirebaseProvider } from '../providers/firebase/firebase';
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA4bdVxe4tjPgG89P2gt8-Optvjj_pgxLM",
+  authDomain: "assetmanagement-20f41.firebaseapp.com",
+  databaseURL: "https://assetmanagement-20f41.firebaseio.com",
+  projectId: "assetmanagement-20f41",
+  storageBucket: "assetmanagement-20f41.appspot.com",
+  messagingSenderId: "440302531046"
+};
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,6 +38,9 @@ import { PropertyService } from '../providers/properties.service';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -36,9 +54,10 @@ import { PropertyService } from '../providers/properties.service';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
-    PropertyService
+    PropertyService,
+    FirebaseProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

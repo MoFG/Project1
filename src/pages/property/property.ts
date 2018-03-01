@@ -1,8 +1,11 @@
+import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { DetailPage } from './../detail/detail';
 import { DashboardPage } from './../dashboard/dashboard';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, App, MenuController} from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import {PropertyService} from '../../providers/properties.service';
+import { FirebaseListObservable } from 'angularfire2/database';
+
 @Component({
   selector: 'page-property',
   templateUrl: 'property.html',
@@ -11,14 +14,13 @@ export class PropertyPage {
   properties: Array<any>;
   searchKey: string = "";
   pushDashboardPage : any;
+  shoppingItems: FirebaseListObservable<any[]>;
+  newItem = '';
 
-  constructor(public navCtrl: NavController, private propertySvc: PropertyService, app: App, menu: MenuController) {
+  constructor(public navCtrl: NavController, private propertySvc: PropertyService,
+    public firebaseProvider: FirebaseProvider) {
     this.findAll();
-    menu.enable(true);
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PropertyPage');
+    this.shoppingItems = this.firebaseProvider.getShoppingItems();
   }
 
   onInput(event){
@@ -41,6 +43,14 @@ export class PropertyPage {
 
   goDetail(property: any){
     this.navCtrl.push(DetailPage, property);
+  }
+
+  addItem(){
+    this.firebaseProvider.addItem(this.newItem);
+  }
+
+  removeItem(id){
+    this.firebaseProvider.removeItem(id);
   }
 
 }
