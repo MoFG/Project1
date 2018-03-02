@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-
+import {Property} from '../../providers/firebase/pro';
 @Injectable()
 export class FirebaseProvider {
 
@@ -12,14 +12,14 @@ export class FirebaseProvider {
     console.log('Hello FirebaseProvider Provider');
   }
   getShoppingItems() {
-    return this.afd.list('/item');
+    return this.afd.list('/items');
   }
   
   addItem(name) {
-    this.afd.list('/item').push(name);
+    this.afd.list('/items').push(name);
   }
 
   removeItem(id) {
-    this.afd.list('/item').remove(id);
+    this.afd.list('/items').remove(id);
   }
 }

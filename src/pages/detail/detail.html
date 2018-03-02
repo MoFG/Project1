@@ -7,11 +7,12 @@
 </ion-header>
 
 <ion-content padding class="content">
-  <ion-card *ngIf="property.id">
-    <img src="{{property.picture}}" alt="">
+
+  <ion-card *ngIf="items.id">
+    <img src="{{items.picture}}" alt="">
     <ion-card-content class="ioncard-content">
-      <h2 class="card-title">{{property.model}}</h2>
-      <p class="discription">{{property.discription}}</p>
+      <h2 class="card-title">{{items.model}}</h2>
+      <p class="discription">{{items.discription}}</p>
     </ion-card-content>
 
     <ion-list class="ionlist">
@@ -19,13 +20,13 @@
       <ion-item class="iconitem">
         <ion-icon ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
         <h3 item-start class="iconitem-text">State</h3>
-        <ion-note item-end class="iconitem-end">{{property.status}}</ion-note>
+        <ion-note item-end class="iconitem-end">{{items.status}}</ion-note>
       </ion-item>
 
       <ion-item class="iconitem">
         <ion-icon ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
         <h3 item-start class="iconitem-text">Quantity</h3>
-        <ion-note item-end class="iconitem-end">{{property.quantity}}</ion-note>
+        <ion-note item-end class="iconitem-end">{{items.quantity}}</ion-note>
       </ion-item>
 
       <ion-item class="iconitem-state">
@@ -46,7 +47,6 @@
     <img src="/assets/imgs/saleoff.jpg" alt="">
   </ion-card>
 
-
   <!-- Form create & edit, display:none -->
   <form class="createForm">
     <ion-col>
@@ -54,28 +54,33 @@
         <h3 class="ion-title">Asset Infomation</h3>
 
         <ion-item class="ionitem-form">
-          <p item-start>Name</p>
-          <input type="text" placeholder="Asset name" name="model" item-end required>
+          <input type="text" placeholder="Asset id" [(ngModel)]="id" name="id" item-start required>
         </ion-item>
 
         <ion-item class="ionitem-form">
-          <p item-start>Quantity</p>
-          <input type="number" placeholder="Asset quantity" name="model" item-end required>
+          <input type="text" placeholder="Asset name" [(ngModel)]="model" name="model" item-start required>
+        </ion-item>
+        
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset Category" [(ngModel)]="category" name="category" item-start required>
         </ion-item>
 
         <ion-item class="ionitem-form">
-          <p item-start>Description</p>
-          <input type="text" placeholder="Asset discription" item-end name="model">
+          <input type="number" placeholder="Asset quantity" [(ngModel)]="quantity" name="quantity" item-start required>
         </ion-item>
 
         <ion-item class="ionitem-form">
-          <p item-start>Thumbnail</p>
-          <input type="text" placeholder="Asset thumbnail" item-end name="model">
+          <input type="text" placeholder="Asset description" [(ngModel)]="description" item-start name="description">
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset thumbnail" [(ngModel)]="thumbnail" item-start name="thumbnail">
         </ion-item>
         <hr>
         <ion-item class="ionitem-form">
           <button ion-button item-start class="btnClear">Clear</button>
           <button ion-button item-end class="btnOk">OK</button>
+          <!-- (click)="updateAsset(id, model, category, quantity, description, thumbnail) -->
         </ion-item>
 
       </ion-list>

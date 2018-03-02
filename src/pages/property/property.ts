@@ -1,10 +1,12 @@
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { DetailPage } from './../detail/detail';
 import { DashboardPage } from './../dashboard/dashboard';
-import { Component } from '@angular/core';
-import { IonicPage, NavController} from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, MenuController} from 'ionic-angular';
 import {PropertyService} from '../../providers/properties.service';
 import { FirebaseListObservable } from 'angularfire2/database';
+import * as $ from 'jquery';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'page-property',
@@ -41,13 +43,14 @@ export class PropertyPage {
     this.navCtrl.push(DashboardPage);
   }
 
-  goDetail(property: any){
-    this.navCtrl.push(DetailPage, property);
+  goDetail(items: any){
+    this.navCtrl.push(DetailPage, {items: items});
+    console.log(items.id);
   }
 
-  addItem(){
-    this.firebaseProvider.addItem(this.newItem);
-  }
+  // addItem(){
+  //   this.firebaseProvider.addItem(this.newItem);
+  // }
 
   removeItem(id){
     this.firebaseProvider.removeItem(id);

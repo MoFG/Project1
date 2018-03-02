@@ -1,39 +1,53 @@
 page-property {
-    .btnBack{
-        background: #f8f8f8;
-    }
-    .content{
-        border-bottom:2px solid #00b894;
-      }
-      p.state{
-          color:#00b894;
-          font-weight: bold;
-      }
-      h2.name{
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-      ion-searchbar.search{
-          width: 70%;
-          border-radius:0.3em;
-          margin-bottom: 0.6em;
-      }
-      button.btnAdd{
-        padding: 1.6em 0.5em;
-        margin-top: 0em;
-        background: #00b894;
-      }
-      .btnMenu{
-          background: #f8f8f8;
-      }
-      .btnMenu:hover{
-          color: #00b894;
-          background: #f8f8f8;
-      }
-      .back-button.show-back-button{
-          display: none;
-      }
-      .ionrow-topcontent{
-          text-align: center;
-      }
+  .btnBack {
+    background: #f8f8f8;
+  }
+  .content {
+    border-bottom: 2px solid #00b894;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  p.state {
+    color: #00b894;
+    font-weight: bold;
+  }
+  h2.name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  ion-searchbar.search {
+    width: 100%;
+    border-radius: 0.3em;
+    margin-bottom: 0.6em;
+  }
+  button.btnAdd {
+    margin-top: 0em;
+    background: #00b894;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+  }
+  .btnMenu {
+    background: #f8f8f8;
+  }
+  .btnMenu:hover {
+    color: #00b894;
+    background: #f8f8f8;
+  }
+  .back-button.show-back-button {
+    display: none;
+  }
+  .ionrow-topcontent {
+    text-align: center;
+  }
+  .btnsearch {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    float: right;
+    top: 26%;
+    right: 8%;
+  }
 }

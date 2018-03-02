@@ -2,7 +2,7 @@
 
   <ion-navbar>
     <button ion-button item start color="light" class="btnMenu" (click)="goMenu()">
-      <ion-icon ios="ios-menu-outline" md="md-menu"></ion-icon>
+      <ion-icon ios="ios-menu-outline" md="md-menu" name="menu"></ion-icon>
     </button>
     <ion-title item-end>Asset List</ion-title>
   </ion-navbar>
@@ -12,40 +12,23 @@
 <ion-content padding>
   <ion-row class="ionrow-topcontent">
     <ion-searchbar class="search" [(ngModel)]="searchKey" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
-    <button ion-button ouline small class="btnAdd" (click)="addItem()">Add New Asset</button>
+    <!-- <button ion-button ouline small class="btnAdd" (click)="addItem()">Add New Asset</button> -->
   </ion-row>
 
-  <!-- demo addItem firebase -->
-  <!--1. type input in textfield
-      2. click button AddNewAsset -->
-  <ion-col col-9>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="newItem" placeholder="New Shopping item"></ion-input>
-    </ion-item>
-
-    <ion-list>
-      <ion-item-sliding *ngFor="let item of shoppingItems | async">
-        <ion-item>
-          {{ item.$value }}
-        </ion-item>
-        <ion-item-options>
-          <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon ios="ios-trash-outline" md="md-trash"></ion-icon>
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-list>
-  </ion-col>
-  <!-- end -->
-
   <ion-list>
-    <ion-item *ngFor="let property of properties">
+    <ion-item *ngFor="let items of shoppingItems | async">
       <ion-thumbnail item-start>
-        <img src="{{property.thumbnail}}"/>
+        <img src="{{items.thumbnail}}" />
       </ion-thumbnail>
-      <h2 class="name">{{property.model}}</h2>
-      <p>Category: {{property.category}}</p>
-      <p class="state">State: {{property.status}}</p>
-      <button ion-button outline small item-end color="dark" (click)="goDetail(property)">Detail</button>
+      <h2 class="name">{{items.model}}</h2>
+      <p>Category: {{items.category}}</p>
+      <p class="state">State: {{items.status}}</p>
+      <button ion-button outline small item-end color="dark" (click)="goDetail(items)">Detail</button>
     </ion-item>
   </ion-list>
+
+  <div class="btnsearch">
+    <button ion-button ouline small class="btnAdd">Add</button>
+  </div>
+
 </ion-content>
