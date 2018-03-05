@@ -22,7 +22,7 @@ export class LoginPage {
     this.showLoading();
     this.auth.login(this.registerCredentials).subscribe(allowed =>{
       if(allowed){
-        //login success -> DashBoard Page
+        //login success -> Property Page (asset list)
         this.navCtrl.setRoot(PropertyPage);
       }else{
         this.showError('Access Denied!')

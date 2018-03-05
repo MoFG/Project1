@@ -1,21 +1,25 @@
 <ion-header>
 
   <ion-navbar>
-    <button ion-button item start color="light" class="btnMenu" (click)="goMenu()">
+    <button class="button-toggle" ion-button item-start (click)="gomenu()">
       <ion-icon ios="ios-menu-outline" md="md-menu" name="menu"></ion-icon>
     </button>
-    <ion-title item-end>Asset List</ion-title>
+    <ion-title item-start>Asset List</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
   <ion-row class="ionrow-topcontent">
-    <ion-searchbar class="search" [(ngModel)]="searchKey" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
-    <!-- <button ion-button ouline small class="btnAdd" (click)="addItem()">Add New Asset</button> -->
+    <!-- search bar use local data -->
+    <!-- <ion-searchbar class="search" [(ngModel)]="searchKey" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar> -->
+
+    <!-- search bar use firebase data -->
+    <ion-searchbar class="search" (ionInput)="getItems($event)" [(ngModel)]="searchKey"></ion-searchbar>
   </ion-row>
 
-  <ion-list>
+  <!-- Asset list get in Firebase -->
+  <ion-list class="list-asset">
     <ion-item *ngFor="let items of shoppingItems | async">
       <ion-thumbnail item-start>
         <img src="{{items.thumbnail}}" />
@@ -30,5 +34,51 @@
   <div class="btnsearch">
     <button ion-button ouline small class="btnAdd">Add</button>
   </div>
+
+  <!-- Menu bar -->
+  <div class="propertymenu">
+    <ion-card class="card-wallpaper">
+      <div class="info">
+        <img src="/assets/imgs/ava1.jpg" alt="" class="avatar">
+        <div class="userinfo">
+          <h2 class="name">Donal J.Trump</h2>
+          <p>trumpd@dxc.com</p>
+        </div>
+      </div>
+    </ion-card>
+
+    <ion-list>
+
+      <ion-item class="button-item" item-start (click)="pushAssets()">
+        <button ion-button color="light">
+          <ion-icon ios="ios-list-outline" md="md-list" class="ioncol-icon"></ion-icon>
+          Asset List
+        </button>
+      </ion-item>
+
+      <ion-item class="button-item" item-start (click)="goCategory()">
+        <button ion-button color="light">
+          <ion-icon ios="ios-folder-open-outline" md="md-list" class="ioncol-icon"></ion-icon>
+          Category
+        </button>
+      </ion-item>
+
+      <ion-item class="button-item" item-start (click)="goSetting()">
+        <button ion-button color="light">
+          <ion-icon ios="ios-settings-outline" md="md-list" class="ioncol-icon"></ion-icon>
+          Settings
+        </button>
+      </ion-item>
+
+      <ion-item class="button-item" item-start (click)="goLogin()">
+        <button ion-button color="light">
+          <ion-icon ios="ios-log-out" md="md-log-out" class="ioncol-icon"></ion-icon>
+          Log out
+        </button>
+      </ion-item>
+
+    </ion-list>
+  </div>
+<!-- end propertymenu -->
 
 </ion-content>

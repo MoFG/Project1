@@ -43,8 +43,5 @@ export class AuthServiceProvider {
       observer.complete();
     });
   }
-  // constructor(public http: HttpClient) {
-  //   console.log('Hello AuthServiceProvider Provider');
-  // }
 
 }

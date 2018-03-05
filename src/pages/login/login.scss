@@ -1,21 +1,44 @@
-*{
-    font-family: segoe ui light;
+* {
+  font-family: segoe ui light;
 }
 page-login {
-    .icon{
-        font-size: 100px;
-        margin-bottom: 1em;
-    }
-    [col-12]{
-        text-align: center;
-    }
-    .content{
-        background: #00b894;
-    }
-    .back-button.show-back-button{
-        display: none;
-    }
-    .content{
-        border-bottom:2px solid #2d3436;
-      }
+  .icon {
+    font-size: 100px;
+    margin-bottom: 1em;
+  }
+  [col-12] {
+    text-align: center;
+  }
+  .content {
+    background: url("/assets/imgs/wall.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h3.title {
+    font-size: 50px;
+    color:#55efc4
+  }
+  .back-button.show-back-button {
+    display: none;
+  }
+  .content {
+    border-bottom: 2px solid #2d3436;
+  }
+  .ionrow-title {
+    margin-bottom: 22%;
+    margin-top: 3%;
+  }
+  .item-email,
+  .item-pass {
+    background: #636e72;
+    opacity: 0.6;
+    border-bottom: 1px solid #fff;
+  }
+  .list-ios .item-block .item-inner {
+    border: 0;
+  }
+  input.text-input.text-input-ios::placeholder {
+    color: #fff;
+    font-weight: bold;
+  }
 }
