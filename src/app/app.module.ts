@@ -1,3 +1,4 @@
+
 import { DetailPage } from './../pages/detail/detail';
 
 import { PropertyPage } from './../pages/property/property';
