@@ -5,14 +5,15 @@ page-property {
   .content {
     border-bottom: 2px solid #00b894;
   }
-
   p.state {
-    color: #00b894;
+    color: #1e90ff;
     font-weight: bold;
   }
   h2.name {
     text-overflow: ellipsis;
     overflow: hidden;
+    color: #2f3542;
+    font-weight: bold;
   }
   ion-searchbar.search {
     width: 100%;
@@ -21,8 +22,7 @@ page-property {
   }
   button.btnAdd {
     margin-top: 0em;
-    background: #636e72;
-    opacity: 0.4;
+    background: #2ed573;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -47,17 +47,33 @@ page-property {
     height: 40px;
     position: fixed;
     float: right;
-    top: 26%;
+    bottom: 5%;
     right: 8%;
   }
-
-  // CSS for propertymenu
+  button.btnDetail {
+    color: #fff;
+    background: #1e90ff;
+    border: 0;
+  } // CSS for propertymenu
   ion-card.card-wallpaper {
     width: 96%;
     margin-top: 8%;
-    background: url('/assets/imgs/wall3.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: #00c6ff;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  h2.username,
+  p.useremail {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .userinfo p.useremail {
+    font-size: 15px;
+    color: #ced6e0;
   }
   ion-card .info {
     position: relative;
@@ -78,28 +94,24 @@ page-property {
     bottom: 6%;
     left: 8%;
   }
-
   .ioncol-list {
     font-size: 20px;
     color: gray;
   }
-
   .ioncol-icon {
     font-size: 26px;
     margin-right: 2em;
     width: 30px;
+    color: #1e90ff;
   }
-
   .btnList {
     background: #fff;
     border: none;
   }
-
   .ioncol-list:hover .assets {
     color: #000;
     font-weight: bold;
   }
-
   .assets {
     color: #2d3436;
   }
@@ -109,17 +121,14 @@ page-property {
   .list-ios .item-block .item-inner {
     border: 0;
   }
-
-  .list-ios > .item-block:first-child,
-  .list-ios > .item-block:last-child {
+  .list-ios>.item-block:first-child,
+  .list-ios>.item-block:last-child {
     border: 0;
   }
-
   button.button-item {
     font-size: 18px;
     background: none;
   }
-
   .item-md .item-button {
     font-size: 18px;
     background: none;
@@ -128,10 +137,10 @@ page-property {
     background: none;
     font-size: 18px;
   }
-  .label-ios{
+  .label-ios {
     border-bottom: 1px solid #636e72;
   }
-  .propertymenu{
+  .propertymenu {
     position: absolute;
     top: -5%;
     left: -102%;
@@ -140,7 +149,7 @@ page-property {
     visibility: hidden;
     opacity: 0;
   }
-  .propertymenu.showMenu{
+  .propertymenu.showMenu {
     opacity: 1;
     visibility: visible;
     top: -5%;
@@ -150,13 +159,85 @@ page-property {
     height: 100%;
     background: #fff;
   }
-  .list-asset.hide{
+  .list-asset.hide {
     opacity: 0;
     visibility: hidden;
-    // transition: 0.4s;
   }
-  .button-item:hover .button{
+  .button-item:hover .button {
     color: #000;
     font-weight: bold;
   }
+
+  // CSS FORM
+  .createForm {
+    border-radius: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 230px;
+    height: 390px;
+    margin-left: -115px;
+    margin-top: -195px;
+    visibility: hidden;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    z-index: 10;
+    background: #fff;
+  }
+  .list-ios>.item-block:last-child,
+  .list-ios>.item-wrapper:last-child .item-block {
+    border: none;
+  }
+  ion-item button.btnClear, button.btnOk{
+    font-size: 20px;
+    width: 70px;
+    text-align: center;
+    background: #1e90ff;
+    font-size: 16px;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px;
+  }
+
+  .createForm.showForm{
+    visibility: visible;
+    transition: 0.4s;
+    transform: scale(1);
+  }
+  .wrapper{
+    width: 100%;
+    height: 830px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background:#636e72;
+    opacity: 0.5;
+    visibility: hidden;
+    transition: 0.4s;
+  }
+  .wrapper.showWrapper{
+    visibility: visible;
+    transition: 0.4s;
+  }
+  .input-wrapper ion-label{
+    border: 0;
+    margin: 0;
+  }
+  h3.ion-title{
+    text-align: center;
+  }
+  .ionlist-input{
+    text-align: center;
+  }
+  ion-item.ionitem-form{
+    text-align: center;
+  }
+ button.btnupdate,button.btndel{
+  padding: 5px 10px;
+  height: 30px;
+ }
 }

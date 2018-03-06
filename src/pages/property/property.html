@@ -11,28 +11,31 @@
 
 <ion-content padding>
   <ion-row class="ionrow-topcontent">
-    <!-- search bar use local data -->
-    <!-- <ion-searchbar class="search" [(ngModel)]="searchKey" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar> -->
 
-    <!-- search bar use firebase data -->
-    <ion-searchbar class="search" (ionInput)="getItems($event)" [(ngModel)]="searchKey"></ion-searchbar>
+    <ion-searchbar class="search"></ion-searchbar>
   </ion-row>
 
   <!-- Asset list get in Firebase -->
-  <ion-list class="list-asset">
-    <ion-item *ngFor="let items of shoppingItems | async">
+  <ion-list class="list-asset" *ngFor="let item of items">
+    <ion-item>
       <ion-thumbnail item-start>
-        <img src="{{items.thumbnail}}" />
+        <img src="{{item.thumbnail}}" />
       </ion-thumbnail>
-      <h2 class="name">{{items.model}}</h2>
-      <p>Category: {{items.category}}</p>
-      <p class="state">State: {{items.status}}</p>
-      <button ion-button outline small item-end color="dark" (click)="goDetail(items)">Detail</button>
+      <h2 class="name">{{item.model}}</h2>
+      <p>Category: {{item.category}}</p>
+      <p class="state">State: {{item.state}}</p>
+      <button ion-button outline small item-end (click)="goDetail(items)" class="btnDetail">Detail</button>
     </ion-item>
+    <button ion-button color="secondary" item-end (click)="updateDocument(location)" class="btnupdate">
+      Update
+    </button>
+    <button ion-button color="danger" item-end (click)="deleteDocument(location)" class="btndel">
+      Delete
+    </button>
   </ion-list>
 
   <div class="btnsearch">
-    <button ion-button ouline small class="btnAdd">Add</button>
+    <button ion-button ouline small class="btnAdd" (click)="addDocument()">Add</button>
   </div>
 
   <!-- Menu bar -->
@@ -41,8 +44,8 @@
       <div class="info">
         <img src="/assets/imgs/ava1.jpg" alt="" class="avatar">
         <div class="userinfo">
-          <h2 class="name">Donal J.Trump</h2>
-          <p>trumpd@dxc.com</p>
+          <h2 class="username">Donal J.Trump</h2>
+          <p class="useremail">trumpd@dxc.com</p>
         </div>
       </div>
     </ion-card>
@@ -79,6 +82,67 @@
 
     </ion-list>
   </div>
-<!-- end propertymenu -->
+  <!-- end propertymenu -->
+
+  <!-- Form create & edit, display:none -->
+  <form class="createForm">
+    <ion-col>
+      <ion-list insert class="ionlist-input">
+        <h3 class="ion-title">Asset Infomation</h3>
+
+        <!-- <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset id" [(ngModel)]="id" name="id" required>
+        </ion-item> -->
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset Category ID" [(ngModel)]="categoryId" name="categoryId" required>
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset name" [(ngModel)]="model" name="model" required>
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset Category" [(ngModel)]="category" name="category" required>
+        </ion-item>
+
+
+        <ion-item class="ionitem-form">
+          <input type="number" placeholder="Asset quantity" [(ngModel)]="quantity" name="quantity" equired>
+        </ion-item>
+
+
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset Picture" [(ngModel)]="picture" name="picture" equired>
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset thumbnail" [(ngModel)]="thumbnail" name="thumbnail">
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset state" [(ngModel)]="state" name="state">
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset logo" [(ngModel)]="logo" name="logo">
+        </ion-item>
+
+        <ion-item class="ionitem-form">
+          <input type="text" placeholder="Asset description" [(ngModel)]="description" name="description">
+        </ion-item>
+
+
+        <ion-item class="ionitem-form" item start>
+          <button class="btnClear" (click)="clearForm()">Clear</button>
+          <button class="btnOk" (click)="addDocument()">OK</button>
+        </ion-item>
+
+      </ion-list>
+    </ion-col>
+
+  </form>
+
+  <!--hide form -->
+  <div class="wrapper" (click)="outForm()"></div>
 
 </ion-content>

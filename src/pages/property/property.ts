@@ -1,9 +1,8 @@
-import { FirebaseProvider } from "./../../providers/firebase/firebase";
+import { ManagePage } from './../manage/manage';
+import { DatabaseProvider } from './../../providers/database/database';
 import { DetailPage } from "./../detail/detail";
-import { DashboardPage } from "./../dashboard/dashboard";
 import { Component, ViewChild } from "@angular/core";
-import { IonicPage, NavController, MenuController } from "ionic-angular";
-import { PropertyService } from "../../providers/properties.service";
+import { IonicPage, NavController, AlertController } from "ionic-angular";
 import {
   FirebaseListObservable,
   AngularFireDatabase
@@ -19,106 +18,136 @@ import { CategoryPage } from '../category/category';
   templateUrl: "property.html"
 })
 export class PropertyPage {
-  properties: Array<any>;
   searchKey: string = "";
   pushDashboardPage: any;
-  public shoppingItems: FirebaseListObservable<any[]>;
   newItem = "";
+  private _COLL: string = "items";
+  private _DOC: string = "Xy76Re34SdFR1";
+  private _CONTENT: any;
+  public items: any;
 
-  public assetList:Array<any>;
-  public loadedAssetList:Array<any>;
-  public assetRef:firebase.database.Reference;
-
-  constructor(
-    public navCtrl: NavController,
-    private propertySvc: PropertyService,
-    public firebaseProvider: FirebaseProvider,
-    public menu: MenuController
-  ) {
-    this.findAll();
-    this.shoppingItems = this.firebaseProvider.getShoppingItems();
-
-    this.assetRef = firebase.database().ref('/items');
-
-    this.assetRef.on('value', assetList => {
-      let assets = [];
-      assetList.forEach(items => {
-        assets.push(items.val());
-        return false;
-      });
-      this.assetList = assets;
-      this.loadedAssetList = assets;
-    });
-  }
-
-  initializeItems(): void {
-    this.assetList = this.loadedAssetList;
-  }
-
-  getItems(searchbar) {
-    this.initializeItems();
-    //set q to the value of the searchbar
-    var q = searchbar.target.value;
-    if (!q) {
-      return;
-    }
-    this.assetList = this.assetList.filter(v => {
-      if (v.model && q) {
-        if (v.model.toLowerCase().indexOf(q.toLowerCase()) > -1) {
-          return true;
-        }
-        return false;
-      }
-    });
-    console.log(q, this.assetList.length);
-  }
-
-  onInput(event) {
-    this.propertySvc
-      .findByName(this.searchKey)
-      .then(data => {
-        this.properties = data;
-      })
-      .catch(error => alert(JSON.stringify(error)));
-  }
-
-  onCancel(event) {
-    this.findAll();
-  }
-
-  findAll() {
-    this.propertySvc
-      .findAll()
-      .then(data => (this.properties = data))
-      .catch(error => alert(error));
+  constructor(public navCtrl: NavController, private _DB: DatabaseProvider, private _ALERT: AlertController) {
+    this._CONTENT = {
+      categoryId: 'CT1',
+      model: "HP 250X",
+      category: "Laptop",
+      quantity: "20",
+      picture: "https://images-na.ssl-images-amazon.com/images/I/71yyt-7PlxL._SX355_.jpg",
+      thumbnail: "https://images-na.ssl-images-amazon.com/images/I/41bwvPP3qZL._AC_SY200_.jpg",
+      state: "Open",
+      logo: "https://images-na.ssl-images-amazon.com/images/I/51GJs9CSkML._AC_SY200_.jpg",
+      description: "8Gb RAM, SSD512Gb, Intel Core i9 9989HQ"
+    };
   }
 
   gomenu() {
     $(".propertymenu").toggleClass("showMenu");
     $(".list-asset").toggleClass("hide");
   }
-
   goDetail(items: any) {
     this.navCtrl.push(DetailPage, { items: items });
     console.log(items.id);
   }
-
-  goCategory(){
+  goCategory() {
     this.navCtrl.push(CategoryPage);
   }
-  // addItem(){
-  //   this.firebaseProvider.addItem(this.newItem);
-  // }
-
-  removeItem(id) {
-    this.firebaseProvider.removeItem(id);
-  }
-  
   pushAssets() {
     return this.gomenu();
   }
-
   goLogin() {
     this.navCtrl.push(LoginPage);
   }
+  goForm() {
+    $('.createForm').toggleClass('showForm');
+    $('.wrapper').addClass('showWrapper');
+  }
+
+  outForm() {
+    $('.wrapper').removeClass('showWrapper');
+    $('.createForm').removeClass('showForm');
+  }
+
+  //remove text in form
+  // clearForm():void {
+  
+  // }
+
+  ionViewDidEnter() {
+    this.retrieveCollection();
+  }
+  generateCollectionAndDocument(): void {
+    this._DB.createAndPopulateDocument(this._COLL,
+      this._DOC,
+      this._CONTENT)
+      .then((data: any) => {
+        console.dir(data);
+      })
+      .catch((error: any) => {
+        console.dir(error);
+      });
+  }
+
+  /**
+    * Retrieve all documents from the specified collection using the
+    * getDocuments method of the DatabaseProvider service
+    *
+    * @public
+    * @method retrieveCollection
+    * @return {none}
+    */
+  retrieveCollection(): void {
+    this._DB.getDocuments(this._COLL)
+      .then((data) => {
+
+        // IF we don't have any documents then the collection doesn't exist
+        // so we create it!
+        if (data.length === 0) {
+          this.generateCollectionAndDocument();
+        }
+
+        // Otherwise the collection does exist and we assign the returned
+        // documents to the public property of locations so this can be
+        // iterated through in the component template
+        else {
+          this.items = data;
+        }
+      })
+      .catch();
+  }
+
+  addDocument(): void {
+    this.navCtrl.push(ManagePage);
+  }
+  updateDocument(obj): void {
+    let params: any = {
+      collection: this._COLL,
+      item: obj
+    };
+    this.navCtrl.push(ManagePage, { record: params, isEdited: true });
+  }
+  deleteDocument(obj): void {
+    this._DB.deleteDocument(this._COLL,
+      obj.id)
+      .then((data: any) => {
+        this.displayAlert('Success', 'The record ' + obj.model + ' was successfully removed');
+      })
+      .catch((error: any) => {
+        this.displayAlert('Error', error.message);
+      });
+  }
+  displayAlert(title: string,
+    message: string): void {
+    let alert: any = this._ALERT.create({
+      title: title,
+      subTitle: message,
+      buttons: [{
+        text: 'Got It!',
+        handler: () => {
+          this.retrieveCollection();
+        }
+      }]
+    });
+    alert.present();
+  }
+
 }

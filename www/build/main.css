@@ -25719,72 +25719,6 @@ page-category ion-col.ioncol-item:hover .ioncard-item {
   transition: 0.4s;
 }
 
-page-dashboard ion-card.card-wallpaper {
-  width: auto;
-  height: 200px;
-  background: url("/assets/imgs/wall3.jpg") no-repeat cover;
-}
-
-page-dashboard ion-card .info {
-  position: relative;
-  width: 150px;
-  height: 180px;
-}
-
-page-dashboard img.avatar {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: 7%;
-  left: 5%;
-  z-index: 2;
-}
-
-page-dashboard .userinfo {
-  position: absolute;
-  bottom: 6%;
-  left: 8%;
-}
-
-page-dashboard .ioncol-list {
-  font-size: 20px;
-  color: gray;
-}
-
-page-dashboard .ioncol-icon {
-  font-size: 26px;
-  margin-right: 2em;
-  width: 30px;
-}
-
-page-dashboard .btnList {
-  background: #fff;
-  border: none;
-}
-
-page-dashboard .ioncol-list:hover .assets {
-  color: #000;
-  font-weight: bold;
-}
-
-page-dashboard .assets {
-  color: #2d3436;
-}
-
-page-dashboard .content {
-  border-bottom: 2px solid #00b894;
-}
-
-page-dashboard .back-button.show-back-button {
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-page-dashboard ion-row.ionrow-list {
-  border-bottom: 1px gray solid;
-}
-
 page-detail .content {
   border-bottom: 2px solid #00b894;
   overflow: hidden;
@@ -25928,14 +25862,17 @@ page-login [col-12] {
 }
 
 page-login .content {
-  background: url("/assets/imgs/wall.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #1c92d2;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#f2fcfe), to(#1c92d2));
+  background: linear-gradient(to right, #f2fcfe, #1c92d2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 page-login h3.title {
   font-size: 50px;
-  color: #55efc4;
+  color: #fff;
 }
 
 page-login .back-button.show-back-button {
@@ -25953,9 +25890,11 @@ page-login .ionrow-title {
 
 page-login .item-email,
 page-login .item-pass {
-  background: #636e72;
+  background: #2f3542;
   opacity: 0.6;
+  border-radius: 20px;
   border-bottom: 1px solid #fff;
+  margin-bottom: 10px;
 }
 
 page-login .list-ios .item-block .item-inner {
@@ -25982,6 +25921,33 @@ page-login input.text-input.text-input-ios::placeholder {
   font-weight: bold;
 }
 
+page-login .text-input-ios::-webkit-input-placeholder {
+  color: #000;
+}
+
+page-login .text-input-ios:-ms-input-placeholder {
+  color: #000;
+}
+
+page-login .text-input-ios::-ms-input-placeholder {
+  color: #000;
+}
+
+page-login .text-input-ios::placeholder {
+  color: #000;
+}
+
+page-login .list-ios > .item-block:first-child,
+page-login .list-ios > .item-block:last-child,
+page-login .list-ios > .item-wrapper:last-child .item-block {
+  border: 0;
+}
+
+page-login button.submit-btn {
+  background: #2ed573;
+  border-radius: 20px;
+}
+
 page-property .btnBack {
   background: #f8f8f8;
 }
@@ -25991,13 +25957,15 @@ page-property .content {
 }
 
 page-property p.state {
-  color: #00b894;
+  color: #1e90ff;
   font-weight: bold;
 }
 
 page-property h2.name {
   text-overflow: ellipsis;
   overflow: hidden;
+  color: #2f3542;
+  font-weight: bold;
 }
 
 page-property ion-searchbar.search {
@@ -26008,8 +25976,7 @@ page-property ion-searchbar.search {
 
 page-property button.btnAdd {
   margin-top: 0em;
-  background: #636e72;
-  opacity: 0.4;
+  background: #2ed573;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -26039,16 +26006,37 @@ page-property .btnsearch {
   height: 40px;
   position: fixed;
   float: right;
-  top: 26%;
+  bottom: 5%;
   right: 8%;
+}
+
+page-property button.btnDetail {
+  color: #fff;
+  background: #1e90ff;
+  border: 0;
 }
 
 page-property ion-card.card-wallpaper {
   width: 96%;
   margin-top: 8%;
-  background: url("/assets/imgs/wall3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #00c6ff;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00c6ff));
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+page-property h2.username,
+page-property p.useremail {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+page-property .userinfo p.useremail {
+  font-size: 15px;
+  color: #ced6e0;
 }
 
 page-property ion-card .info {
@@ -26082,6 +26070,7 @@ page-property .ioncol-icon {
   font-size: 26px;
   margin-right: 2em;
   width: 30px;
+  color: #1e90ff;
 }
 
 page-property .btnList {
@@ -26162,4 +26151,89 @@ page-property .list-asset.hide {
 page-property .button-item:hover .button {
   color: #000;
   font-weight: bold;
+}
+
+page-property .createForm {
+  border-radius: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 230px;
+  height: 390px;
+  margin-left: -115px;
+  margin-top: -195px;
+  visibility: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  z-index: 10;
+  background: #fff;
+}
+
+page-property .list-ios > .item-block:last-child,
+page-property .list-ios > .item-wrapper:last-child .item-block {
+  border: none;
+}
+
+page-property ion-item button.btnClear, page-property button.btnOk {
+  font-size: 20px;
+  width: 70px;
+  text-align: center;
+  background: #1e90ff;
+  font-size: 16px;
+  border-radius: 5px;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px;
+}
+
+page-property .createForm.showForm {
+  visibility: visible;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+page-property .wrapper {
+  width: 100%;
+  height: 830px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background: #636e72;
+  opacity: 0.5;
+  visibility: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+page-property .wrapper.showWrapper {
+  visibility: visible;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+page-property .input-wrapper ion-label {
+  border: 0;
+  margin: 0;
+}
+
+page-property h3.ion-title {
+  text-align: center;
+}
+
+page-property .ionlist-input {
+  text-align: center;
+}
+
+page-property ion-item.ionitem-form {
+  text-align: center;
+}
+
+page-property button.btnupdate, page-property button.btndel {
+  padding: 5px 10px;
+  height: 30px;
 }

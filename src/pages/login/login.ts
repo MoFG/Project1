@@ -1,7 +1,6 @@
 
 import { PropertyPage } from './../property/property';
 import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
-import { DashboardPage } from './../dashboard/dashboard';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Loading,LoadingController,AlertController } from 'ionic-angular';
 
