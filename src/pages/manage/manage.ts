@@ -14,6 +14,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class ManagePage {
   public form: any;
   public records: any;
+  public id: string = '';
   public model: string = '';
   public categoryId: string = '';
   public category: string = '';
@@ -31,6 +32,7 @@ export class ManagePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private _FB: FormBuilder, private _DB: DatabaseProvider,
     private _ALERT: AlertController) {
     this.form = _FB.group({
+      'id': ['', Validators.required],
       'model': ['', Validators.required],
       'categoryId': ['', Validators.required],
       'category': ['', Validators.required],
@@ -45,6 +47,7 @@ export class ManagePage {
     if (navParams.get('isEdited')) {
       let record = navParams.get('record');
 
+      this.id = record.item.id;
       this.model = record.item.model;
       this.categoryId = record.item.categoryId;
       this.category = record.item.category;
@@ -63,6 +66,7 @@ export class ManagePage {
 
   saveDocument(val: any): void {
     let model: string = this.form.controls["model"].value,
+      id: string = this.form.controls["id"].value,
       categoryId: string = this.form.controls["categoryId"].value,
       category: string = this.form.controls["category"].value,
       quantity: string = this.form.controls["quantity"].value,
@@ -81,6 +85,7 @@ export class ManagePage {
       this._DB.updateDocument(this._COLL,
         this.docID,
         {
+          id:id,
           model: model,
           categoryId: categoryId,
           category: category,
@@ -107,6 +112,7 @@ export class ManagePage {
       // with the addDocument method
       this._DB.addDocument(this._COLL,
         {
+          id: id,
           model: model,
           categoryId: categoryId,
           category: category,
@@ -147,6 +153,7 @@ export class ManagePage {
   * @return {none}
   */
   clearForm(): void {
+    this.id = '';
     this.model = '';
     this.categoryId = '';
     this.category = '';

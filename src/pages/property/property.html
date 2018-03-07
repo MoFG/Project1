@@ -24,12 +24,12 @@
       <h2 class="name">{{item.model}}</h2>
       <p>Category: {{item.category}}</p>
       <p class="state">State: {{item.state}}</p>
-      <button ion-button outline small item-end (click)="goDetail(items)" class="btnDetail">Detail</button>
+      <button ion-button outline small item-end (click)="goDetail(item)" class="btnDetail">Detail</button>
     </ion-item>
-    <button ion-button color="secondary" item-end (click)="updateDocument(location)" class="btnupdate">
+    <button ion-button color="secondary" item-end (click)="updateDocument(item)" class="btnupdate">
       Update
     </button>
-    <button ion-button color="danger" item-end (click)="deleteDocument(location)" class="btndel">
+    <button ion-button color="danger" item-end (click)="deleteDocument(item)" class="btndel">
       Delete
     </button>
   </ion-list>
@@ -90,9 +90,11 @@
       <ion-list insert class="ionlist-input">
         <h3 class="ion-title">Asset Infomation</h3>
 
-        <!-- <ion-item class="ionitem-form">
+        <ion-item class="ionitem-form">
           <input type="text" placeholder="Asset id" [(ngModel)]="id" name="id" required>
-        </ion-item> -->
+        </ion-item>
+
+        
         <ion-item class="ionitem-form">
           <input type="text" placeholder="Asset Category ID" [(ngModel)]="categoryId" name="categoryId" required>
         </ion-item>

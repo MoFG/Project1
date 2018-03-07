@@ -11,6 +11,12 @@
   <form [formGroup]="form" (ngSubmit)="saveDocument(form.value)">
 
     <ion-item>
+      <ion-label stacked>ID:</ion-label>
+      <ion-input type="text" formControlName="id" [(ngModel)]="id"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
       <ion-label stacked>Model:</ion-label>
       <ion-input type="text" formControlName="model" [(ngModel)]="model"></ion-input>
     </ion-item>
@@ -24,7 +30,7 @@
 
     <ion-item>
       <ion-label stacked>Category:</ion-label>
-      <ion-input type="text" formControlName="categoryId" [(ngModel)]="category"></ion-input>
+      <ion-input type="text" formControlName="category" [(ngModel)]="category"></ion-input>
     </ion-item>
 
 

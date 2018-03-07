@@ -33,9 +33,9 @@ export class DetailPage {
     $('.createForm').removeClass('showForm');
   }
 
-  goDetail(items: any) {
-    console.log(items);
-    this.afd.list('/items').subscribe(res => {
+  goDetail(item: any) {
+    console.log(item);
+    this.afd.list('/item').subscribe(res => {
       console.log(res);
     })
   }

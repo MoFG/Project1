@@ -28,6 +28,7 @@ export class PropertyPage {
 
   constructor(public navCtrl: NavController, private _DB: DatabaseProvider, private _ALERT: AlertController) {
     this._CONTENT = {
+      id:'1',
       categoryId: 'CT1',
       model: "HP 250X",
       category: "Laptop",
@@ -44,9 +45,9 @@ export class PropertyPage {
     $(".propertymenu").toggleClass("showMenu");
     $(".list-asset").toggleClass("hide");
   }
-  goDetail(items: any) {
-    this.navCtrl.push(DetailPage, { items: items });
-    console.log(items.id);
+  goDetail(item: any) {
+    this.navCtrl.push(DetailPage, { item: item });
+    console.log(item.model);
   }
   goCategory() {
     this.navCtrl.push(CategoryPage);

@@ -8,11 +8,11 @@
 
 <ion-content padding class="content">
 
-  <!-- <ion-card *ngIf="items.id">
-    <img src="{{items.picture}}" alt="">
+  <ion-card *ngIf="item.id">
+    <img src="{{item.picture}}" alt="">
     <ion-card-content class="ioncard-content">
-      <h2 class="card-title">{{items.model}}</h2>
-      <p class="discription">{{items.discription}}</p>
+      <h2 class="card-title">{{item.model}}</h2>
+      <p class="discription">{{item.discription}}</p>
     </ion-card-content>
 
     <ion-list class="ionlist">
@@ -20,16 +20,16 @@
       <ion-item class="iconitem">
         <ion-icon ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
         <h3 item-start class="iconitem-text">State</h3>
-        <ion-note item-end class="iconitem-end">{{items.status}}</ion-note>
+        <ion-note item-end class="iconitem-end">{{item.state}}</ion-note>
       </ion-item>
 
       <ion-item class="iconitem">
         <ion-icon ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
         <h3 item-start class="iconitem-text">Quantity</h3>
-        <ion-note item-end class="iconitem-end">{{items.quantity}}</ion-note>
+        <ion-note item-end class="iconitem-end">{{item.quantity}}</ion-note>
       </ion-item>
 
-      <ion-item class="iconitem-state">
+      <!-- <ion-item class="iconitem-state">
         <button ion-button icon-left clear item-left class="item-button" (click)="goForm()">
           <ion-icon ios="ios-build-outline" md="md-build"></ion-icon>
           Edit
@@ -38,58 +38,15 @@
           <ion-icon ios="ios-trash-outline" md="md-trash"></ion-icon>
           Remove
         </button>
-      </ion-item>
+      </ion-item> -->
 
     </ion-list>
-  </ion-card> -->
+  </ion-card>
 
   <ion-card class="ioncard-img">
     <img src="/assets/imgs/saleoff.jpg" alt="">
   </ion-card>
 
-  <!-- Form create & edit, display:none -->
-  <form class="createForm">
-    <ion-col>
-      <ion-list insert>
-        <h3 class="ion-title">Asset Infomation</h3>
-
-        <ion-item class="ionitem-form">
-          <input type="text" placeholder="Asset id" [(ngModel)]="id" name="id" item-start required>
-        </ion-item>
-
-        <ion-item class="ionitem-form">
-          <input type="text" placeholder="Asset name" [(ngModel)]="model" name="model" item-start required>
-        </ion-item>
-        
-        <ion-item class="ionitem-form">
-          <input type="text" placeholder="Asset Category" [(ngModel)]="category" name="category" item-start required>
-        </ion-item>
-
-        <ion-item class="ionitem-form">
-          <input type="number" placeholder="Asset quantity" [(ngModel)]="quantity" name="quantity" item-start required>
-        </ion-item>
-
-        <ion-item class="ionitem-form">
-          <input type="text" placeholder="Asset description" [(ngModel)]="description" item-start name="description">
-        </ion-item>
-
-        <ion-item class="ionitem-form">
-          <input type="text" placeholder="Asset thumbnail" [(ngModel)]="thumbnail" item-start name="thumbnail">
-        </ion-item>
-        <hr>
-        <ion-item class="ionitem-form">
-          <button ion-button item-start class="btnClear">Clear</button>
-          <button ion-button item-end class="btnOk">OK</button>
-          <!-- (click)="updateAsset(id, model, category, quantity, description, thumbnail) -->
-        </ion-item>
-
-      </ion-list>
-    </ion-col>
-
-  </form>
-
-  <!--hide form -->
-  <div class="wrapper" (click)="outForm()"></div>
 </ion-content>
 
 
