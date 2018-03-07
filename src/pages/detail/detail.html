@@ -8,37 +8,26 @@
 
 <ion-content padding class="content">
 
-  <ion-card *ngIf="item.id">
+  <ion-card>
     <img src="{{item.picture}}" alt="">
     <ion-card-content class="ioncard-content">
       <h2 class="card-title">{{item.model}}</h2>
-      <p class="discription">{{item.discription}}</p>
+      <p class="discription">{{item.description}}</p>
     </ion-card-content>
 
     <ion-list class="ionlist">
 
       <ion-item class="iconitem">
-        <ion-icon ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
+        <ion-icon class="eye" ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
         <h3 item-start class="iconitem-text">State</h3>
         <ion-note item-end class="iconitem-end">{{item.state}}</ion-note>
       </ion-item>
 
       <ion-item class="iconitem">
-        <ion-icon ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
+        <ion-icon class="eye" ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
         <h3 item-start class="iconitem-text">Quantity</h3>
         <ion-note item-end class="iconitem-end">{{item.quantity}}</ion-note>
       </ion-item>
-
-      <!-- <ion-item class="iconitem-state">
-        <button ion-button icon-left clear item-left class="item-button" (click)="goForm()">
-          <ion-icon ios="ios-build-outline" md="md-build"></ion-icon>
-          Edit
-        </button>
-        <button ion-button icon-left clear item-right class="item-button">
-          <ion-icon ios="ios-trash-outline" md="md-trash"></ion-icon>
-          Remove
-        </button>
-      </ion-item> -->
 
     </ion-list>
   </ion-card>

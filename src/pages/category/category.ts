@@ -1,20 +1,16 @@
 
 import { DetailPage } from './../detail/detail';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FirebaseListObservable } from 'angularfire2/database';
+import { IonicPage, NavController, NavParams, AlertController, ActionSheetController } from 'ionic-angular';
+import { DatabaseProvider } from '../../providers/database/database';
 
 @Component({
   selector: 'page-category',
   templateUrl: 'category.html',
 })
 export class CategoryPage {
-
-  public shoppingItems: FirebaseListObservable<any[]>;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // this.firebaseProvider.getShoppingItems().subscribe(res => {
-    //   this.shoppingItems = res;
-    // })
+  
+  constructor(public navCtrl: NavController, public actionCtrl: ActionSheetController) {
   }
 
 }

@@ -78,7 +78,6 @@ export class DatabaseProvider {
                 quantity: doc.data().quantity,
                 picture: doc.data().picture,
                 thumbnail: doc.data().thumbnail,
-                logo: doc.data().logo,
                 state: doc.data().state,
                 description: doc.data().description
               });
@@ -169,5 +168,5 @@ export class DatabaseProvider {
     });
   }
 
-  
+
 }

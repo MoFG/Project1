@@ -14,7 +14,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class ManagePage {
   public form: any;
   public records: any;
-  public id: string = '';
   public model: string = '';
   public categoryId: string = '';
   public category: string = '';
@@ -22,11 +21,11 @@ export class ManagePage {
   public picture: string = '';
   public thumbnail: string = '';
   public state: string = '';
-  public logo: string = '';
+  // public logo: string = '';
   public description: string = '';
   public docID: string = '';
   public isEditable: boolean = false;
-  public title: string = 'Add a new document';
+  public title: string = 'Add a new asset';
   private _COLL: string = "items";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _FB: FormBuilder, private _DB: DatabaseProvider,
@@ -40,14 +39,13 @@ export class ManagePage {
       'picture': ['', Validators.required],
       'thumbnail': ['', Validators.required],
       'state': ['', Validators.required],
-      'logo': ['', Validators.required],
+      // 'logo': ['', Validators.required],
       'description': ['', Validators.required]
     });
 
     if (navParams.get('isEdited')) {
       let record = navParams.get('record');
 
-      this.id = record.item.id;
       this.model = record.item.model;
       this.categoryId = record.item.categoryId;
       this.category = record.item.category;
@@ -55,7 +53,7 @@ export class ManagePage {
       this.picture = record.item.picture;
       this.thumbnail = record.item.thumbnail;
       this.state = record.item.state;
-      this.logo = record.item.logo;
+      // this.logo = record.item.logo;
       this.description = record.item.description;
       this.docID = record.item.id;
       this.isEditable = true;
@@ -66,14 +64,12 @@ export class ManagePage {
 
   saveDocument(val: any): void {
     let model: string = this.form.controls["model"].value,
-      id: string = this.form.controls["id"].value,
       categoryId: string = this.form.controls["categoryId"].value,
       category: string = this.form.controls["category"].value,
       quantity: string = this.form.controls["quantity"].value,
       picture: string = this.form.controls["picture"].value,
       thumbnail: string = this.form.controls["thumbnail"].value,
       state: string = this.form.controls["state"].value,
-      logo: string = this.form.controls["logo"].value,
       description: string = this.form.controls["description"].value;
 
 
@@ -85,7 +81,6 @@ export class ManagePage {
       this._DB.updateDocument(this._COLL,
         this.docID,
         {
-          id:id,
           model: model,
           categoryId: categoryId,
           category: category,
@@ -93,11 +88,9 @@ export class ManagePage {
           picture: picture,
           thumbnail: thumbnail,
           state: state,
-          logo: logo,
           description: description
         })
         .then((data) => {
-          this.clearForm();
           this.displayAlert('Success', 'The document ' + model + ' was successfully updated');
         })
         .catch((error) => {
@@ -112,7 +105,6 @@ export class ManagePage {
       // with the addDocument method
       this._DB.addDocument(this._COLL,
         {
-          id: id,
           model: model,
           categoryId: categoryId,
           category: category,
@@ -120,7 +112,6 @@ export class ManagePage {
           picture: picture,
           thumbnail: thumbnail,
           state: state,
-          logo: logo,
           description: description
         })
         .then((data) => {
@@ -145,15 +136,7 @@ export class ManagePage {
 
 
 
-  /**
-  * Clear all form data
-  *
-  * @public
-  * @method clearForm
-  * @return {none}
-  */
   clearForm(): void {
-    this.id = '';
     this.model = '';
     this.categoryId = '';
     this.category = '';
@@ -161,7 +144,6 @@ export class ManagePage {
     this.picture = '';
     this.thumbnail = '';
     this.state = '';
-    this.logo = '';
     this.description = '';
   }
 

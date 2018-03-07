@@ -14,20 +14,15 @@ page-property {
     overflow: hidden;
     color: #2f3542;
     font-weight: bold;
+    margin-bottom: 15px;
+  }
+  p.cate{
+    margin-bottom: 5px;
   }
   ion-searchbar.search {
     width: 100%;
     border-radius: 0.3em;
     margin-bottom: 0.6em;
-  }
-  button.btnAdd {
-    margin-top: 0em;
-    background: #2ed573;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
   }
   .btnMenu {
     background: #f8f8f8;
@@ -42,19 +37,36 @@ page-property {
   .ionrow-topcontent {
     text-align: center;
   }
-  .btnsearch {
+  .btnadd {
     width: 40px;
     height: 40px;
     position: fixed;
+    text-align: center;
     float: right;
     bottom: 5%;
+    line-height: 40px;
     right: 8%;
+    background: #1e90ff;
+    border-radius: 50%;
   }
-  button.btnDetail {
+  button.btnDetail{
     color: #fff;
     background: #1e90ff;
     border: 0;
-  } // CSS for propertymenu
+    padding: 5px 10px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+  }
+  button.btnupdate{
+    background: #2ed573;
+  }
+  button.btndel{
+    background: #ff3838;
+  }
+  
+  // CSS for propertymenu
   ion-card.card-wallpaper {
     width: 96%;
     margin-top: 8%;
@@ -159,7 +171,7 @@ page-property {
     height: 100%;
     background: #fff;
   }
-  .list-asset.hide {
+  .list-asset.hide, .btnadd.hide {
     opacity: 0;
     visibility: hidden;
   }
@@ -236,8 +248,34 @@ page-property {
   ion-item.ionitem-form{
     text-align: center;
   }
- button.btnupdate,button.btndel{
-  padding: 5px 10px;
-  height: 30px;
- }
+  .ionicon-add{
+    font-size: 3em;
+  }
+  .btnDetail,.iconupdate,.icondel{
+    width: 30px;
+    text-align: center;
+    color: #2f3542;
+    border-radius: 5px;
+    float: left;
+    background: transparent;
+    font-size: 2em;
+    margin-left: 50px;
+    font-size: 2em;
+  }
+  .ioncol-thumbnail{
+    text-align: center;
+  }
+  .thumb{
+    margin-left: 10px;
+  }
+  .btndel{
+    margin-left: 15px;
+  }
+  .item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img{
+    width: 80px;
+    height: 80px;;
+  }
+  .row-item{
+    border-bottom: 1px solid #ced6e0;
+  }
 }

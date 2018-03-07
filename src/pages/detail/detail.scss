@@ -14,13 +14,17 @@ page-detail {
     text-overflow: ellipsis;
     overflow: hidden;
   }
-  h3.iconitem-text,
-  .iconitem-end {
+  h3.iconitem-text{
     font-size: 16px;
     color: #2d3436;
   }
   ion-note.iconitem-end {
-    color: #00b894;
+    color: #1e90ff;
+    font-weight: bold;
+  }
+  .iconitem .eye{
+    font-size: 2em;
+    color: #2f3542;
   }
   .item-ios .item-button {
     font-size: 1.7rem;

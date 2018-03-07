@@ -1,3 +1,4 @@
+import { ActionSheetController } from 'ionic-angular/components/action-sheet/action-sheet-controller';
 import { ManagePage } from './../manage/manage';
 import { DatabaseProvider } from './../../providers/database/database';
 import { DetailPage } from "./../detail/detail";
@@ -18,36 +19,74 @@ import { CategoryPage } from '../category/category';
   templateUrl: "property.html"
 })
 export class PropertyPage {
+  public assetRef: firebase.database.Reference; //pull data from firebase
+  public assetList: Array<any>;//get data from firebase
+  public loadAssetList: Array<any>;
+
   searchKey: string = "";
   pushDashboardPage: any;
   newItem = "";
   private _COLL: string = "items";
-  private _DOC: string = "Xy76Re34SdFR1";
+  private _DOC: string = "";
   private _CONTENT: any;
   public items: any;
 
-  constructor(public navCtrl: NavController, private _DB: DatabaseProvider, private _ALERT: AlertController) {
+  constructor(public navCtrl: NavController, private _DB: DatabaseProvider, private _ALERT: AlertController, public actionCtrl: ActionSheetController) {
     this._CONTENT = {
-      id:'1',
-      categoryId: 'CT1',
-      model: "HP 250X",
-      category: "Laptop",
-      quantity: "20",
-      picture: "https://images-na.ssl-images-amazon.com/images/I/71yyt-7PlxL._SX355_.jpg",
-      thumbnail: "https://images-na.ssl-images-amazon.com/images/I/41bwvPP3qZL._AC_SY200_.jpg",
-      state: "Open",
-      logo: "https://images-na.ssl-images-amazon.com/images/I/51GJs9CSkML._AC_SY200_.jpg",
-      description: "8Gb RAM, SSD512Gb, Intel Core i9 9989HQ"
+      id: '',
+      categoryId: '',
+      model: "",
+      category: "",
+      quantity: "",
+      picture: "",
+      thumbnail: "",
+      state: "",
+      logo: "",
+      description: ""
     };
+    // this.assetRef = firebase.database().ref('/items');
+    // this.assetRef.on('value', assetList => {
+    //   let assets = [];
+    //   assetList.forEach(asset => {
+    //     assets.push(asset.val());
+    //     return false;
+    //   });
+
+    //   this.assetList = assets;
+    //   this.loadAssetList = assets;
+    // });
   }
+
+  // initializeItems(): void {
+  //   this.assetList = this.loadAssetList;
+  // }
+
+  // getItems(searchbar) {
+  //   this.initializeItems();
+  //   var q = searchbar.srcElement.value;
+  //   if (!q) {
+  //     return;
+  //   }
+
+  //   this.assetList = this.assetList.filter((v) => {
+  //     if (v.model && q) {
+  //       if (v.model.toLowercase().indexOf(q.toLowercase()) < -1) {
+  //         return false;
+  //       }
+  //       return false;
+  //     }
+  //   });
+  //   console.log(q, this.assetList.length);
+  // }
 
   gomenu() {
     $(".propertymenu").toggleClass("showMenu");
     $(".list-asset").toggleClass("hide");
+    $(".btnadd").toggleClass("hide");
   }
   goDetail(item: any) {
     this.navCtrl.push(DetailPage, { item: item });
-    console.log(item.model);
+    console.log(item.id);
   }
   goCategory() {
     this.navCtrl.push(CategoryPage);
@@ -68,14 +107,10 @@ export class PropertyPage {
     $('.createForm').removeClass('showForm');
   }
 
-  //remove text in form
-  // clearForm():void {
-  
-  // }
-
   ionViewDidEnter() {
     this.retrieveCollection();
   }
+
   generateCollectionAndDocument(): void {
     this._DB.createAndPopulateDocument(this._COLL,
       this._DOC,
@@ -127,14 +162,29 @@ export class PropertyPage {
     this.navCtrl.push(ManagePage, { record: params, isEdited: true });
   }
   deleteDocument(obj): void {
-    this._DB.deleteDocument(this._COLL,
-      obj.id)
-      .then((data: any) => {
-        this.displayAlert('Success', 'The record ' + obj.model + ' was successfully removed');
-      })
-      .catch((error: any) => {
-        this.displayAlert('Error', error.message);
-      });
+    let alert = this._ALERT.create({
+      title: 'DELETE',
+      message: 'DO YOU REALLY WANT TO DELETE',
+      buttons: [{
+        text: 'NO',
+        handler: data => {
+          console.log('NO clicked!');
+        }
+      }, {
+        text: 'YES',
+        handler: () => {
+          this._DB.deleteDocument(this._COLL,
+            obj.id)
+            .then((data: any) => {
+              this.displayAlert('Success', 'The record ' + obj.model + ' was successfully removed');
+            })
+            .catch((error: any) => {
+              this.displayAlert('Error', error.message);
+            });
+        }
+      }]
+    });
+    alert.present();
   }
   displayAlert(title: string,
     message: string): void {

@@ -1,3 +1,4 @@
+import { enviroment } from './../enviroments/enviroment';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailPage } from './../pages/detail/detail';
 import { PropertyPage } from './../pages/property/property';
@@ -33,7 +34,7 @@ import { ManagePage } from '../pages/manage/manage';
     HttpModule,
     AngularFireDatabaseModule,
     HttpClientModule,
-    // AngularFireModule.initializeApp(enviroment),
+    AngularFireModule.initializeApp(enviroment.firebase),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
