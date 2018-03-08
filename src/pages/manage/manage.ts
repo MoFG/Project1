@@ -21,7 +21,6 @@ export class ManagePage {
   public picture: string = '';
   public thumbnail: string = '';
   public state: string = '';
-  // public logo: string = '';
   public description: string = '';
   public docID: string = '';
   public isEditable: boolean = false;
@@ -31,7 +30,7 @@ export class ManagePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private _FB: FormBuilder, private _DB: DatabaseProvider,
     private _ALERT: AlertController) {
     this.form = _FB.group({
-      'id': ['', Validators.required],
+      // 'id': ['', Validators.required],
       'model': ['', Validators.required],
       'categoryId': ['', Validators.required],
       'category': ['', Validators.required],
@@ -39,7 +38,6 @@ export class ManagePage {
       'picture': ['', Validators.required],
       'thumbnail': ['', Validators.required],
       'state': ['', Validators.required],
-      // 'logo': ['', Validators.required],
       'description': ['', Validators.required]
     });
 
@@ -53,7 +51,6 @@ export class ManagePage {
       this.picture = record.item.picture;
       this.thumbnail = record.item.thumbnail;
       this.state = record.item.state;
-      // this.logo = record.item.logo;
       this.description = record.item.description;
       this.docID = record.item.id;
       this.isEditable = true;
@@ -146,6 +143,5 @@ export class ManagePage {
     this.state = '';
     this.description = '';
   }
-
 
 }

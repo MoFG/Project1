@@ -19,19 +19,18 @@ import { CategoryPage } from '../category/category';
   templateUrl: "property.html"
 })
 export class PropertyPage {
-  public assetRef: firebase.database.Reference; //pull data from firebase
-  public assetList: Array<any>;//get data from firebase
-  public loadAssetList: Array<any>;
 
-  searchKey: string = "";
   pushDashboardPage: any;
   newItem = "";
   private _COLL: string = "items";
   private _DOC: string = "";
   private _CONTENT: any;
   public items: any;
+  filterItems:any;
+
 
   constructor(public navCtrl: NavController, private _DB: DatabaseProvider, private _ALERT: AlertController, public actionCtrl: ActionSheetController) {
+
     this._CONTENT = {
       id: '',
       categoryId: '',
@@ -44,45 +43,28 @@ export class PropertyPage {
       logo: "",
       description: ""
     };
-    // this.assetRef = firebase.database().ref('/items');
-    // this.assetRef.on('value', assetList => {
-    //   let assets = [];
-    //   assetList.forEach(asset => {
-    //     assets.push(asset.val());
-    //     return false;
-    //   });
+    
+    console.log(this.items);
+    
 
-    //   this.assetList = assets;
-    //   this.loadAssetList = assets;
-    // });
   }
 
-  // initializeItems(): void {
-  //   this.assetList = this.loadAssetList;
-  // }
+  //Function search items
+  getItems(input:any) {
+    let searchKeyword = input.target.value;
+    if(searchKeyword != null){
+      this.filterItems = this.items.filter(item => 
+        item.model.toLowerCase().indexOf(searchKeyword.toLowerCase()) > -1
+      );
+    }else{
+      this.filterItems = this.items;
+    }
 
-  // getItems(searchbar) {
-  //   this.initializeItems();
-  //   var q = searchbar.srcElement.value;
-  //   if (!q) {
-  //     return;
-  //   }
-
-  //   this.assetList = this.assetList.filter((v) => {
-  //     if (v.model && q) {
-  //       if (v.model.toLowercase().indexOf(q.toLowercase()) < -1) {
-  //         return false;
-  //       }
-  //       return false;
-  //     }
-  //   });
-  //   console.log(q, this.assetList.length);
-  // }
+  }
 
   gomenu() {
     $(".propertymenu").toggleClass("showMenu");
-    $(".list-asset").toggleClass("hide");
-    $(".btnadd").toggleClass("hide");
+    $('.wrapper').toggleClass('showWrapper');
   }
   goDetail(item: any) {
     this.navCtrl.push(DetailPage, { item: item });
@@ -100,11 +82,6 @@ export class PropertyPage {
   goForm() {
     $('.createForm').toggleClass('showForm');
     $('.wrapper').addClass('showWrapper');
-  }
-
-  outForm() {
-    $('.wrapper').removeClass('showWrapper');
-    $('.createForm').removeClass('showForm');
   }
 
   ionViewDidEnter() {
@@ -134,7 +111,7 @@ export class PropertyPage {
   retrieveCollection(): void {
     this._DB.getDocuments(this._COLL)
       .then((data) => {
-
+        console.log(data);        
         // IF we don't have any documents then the collection doesn't exist
         // so we create it!
         if (data.length === 0) {
@@ -145,6 +122,7 @@ export class PropertyPage {
         // documents to the public property of locations so this can be
         // iterated through in the component template
         else {
+          this.filterItems = data;
           this.items = data;
         }
       })

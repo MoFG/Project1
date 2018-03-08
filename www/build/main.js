@@ -5,11 +5,11 @@ webpackJsonp([1],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_firestore__ = __webpack_require__(483);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase_firestore__);
@@ -185,7 +185,7 @@ var DatabaseProvider = (function () {
 
 /***/ }),
 
-/***/ 191:
+/***/ 190:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -250,7 +250,7 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\login\login.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="content">\n\n  <form (ngSubmit)="login()" #loginForm="ngForm">\n\n  <ion-grid>\n\n\n\n    <ion-row class="ionrow-title">\n\n      <ion-col col-12>\n\n          <h3 class="title">uAsset</h3>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col>\n\n          <ion-list insert>\n\n            <ion-item class="item-email">\n\n              <ion-input class="txtEmail" type="text" placeholder="Your Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item class="item-pass">\n\n              <ion-input class="txtPass" type="password" placeholder="Your Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col col-12 class="signup-col">\n\n        <button ion-button full class="submit-btn" type="submit" >Login</button>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-grid>\n\n</form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\login\login.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="content">\n\n  <form (ngSubmit)="login()" #loginForm="ngForm">\n\n  <ion-grid>\n\n\n\n    <ion-row class="ionrow-title">\n\n      <ion-col col-12>\n\n          <h3 class="title">uAsset</h3>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col>\n\n          <ion-list insert>\n\n            <ion-item class="item-email">\n\n              <ion-input class="txtEmail" type="text" placeholder="Your Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item class="item-pass">\n\n              <ion-input class="txtPass" type="password" placeholder="Your Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col col-12 class="signup-col">\n\n        <button ion-button full class="submit-btn" type="submit" >Login</button>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-grid>\n\n</form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1__providers_auth_service_auth_service__["a" /* AuthServiceProvider */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]])
@@ -262,7 +262,7 @@ var LoginPage = (function () {
 
 /***/ }),
 
-/***/ 193:
+/***/ 192:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -299,14 +299,13 @@ var ManagePage = (function () {
         this.picture = '';
         this.thumbnail = '';
         this.state = '';
-        // public logo: string = '';
         this.description = '';
         this.docID = '';
         this.isEditable = false;
         this.title = 'Add a new asset';
         this._COLL = "items";
         this.form = _FB.group({
-            'id': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
+            // 'id': ['', Validators.required],
             'model': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
             'categoryId': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
             'category': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
@@ -314,7 +313,6 @@ var ManagePage = (function () {
             'picture': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
             'thumbnail': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
             'state': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
-            // 'logo': ['', Validators.required],
             'description': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]
         });
         if (navParams.get('isEdited')) {
@@ -326,7 +324,6 @@ var ManagePage = (function () {
             this.picture = record.item.picture;
             this.thumbnail = record.item.thumbnail;
             this.state = record.item.state;
-            // this.logo = record.item.logo;
             this.description = record.item.description;
             this.docID = record.item.id;
             this.isEditable = true;
@@ -399,7 +396,7 @@ var ManagePage = (function () {
     };
     ManagePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-manage',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\manage\manage.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="form" (ngSubmit)="saveDocument(form.value)">\n\n\n\n    <ion-item>\n\n      <ion-input type="text" formControlName="model" [(ngModel)]="model" placeholder="Asset Model"></ion-input>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-input type="text" formControlName="categoryId" [(ngModel)]="categoryId" placeholder="Asset Category ID"></ion-input>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-input type="text" formControlName="category" [(ngModel)]="category" placeholder="Asset Category"></ion-input>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-input type="text" formControlName="quantity" [(ngModel)]="quantity" placeholder="Asset Quantity"></ion-input>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-input type="text" formControlName="picture" [(ngModel)]="picture" placeholder="Asset Picture"></ion-input>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-input type="text" formControlName="thumbnail" [(ngModel)]="thumbnail" placeholder="Asset Thumbnail"></ion-input>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-input type="text" formControlName="state" [(ngModel)]="state" placeholder="Asset State"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-input type="text" formControlName="description" [(ngModel)]="description" placeholder="Asset Description"></ion-input>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <button ion-button block color="primary" text-center padding-top padding-bottom>\n\n        <div *ngIf="!isEditable">\n\n          Add a new document\n\n        </div>\n\n\n\n        <div *ngIf="isEditable">\n\n          Update this document\n\n        </div>\n\n      </button>\n\n    </ion-item>\n\n\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\manage\manage.html"*/,
+            selector: 'page-manage',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\manage\manage.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="form" (ngSubmit)="saveDocument(form.value)">\n\n\n\n    <ion-item>\n\n      <ion-label floating>Asset Name</ion-label>\n\n      <ion-input type="text" formControlName="model" [(ngModel)]="model"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Category ID</ion-label>\n\n      <ion-select formControlName="categoryId" [(ngModel)]="categoryId">\n\n        <ion-option value="LT01">LT01</ion-option>\n\n        <ion-option value="MA01">MA01</ion-option>\n\n        <ion-option value="MC01">MC01</ion-option>\n\n      </ion-select>\n\n      <!-- <ion-input type="text" formControlName="categoryId" [(ngModel)]="categoryId" placeholder="Category ID"></ion-input> -->\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Category</ion-label>\n\n      <ion-select formControlName="category" [(ngModel)]="category">\n\n        <ion-option value="Laptop">Laptop</ion-option>\n\n        <ion-option value="Camera">Camera</ion-option>\n\n        <ion-option value="Projector">Projector</ion-option>\n\n      </ion-select>\n\n      <!-- <ion-input type="text" formControlName="category" [(ngModel)]="category" placeholder="Asset Category"></ion-input> -->\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Asset Quantity</ion-label>\n\n      <ion-input type="text" formControlName="quantity" [(ngModel)]="quantity"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Asset Picture</ion-label>\n\n      <ion-input type="text" formControlName="picture" [(ngModel)]="picture"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Asset Thumbnail</ion-label>\n\n      <ion-input type="text" formControlName="thumbnail" [(ngModel)]="thumbnail"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>State</ion-label>\n\n      <ion-select formControlName="state" [(ngModel)]="state">\n\n        <ion-option value="open">Open</ion-option>\n\n        <ion-option value="close">Close</ion-option>\n\n      </ion-select>\n\n      <!-- <ion-input type="text" formControlName="state" [(ngModel)]="state" placeholder="Asset State"></ion-input> -->\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Description</ion-label>\n\n      <ion-input type="text" formControlName="description" [(ngModel)]="description"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <button ion-button block color="primary" text-center padding-top padding-bottom [disabled]="!form.valid">\n\n        <div *ngIf="!isEditable">\n\n          Add a new document\n\n        </div>\n\n\n\n        <div *ngIf="isEditable">\n\n          Update this document\n\n        </div>\n\n      </button>\n\n    </ion-item>\n\n\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\manage\manage.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1__providers_database_database__["a" /* DatabaseProvider */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["b" /* AlertController */]])
@@ -411,7 +408,7 @@ var ManagePage = (function () {
 
 /***/ }),
 
-/***/ 203:
+/***/ 202:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -424,11 +421,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 203;
+webpackEmptyAsyncContext.id = 202;
 
 /***/ }),
 
-/***/ 204:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -445,14 +442,14 @@ var enviroment = {
 
 /***/ }),
 
-/***/ 207:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_components_toast_toast_controller__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_components_toast_toast_controller__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_action_sheet_action_sheet_controller__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(336);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(346);
@@ -510,7 +507,7 @@ var DetailPage = (function () {
 
 /***/ }),
 
-/***/ 247:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -530,7 +527,7 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 247;
+webpackAsyncContext.id = 246;
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -541,14 +538,14 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PropertyPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular_components_action_sheet_action_sheet_controller__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__manage_manage__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__manage_manage__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_database_database__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_detail__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_detail__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery__ = __webpack_require__(346);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__category_category__ = __webpack_require__(349);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -574,7 +571,6 @@ var PropertyPage = (function () {
         this._DB = _DB;
         this._ALERT = _ALERT;
         this.actionCtrl = actionCtrl;
-        this.searchKey = "";
         this.newItem = "";
         this._COLL = "items";
         this._DOC = "";
@@ -590,39 +586,22 @@ var PropertyPage = (function () {
             logo: "",
             description: ""
         };
-        // this.assetRef = firebase.database().ref('/items');
-        // this.assetRef.on('value', assetList => {
-        //   let assets = [];
-        //   assetList.forEach(asset => {
-        //     assets.push(asset.val());
-        //     return false;
-        //   });
-        //   this.assetList = assets;
-        //   this.loadAssetList = assets;
-        // });
+        console.log(this.items);
     }
-    // initializeItems(): void {
-    //   this.assetList = this.loadAssetList;
-    // }
-    // getItems(searchbar) {
-    //   this.initializeItems();
-    //   var q = searchbar.srcElement.value;
-    //   if (!q) {
-    //     return;
-    //   }
-    //   this.assetList = this.assetList.filter((v) => {
-    //     if (v.model && q) {
-    //       if (v.model.toLowercase().indexOf(q.toLowercase()) < -1) {
-    //         return false;
-    //       }
-    //       return false;
-    //     }
-    //   });
-    //   console.log(q, this.assetList.length);
-    // }
+    //Function search items
+    PropertyPage.prototype.getItems = function (input) {
+        var searchKeyword = input.target.value;
+        if (searchKeyword != null) {
+            this.filterItems = this.items.filter(function (item) {
+                return item.model.toLowerCase().indexOf(searchKeyword.toLowerCase()) > -1;
+            });
+        }
+        else {
+            this.filterItems = this.items;
+        }
+    };
     PropertyPage.prototype.gomenu = function () {
         __WEBPACK_IMPORTED_MODULE_6_jquery__(".propertymenu").toggleClass("showMenu");
-        __WEBPACK_IMPORTED_MODULE_6_jquery__(".list-asset").toggleClass("hide");
         __WEBPACK_IMPORTED_MODULE_6_jquery__(".btnadd").toggleClass("hide");
     };
     PropertyPage.prototype.goDetail = function (item) {
@@ -670,12 +649,14 @@ var PropertyPage = (function () {
         var _this = this;
         this._DB.getDocuments(this._COLL)
             .then(function (data) {
+            console.log(data);
             // IF we don't have any documents then the collection doesn't exist
             // so we create it!
             if (data.length === 0) {
                 _this.generateCollectionAndDocument();
             }
             else {
+                _this.filterItems = data;
                 _this.items = data;
             }
         })
@@ -732,12 +713,11 @@ var PropertyPage = (function () {
     };
     PropertyPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["m" /* Component */])({
-            selector: "page-property",template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\property\property.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button class="button-toggle" ion-button item-start (click)="gomenu()">\n\n      <ion-icon ios="ios-menu-outline" md="md-menu" name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title item-start>Asset List</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row class="ionrow-topcontent">\n\n    <ion-searchbar class="search" (ionInput)="getItems($event)"></ion-searchbar>\n\n  </ion-row>\n\n\n\n  <!-- Asset list get in Firebase -->\n\n  <ion-list class="list-asset" *ngFor="let item of items">\n\n    <ion-item>\n\n      <ion-row class="row-item">\n\n\n\n        <ion-col col-4 class="ioncol-thumbnail">\n\n          <ion-thumbnail item-start>\n\n            <img src="{{item.thumbnail}}" class="thumb" />\n\n          </ion-thumbnail>\n\n        </ion-col>\n\n\n\n        <ion-col col-4>\n\n          <h2 class="name">{{item.model}}</h2>\n\n          <p class="cate">Category: {{item.category}}</p>\n\n          <p class="state">State: {{item.state}}</p>\n\n        </ion-col>\n\n\n\n        <ion-col col-4>\n\n          <ion-row>\n\n            <ion-icon (click)="goDetail(item)" ios="ios-arrow-dropright-outline" md="md-arrow-dropright-outline" class="btnDetail"></ion-icon>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-icon ios="ios-create-outline" md="md-create-outline" (click)="updateDocument(item)" class="iconupdate"></ion-icon>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-icon class="icondel" ios="ios-trash-outline" md="md-trash-outline" (click)="deleteDocument(item)"></ion-icon>\n\n          </ion-row>\n\n        </ion-col>\n\n\n\n      </ion-row>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <div class="btnadd">\n\n    <ion-icon class="ionicon-add" ios="ios-add-outline" md="md-add-outline" (click)="addDocument()"></ion-icon>\n\n  </div>\n\n\n\n  <!-- Menu bar -->\n\n  <div class="propertymenu">\n\n    <ion-card class="card-wallpaper">\n\n      <div class="info">\n\n        <img src="/assets/imgs/ava1.jpg" alt="" class="avatar">\n\n        <div class="userinfo">\n\n          <h2 class="username">Donal J.Trump</h2>\n\n          <p class="useremail">trumpd@dxc.com</p>\n\n        </div>\n\n      </div>\n\n    </ion-card>\n\n\n\n    <ion-list>\n\n\n\n      <ion-item class="button-item" item-start (click)="pushAssets()">\n\n        <button ion-button color="light">\n\n          <ion-icon ios="ios-list-outline" md="md-list" class="ioncol-icon"></ion-icon>\n\n          Asset List\n\n        </button>\n\n      </ion-item>\n\n\n\n      <ion-item class="button-item" item-start (click)="goCategory()">\n\n        <button ion-button color="light">\n\n          <ion-icon ios="ios-folder-open-outline" md="md-list" class="ioncol-icon"></ion-icon>\n\n          Category\n\n        </button>\n\n      </ion-item>\n\n\n\n      <ion-item class="button-item" item-start (click)="goSetting()">\n\n        <button ion-button color="light">\n\n          <ion-icon ios="ios-settings-outline" md="md-list" class="ioncol-icon"></ion-icon>\n\n          Settings\n\n        </button>\n\n      </ion-item>\n\n\n\n      <ion-item class="button-item" item-start (click)="goLogin()">\n\n        <button ion-button color="light">\n\n          <ion-icon ios="ios-log-out" md="md-log-out" class="ioncol-icon"></ion-icon>\n\n          Log out\n\n        </button>\n\n      </ion-item>\n\n\n\n    </ion-list>\n\n  </div>\n\n  <!-- end propertymenu -->\n\n\n\n  <!-- Form create & edit, display:none -->\n\n  <form class="createForm">\n\n    <ion-col>\n\n      <ion-list insert class="ionlist-input">\n\n        <h3 class="ion-title">Asset Infomation</h3>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset id" [(ngModel)]="id" name="id" required>\n\n        </ion-item>\n\n\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset Category ID" [(ngModel)]="categoryId" name="categoryId" required>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset name" [(ngModel)]="model" name="model" required>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset Category" [(ngModel)]="category" name="category" required>\n\n        </ion-item>\n\n\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="number" placeholder="Asset quantity" [(ngModel)]="quantity" name="quantity" equired>\n\n        </ion-item>\n\n\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset Picture" [(ngModel)]="picture" name="picture" equired>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset thumbnail" [(ngModel)]="thumbnail" name="thumbnail">\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset state" [(ngModel)]="state" name="state">\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset logo" [(ngModel)]="logo" name="logo">\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset description" [(ngModel)]="description" name="description">\n\n        </ion-item>\n\n\n\n\n\n        <ion-item class="ionitem-form" item start>\n\n          <button class="btnClear" (click)="clearForm()">Clear</button>\n\n          <button class="btnOk" (click)="addDocument()">OK</button>\n\n        </ion-item>\n\n\n\n      </ion-list>\n\n    </ion-col>\n\n\n\n  </form>\n\n\n\n  <!--hide form -->\n\n  <div class="wrapper" (click)="outForm()"></div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\property\property.html"*/
+            selector: "page-property",template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\property\property.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button class="button-toggle" ion-button item-start (click)="gomenu()">\n\n      <ion-icon ios="ios-menu-outline" md="md-menu" name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title item-start>Asset List</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row class="ionrow-topcontent">\n\n    <ion-searchbar class="search" (ionInput)="getItems($event)"></ion-searchbar>\n\n  </ion-row>\n\n\n\n  <!-- Asset list get in Firebase -->\n\n  <ion-list class="list-asset" *ngFor="let item of filterItems">\n\n    <ion-item>\n\n      <ion-row class="row-item">\n\n\n\n        <ion-col col-4 class="ioncol-thumbnail">\n\n          <ion-thumbnail item-start>\n\n            <img src="{{item.thumbnail}}" class="thumb" />\n\n          </ion-thumbnail>\n\n        </ion-col>\n\n\n\n        <ion-col col-4>\n\n          <h2 class="name">{{item.model}}</h2>\n\n          <p class="cate">Category: {{item.category}}</p>\n\n          <p class="state">State: {{item.state}}</p>\n\n        </ion-col>\n\n\n\n        <ion-col col-4>\n\n          <ion-row>\n\n            <ion-icon (click)="goDetail(item)" ios="ios-arrow-dropright-outline" md="md-arrow-dropright-outline" class="btnDetail"></ion-icon>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-icon ios="ios-create-outline" md="md-create-outline" (click)="updateDocument(item)" class="iconupdate"></ion-icon>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-icon class="icondel" ios="ios-trash-outline" md="md-trash-outline" (click)="deleteDocument(item)"></ion-icon>\n\n          </ion-row>\n\n        </ion-col>\n\n\n\n      </ion-row>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <div class="btnadd">\n\n    <ion-icon class="ionicon-add" ios="ios-add-outline" md="md-add-outline" (click)="addDocument()"></ion-icon>\n\n  </div>\n\n\n\n  <!-- Menu bar -->\n\n  <div class="propertymenu">\n\n    <ion-card class="card-wallpaper">\n\n      <div class="info">\n\n        <img src="/assets/imgs/ava1.jpg" alt="" class="avatar">\n\n        <div class="userinfo">\n\n          <h2 class="username">Donal J.Trump</h2>\n\n          <p class="useremail">trumpd@dxc.com</p>\n\n        </div>\n\n      </div>\n\n    </ion-card>\n\n\n\n    <ion-list>\n\n\n\n      <ion-item class="button-item" item-start (click)="pushAssets()">\n\n        <button ion-button color="light">\n\n          <ion-icon ios="ios-list-outline" md="md-list" class="ioncol-icon"></ion-icon>\n\n          Asset List\n\n        </button>\n\n      </ion-item>\n\n\n\n      <ion-item class="button-item" item-start (click)="goCategory()">\n\n        <button ion-button color="light">\n\n          <ion-icon ios="ios-folder-open-outline" md="md-list" class="ioncol-icon"></ion-icon>\n\n          Category\n\n        </button>\n\n      </ion-item>\n\n\n\n      <ion-item class="button-item" item-start (click)="goSetting()">\n\n        <button ion-button color="light">\n\n          <ion-icon ios="ios-settings-outline" md="md-list" class="ioncol-icon"></ion-icon>\n\n          Settings\n\n        </button>\n\n      </ion-item>\n\n\n\n      <ion-item class="button-item" item-start (click)="goLogin()">\n\n        <button ion-button color="light">\n\n          <ion-icon ios="ios-log-out" md="md-log-out" class="ioncol-icon"></ion-icon>\n\n          Log out\n\n        </button>\n\n      </ion-item>\n\n\n\n    </ion-list>\n\n  </div>\n\n  <!-- end propertymenu -->\n\n\n\n  <!-- Form create & edit, display:none -->\n\n  <!-- <form class="createForm">\n\n    <ion-col>\n\n      <ion-list insert class="ionlist-input">\n\n        <h3 class="ion-title">Asset Infomation</h3>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset id" [(ngModel)]="id" name="id" required>\n\n        </ion-item>\n\n\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset Category ID" [(ngModel)]="categoryId" name="categoryId" required>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset name" [(ngModel)]="model" name="model" required>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset Category" [(ngModel)]="category" name="category" required>\n\n        </ion-item>\n\n\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="number" placeholder="Asset quantity" [(ngModel)]="quantity" name="quantity" equired>\n\n        </ion-item>\n\n\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset Picture" [(ngModel)]="picture" name="picture" equired>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset thumbnail" [(ngModel)]="thumbnail" name="thumbnail">\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset state" [(ngModel)]="state" name="state">\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset logo" [(ngModel)]="logo" name="logo">\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitem-form">\n\n          <input type="text" placeholder="Asset description" [(ngModel)]="description" name="description">\n\n        </ion-item>\n\n\n\n\n\n        <ion-item class="ionitem-form" item start>\n\n          <button class="btnClear" (click)="clearForm()">Clear</button>\n\n          <button class="btnOk" (click)="addDocument()">OK</button>\n\n        </ion-item>\n\n\n\n      </ion-list>\n\n    </ion-col>\n\n\n\n  </form> -->\n\n\n\n  <!--hide form -->\n\n  <!-- <div class="wrapper" (click)="outForm()"></div> -->\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\property\property.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["b" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular_components_action_sheet_action_sheet_controller__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular_components_action_sheet_action_sheet_controller__["a" /* ActionSheetController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular_components_action_sheet_action_sheet_controller__["a" /* ActionSheetController */]])
     ], PropertyPage);
     return PropertyPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=property.js.map
@@ -753,7 +733,7 @@ var PropertyPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable__ = __webpack_require__(560);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -835,7 +815,7 @@ var CategoryPage = (function () {
     }
     CategoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-category',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\category\category.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Category</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="cate-content">\n\n  <h2 class="category-title">Top Categories</h2>\n\n\n\n  <ion-list>\n\n    <ion-item *ngFor="let cate of cates">\n\n      <p>{{cate.categoryId}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\category\category.html"*/,
+            selector: 'page-category',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\category\category.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Top Category</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="cate-content">\n\n\n\n  <ion-row>\n\n\n\n    <ion-col col-12>\n\n\n\n      <div class="ioncol-picture">\n\n        <div class="ioncol-flat">\n\n          <div class="ioncol-text">\n\n            <h3 class="ioncol-title">XPS</h3>\n\n            <div class="line"></div>\n\n            <p class="ioncol-text">For the ultimate <br> experience</p>\n\n          </div>\n\n        </div>\n\n      </div>\n\n\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\category\category.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
     ], CategoryPage);
@@ -865,9 +845,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enviroments_enviroment__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_detail_detail__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enviroments_enviroment__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_detail_detail__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_property_property__ = __webpack_require__(347);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(0);
@@ -875,7 +855,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(569);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_auth_service_auth_service__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(570);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2_database__ = __webpack_require__(336);
@@ -883,7 +863,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_category_category__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_setting_setting__ = __webpack_require__(572);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_database_database__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_manage_manage__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_manage_manage__ = __webpack_require__(192);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -966,13 +946,13 @@ var AppModule = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enviroments_enviroment__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enviroments_enviroment__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

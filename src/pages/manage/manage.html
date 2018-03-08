@@ -11,46 +11,61 @@
   <form [formGroup]="form" (ngSubmit)="saveDocument(form.value)">
 
     <ion-item>
-      <ion-input type="text" formControlName="model" [(ngModel)]="model" placeholder="Asset Model"></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-input type="text" formControlName="categoryId" [(ngModel)]="categoryId" placeholder="Asset Category ID"></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-input type="text" formControlName="category" [(ngModel)]="category" placeholder="Asset Category"></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-input type="text" formControlName="quantity" [(ngModel)]="quantity" placeholder="Asset Quantity"></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-input type="text" formControlName="picture" [(ngModel)]="picture" placeholder="Asset Picture"></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-input type="text" formControlName="thumbnail" [(ngModel)]="thumbnail" placeholder="Asset Thumbnail"></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-input type="text" formControlName="state" [(ngModel)]="state" placeholder="Asset State"></ion-input>
+      <ion-label floating>Asset Name</ion-label>
+      <ion-input type="text" formControlName="model" [(ngModel)]="model"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="text" formControlName="description" [(ngModel)]="description" placeholder="Asset Description"></ion-input>
+      <ion-label floating>Category ID</ion-label>
+      <ion-select formControlName="categoryId" [(ngModel)]="categoryId">
+        <ion-option value="LT01">LT01</ion-option>
+        <ion-option value="MA01">MA01</ion-option>
+        <ion-option value="MC01">MC01</ion-option>
+      </ion-select>
+      <!-- <ion-input type="text" formControlName="categoryId" [(ngModel)]="categoryId" placeholder="Category ID"></ion-input> -->
     </ion-item>
 
+    <ion-item>
+      <ion-label floating>Category</ion-label>
+      <ion-select formControlName="category" [(ngModel)]="category">
+        <ion-option value="Laptop">Laptop</ion-option>
+        <ion-option value="Camera">Camera</ion-option>
+        <ion-option value="Projector">Projector</ion-option>
+      </ion-select>
+      <!-- <ion-input type="text" formControlName="category" [(ngModel)]="category" placeholder="Asset Category"></ion-input> -->
+    </ion-item>
 
     <ion-item>
-      <button ion-button block color="primary" text-center padding-top padding-bottom>
+      <ion-label floating>Asset Quantity</ion-label>
+      <ion-input type="text" formControlName="quantity" [(ngModel)]="quantity"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Asset Picture</ion-label>
+      <ion-input type="text" formControlName="picture" [(ngModel)]="picture"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Asset Thumbnail</ion-label>
+      <ion-input type="text" formControlName="thumbnail" [(ngModel)]="thumbnail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>State</ion-label>
+      <ion-select formControlName="state" [(ngModel)]="state">
+        <ion-option value="open">Open</ion-option>
+        <ion-option value="close">Close</ion-option>
+      </ion-select>
+      <!-- <ion-input type="text" formControlName="state" [(ngModel)]="state" placeholder="Asset State"></ion-input> -->
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-input type="text" formControlName="description" [(ngModel)]="description"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button block color="primary" text-center padding-top padding-bottom [disabled]="!form.valid">
         <div *ngIf="!isEditable">
           Add a new document
         </div>

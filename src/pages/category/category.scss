@@ -1,34 +1,22 @@
 page-category {
-    ion-col.col{
-
+    .ioncol-picture {
+        background: url('/assets/imgs/xps.jpg');
+        height: 200px;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
-    ion-card-title.card-title.card-title-ios{
-        font-size: 16px;
-    text-align: center;
-    font-weight: bold;
-    color: #1c1e1f;
-    background: #dfe6e92b;
-    }
-    // ion-content.cate-content {
-    //     padding: 16px;
-    //     background: url(/assets/imgs/wall.jpg);
-    //     background-size: cover;
-    //     background-repeat: no-repeat;
-    // }
-    h2.category-title {
-        font-size: 30px;
+    h3.ioncol-title {
+        font-size: 4em;
         font-weight: bold;
-        color: #2d3436;
+        color: #535c68;
     }
-    ion-card.ioncard-item.card.card-ios {
-        box-sizing: border-box;
-        padding: 0.5em;
-        transition: 0.4s;
+    p.ioncol-text {
+        font-size: 1.5em;
+        color: #fff;
     }
-
-    ion-col.ioncol-item:hover .ioncard-item{
-        transform: scale(0.8);
-        border-radius: 0.5em;
-        transition: 0.4s;
+    .line {
+        width: 50%;
+        background: #6ab04c;
+        height: 1px;
     }
 }

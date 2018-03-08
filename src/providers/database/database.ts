@@ -168,5 +168,4 @@ export class DatabaseProvider {
     });
   }
 
-
 }

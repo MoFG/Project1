@@ -1,19 +1,32 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Category</ion-title>
+    <ion-title>Top Category</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="cate-content">
-  <h2 class="category-title">Top Categories</h2>
 
-  <ion-list>
-    <ion-item *ngFor="let cate of cates">
-      <p>{{cate.categoryId}}</p>
-    </ion-item>
-  </ion-list>
+  <ion-row>
+
+    <ion-col col-12>
+
+      <div class="ioncol-picture">
+        <div class="ioncol-flat">
+          <div class="ioncol-text">
+            <h3 class="ioncol-title">XPS</h3>
+            <div class="line"></div>
+            <p class="ioncol-text">For the ultimate <br> experience</p>
+          </div>
+        </div>
+      </div>
+
+    </ion-col>
+
+  </ion-row>
+
+
 
 </ion-content>

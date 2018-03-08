@@ -15,7 +15,7 @@
   </ion-row>
 
   <!-- Asset list get in Firebase -->
-  <ion-list class="list-asset" *ngFor="let item of items">
+  <ion-list class="list-asset" *ngFor="let item of filterItems">
     <ion-item>
       <ion-row class="row-item">
 
@@ -99,7 +99,7 @@
   <!-- end propertymenu -->
 
   <!-- Form create & edit, display:none -->
-  <form class="createForm">
+  <!-- <form class="createForm">
     <ion-col>
       <ion-list insert class="ionlist-input">
         <h3 class="ion-title">Asset Infomation</h3>
@@ -156,9 +156,9 @@
       </ion-list>
     </ion-col>
 
-  </form>
+  </form> -->
 
   <!--hide form -->
-  <div class="wrapper" (click)="outForm()"></div>
+  <!-- <div class="wrapper" (click)="outForm()"></div> -->
 
 </ion-content>

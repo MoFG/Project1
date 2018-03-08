@@ -16,7 +16,7 @@ page-property {
     font-weight: bold;
     margin-bottom: 15px;
   }
-  p.cate{
+  p.cate {
     margin-bottom: 5px;
   }
   ion-searchbar.search {
@@ -49,7 +49,7 @@ page-property {
     background: #1e90ff;
     border-radius: 50%;
   }
-  button.btnDetail{
+  button.btnDetail {
     color: #fff;
     background: #1e90ff;
     border: 0;
@@ -59,23 +59,18 @@ page-property {
     text-align: center;
     line-height: 30px;
   }
-  button.btnupdate{
+  button.btnupdate {
     background: #2ed573;
   }
-  button.btndel{
+  button.btndel {
     background: #ff3838;
-  }
-  
-  // CSS for propertymenu
+  } // CSS for propertymenu
   ion-card.card-wallpaper {
     width: 96%;
-    margin-top: 8%;
+    margin-top: 15%;
     background: #00c6ff;
-    /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #0072ff, #00c6ff);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   h2.username,
   p.useremail {
@@ -153,56 +148,39 @@ page-property {
     border-bottom: 1px solid #636e72;
   }
   .propertymenu {
-    position: absolute;
-    top: -5%;
+    position: fixed;
+    top: 0%;
     left: -102%;
     z-index: 20;
+    -webkit-transition: 0.6s;
     transition: 0.6s;
     visibility: hidden;
     opacity: 0;
+    width: 100%;
+    height: 100%;
   }
   .propertymenu.showMenu {
     opacity: 1;
     visibility: visible;
-    top: -5%;
-    left: -3%;
+    top: 0%;
+    left: 0%;
+    -webkit-transition: 0.4s;
     transition: 0.4s;
     width: 100%;
     height: 100%;
+    position: fixed;
     background: #fff;
-  }
-  .list-asset.hide, .btnadd.hide {
-    opacity: 0;
-    visibility: hidden;
   }
   .button-item:hover .button {
     color: #000;
     font-weight: bold;
   }
-
-  // CSS FORM
-  .createForm {
-    border-radius: 2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 230px;
-    height: 390px;
-    margin-left: -115px;
-    margin-top: -195px;
-    visibility: hidden;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    z-index: 10;
-    background: #fff;
-  }
-  .list-ios>.item-block:last-child,
-  .list-ios>.item-wrapper:last-child .item-block {
-    border: none;
-  }
-  ion-item button.btnClear, button.btnOk{
+  // .list-ios>.item-block:last-child,
+  // .list-ios>.item-wrapper:last-child .item-block {
+  //   border: none;
+  // }
+  ion-item button.btnClear,
+  button.btnOk {
     font-size: 20px;
     width: 70px;
     text-align: center;
@@ -213,45 +191,42 @@ page-property {
     line-height: 30px;
     margin: 10px;
   }
-
-  .createForm.showForm{
-    visibility: visible;
-    transition: 0.4s;
-    transform: scale(1);
-  }
-  .wrapper{
-    width: 100%;
-    height: 830px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    background:#636e72;
-    opacity: 0.5;
-    visibility: hidden;
-    transition: 0.4s;
-  }
-  .wrapper.showWrapper{
-    visibility: visible;
-    transition: 0.4s;
-  }
-  .input-wrapper ion-label{
+  
+  // .wrapper {
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: 9;
+  //   background: #636e72;
+  //   opacity: 0.5;
+  //   visibility: hidden;
+  //   transition: 0.4s;
+  // }
+  // .wrapper.showWrapper {
+  //   visibility: visible;
+  //   transition: 0.4s;
+  // }
+  .input-wrapper ion-label {
     border: 0;
     margin: 0;
   }
-  h3.ion-title{
+  h3.ion-title {
     text-align: center;
   }
-  .ionlist-input{
+  .ionlist-input {
     text-align: center;
   }
-  ion-item.ionitem-form{
+  ion-item.ionitem-form {
     text-align: center;
   }
-  .ionicon-add{
+  .ionicon-add {
     font-size: 3em;
   }
-  .btnDetail,.iconupdate,.icondel{
+  .btnDetail,
+  .iconupdate,
+  .icondel {
     width: 30px;
     text-align: center;
     color: #2f3542;
@@ -262,20 +237,22 @@ page-property {
     margin-left: 50px;
     font-size: 2em;
   }
-  .ioncol-thumbnail{
+  .ioncol-thumbnail {
     text-align: center;
   }
-  .thumb{
+  .thumb {
     margin-left: 10px;
   }
-  .btndel{
+  .btndel {
     margin-left: 15px;
   }
-  .item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img{
+  .item-ios ion-thumbnail ion-img,
+  .item-ios ion-thumbnail img {
     width: 80px;
-    height: 80px;;
+    height: 80px;
+    ;
   }
-  .row-item{
+  .row-item {
     border-bottom: 1px solid #ced6e0;
   }
 }
