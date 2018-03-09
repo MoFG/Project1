@@ -9,22 +9,68 @@
 
 <ion-content padding class="cate-content">
 
-  <ion-row>
-
-    <ion-col col-12>
-
+  <ion-row class="ionrow">
+    <ion-col col-12 class="ioncol-item" (click)="goCateLaptop()">
       <div class="ioncol-picture">
-        <div class="ioncol-flat">
-          <div class="ioncol-text">
-            <h3 class="ioncol-title">XPS</h3>
-            <div class="line"></div>
-            <p class="ioncol-text">For the ultimate <br> experience</p>
-          </div>
+        <img src="/assets/imgs/mac.png" alt="">
+        <div class="ioncol-text">
+          <h3 class="ioncol-title">XPS</h3>
+          <div class="line"></div>
+          <p class="text">For the ultimate
+            <br> experience</p>
         </div>
       </div>
-
     </ion-col>
+  </ion-row>
 
+  <!-- Binding data -->
+  <!-- <ion-list *ngFor="let item of filterItems" class="filter-list">
+    <ion-item>
+      <ion-row>
+
+        <ion-col col-4 class="ioncol-thumbnail">
+          <ion-thumbnail item-start>
+            <img src="{{item.thumbnail}}" class="thumb" />
+          </ion-thumbnail>
+        </ion-col>
+
+        <ion-col col-8>
+            <h2 class="name">{{item.model}}</h2>
+          <p class="cate">Category: {{item.category}}</p>
+          <p class="description">Infomation: {{item.description}}</p>
+        </ion-col>
+
+      </ion-row>
+    </ion-item>
+  </ion-list> -->
+  <!-- end -->
+
+  <ion-row class="ionrow">
+    <ion-col col-12 class="ioncol-item item2" (click)="goCateProjector()">
+      <div class="ioncol-picture">
+        <img src="/assets/imgs/projector.png" alt="">
+        <div class="ioncol-text">
+          <h3 class="ioncol-title">Sony</h3>
+          <div class="line"></div>
+          <p class="text">For the ultimate
+            <br> experience</p>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ionrow">
+    <ion-col col-12 class="ioncol-item item3" (click)="goCateprint()">
+      <div class="ioncol-picture">
+        <img src="/assets/imgs/printer10.png" alt="">
+        <div class="ioncol-text">
+          <h3 class="ioncol-title">Toshiba</h3>
+          <div class="line"></div>
+          <p class="text">For the ultimate
+            <br> experience</p>
+        </div>
+      </div>
+    </ion-col>
   </ion-row>
 
 

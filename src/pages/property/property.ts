@@ -20,13 +20,12 @@ import { CategoryPage } from '../category/category';
 })
 export class PropertyPage {
 
-  pushDashboardPage: any;
-  newItem = "";
-  private _COLL: string = "items";
-  private _DOC: string = "";
-  private _CONTENT: any;
+
+  private _COLL: string = "items";    // Defines the name of the database collection
+  private _DOC: string = "";          // Defines the initial document ID for the database collection
+  private _CONTENT: any;              // Used to store/provide the initial document data for the database collection
   public items: any;
-  filterItems:any;
+  filterItems: any;                   //Used to find items
 
 
   constructor(public navCtrl: NavController, private _DB: DatabaseProvider, private _ALERT: AlertController, public actionCtrl: ActionSheetController) {
@@ -43,47 +42,43 @@ export class PropertyPage {
       logo: "",
       description: ""
     };
-    
-    console.log(this.items);
-    
-
   }
 
   //Function search items
-  getItems(input:any) {
+  getItems(input: any) {
     let searchKeyword = input.target.value;
-    if(searchKeyword != null){
-      this.filterItems = this.items.filter(item => 
+    if (searchKeyword != null) {
+      this.filterItems = this.items.filter(item =>
         item.model.toLowerCase().indexOf(searchKeyword.toLowerCase()) > -1
       );
-    }else{
+    } else {
       this.filterItems = this.items;
     }
-
   }
 
+  //  jQuery for menu
   gomenu() {
     $(".propertymenu").toggleClass("showMenu");
     $('.wrapper').toggleClass('showWrapper');
   }
+  //  Go detail of item
   goDetail(item: any) {
     this.navCtrl.push(DetailPage, { item: item });
     console.log(item.id);
   }
+  //  Go category page
   goCategory() {
     this.navCtrl.push(CategoryPage);
   }
+  //  Go Menu
   pushAssets() {
     return this.gomenu();
   }
+  //  Come back form Login
   goLogin() {
     this.navCtrl.push(LoginPage);
   }
-  goForm() {
-    $('.createForm').toggleClass('showForm');
-    $('.wrapper').addClass('showWrapper');
-  }
-
+  // Call retrieveCollection() to show list item
   ionViewDidEnter() {
     this.retrieveCollection();
   }
@@ -100,18 +95,12 @@ export class PropertyPage {
       });
   }
 
-  /**
-    * Retrieve all documents from the specified collection using the
-    * getDocuments method of the DatabaseProvider service
-    *
-    * @public
-    * @method retrieveCollection
-    * @return {none}
-    */
+  // Retrieve all documents from the specified collection 
+  // getDocuments method of the DatabaseProvider
   retrieveCollection(): void {
     this._DB.getDocuments(this._COLL)
       .then((data) => {
-        console.log(data);        
+        console.log(data);
         // IF we don't have any documents then the collection doesn't exist
         // so we create it!
         if (data.length === 0) {
@@ -129,9 +118,12 @@ export class PropertyPage {
       .catch();
   }
 
+  // Go to Form at ManagePage: create, update.
   addDocument(): void {
     this.navCtrl.push(ManagePage);
   }
+
+  // Update item
   updateDocument(obj): void {
     let params: any = {
       collection: this._COLL,
@@ -139,6 +131,8 @@ export class PropertyPage {
     };
     this.navCtrl.push(ManagePage, { record: params, isEdited: true });
   }
+
+  //  Delete item
   deleteDocument(obj): void {
     let alert = this._ALERT.create({
       title: 'DELETE',
@@ -164,6 +158,7 @@ export class PropertyPage {
     });
     alert.present();
   }
+  
   displayAlert(title: string,
     message: string): void {
     let alert: any = this._ALERT.create({

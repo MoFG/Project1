@@ -36,12 +36,12 @@ export class AuthServiceProvider {
     return this.currentUser;
   }
 
-  public logout(){
-    return Observable.create( observer =>{
-      this.currentUser = null;
-      observer.next(true);
-      observer.complete();
-    });
-  }
+  // public logout(){
+  //   return Observable.create( observer =>{
+  //     this.currentUser = null;
+  //     observer.next(true);
+  //     observer.complete();
+  //   });
+  // }
 
 }

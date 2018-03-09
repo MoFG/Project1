@@ -25682,11 +25682,40 @@ ion-navbar.toolbar {
   font-family: 'segoe ui light';
 }
 
-page-category .ioncol-picture {
-  background: url("/assets/imgs/xps.jpg");
+page-category .ioncol-item .ioncol-picture {
   height: 200px;
+  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 28px;
+  z-index: 1;
+}
+
+page-category ion-thumbnail img.thumb {
+  width: 72px;
+  height: 72px;
+}
+
+page-category .ioncol-item.item2 .ioncol-text {
+  left: 55%;
+  -webkit-animation: animation2 2s forwards;
+  animation: animation2 2s forwards;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+page-category .ioncol-item.item2 img {
+  left: -7%;
+}
+
+page-category .ioncol-picture img {
+  width: 200px;
+  position: absolute;
+  right: 10%;
+  top: 18%;
 }
 
 page-category h3.ioncol-title {
@@ -25695,15 +25724,97 @@ page-category h3.ioncol-title {
   color: #535c68;
 }
 
-page-category p.ioncol-text {
-  font-size: 1.5em;
-  color: #fff;
+page-category .line {
+  width: 35%;
+  background: #2ed573;
+  height: 1px;
 }
 
-page-category .line {
-  width: 50%;
-  background: #6ab04c;
-  height: 1px;
+page-category .ioncol-item {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+page-category .ioncol-text {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top: 15%;
+  left: -3%;
+  z-index: 3;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-animation: animation 2s forwards;
+  animation: animation 2s forwards;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+page-category p.text {
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0.3em;
+}
+
+page-category ion-row.ionrow {
+  background: #ecf0f1;
+  margin-bottom: 1em;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+page-category .ionrow:hover {
+  background: #747d8c;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+@-webkit-keyframes animation {
+  from {
+    left: -44%;
+    opacity: 0;
+  }
+  to {
+    left: -3%;
+    opacity: 1;
+  }
+}
+
+@keyframes animation {
+  from {
+    left: -44%;
+    opacity: 0;
+  }
+  to {
+    left: -3%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation2 {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+  to {
+    left: 55%;
+    opacity: 1;
+  }
+}
+
+@keyframes animation2 {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+  to {
+    left: 55%;
+    opacity: 1;
+  }
 }
 
 page-detail .content {

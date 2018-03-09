@@ -1,3 +1,6 @@
+import { PrinterPage } from './../pages/printer/printer';
+import { ProjectorPage } from './../pages/projector/projector';
+import { LaptopPage } from './../pages/laptop/laptop';
 import { enviroment } from './../enviroments/enviroment';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailPage } from './../pages/detail/detail';
@@ -15,7 +18,6 @@ import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { CategoryPage } from '../pages/category/category';
-import { SettingPage } from '../pages/setting/setting';
 import { DatabaseProvider } from '../providers/database/database';
 import { ManagePage } from '../pages/manage/manage';
 
@@ -26,8 +28,10 @@ import { ManagePage } from '../pages/manage/manage';
     PropertyPage,
     DetailPage,
     CategoryPage,
-    SettingPage,
-    ManagePage
+    ManagePage,
+    LaptopPage,
+    ProjectorPage,
+    PrinterPage
   ],
   imports: [
     BrowserModule,
@@ -44,8 +48,10 @@ import { ManagePage } from '../pages/manage/manage';
     PropertyPage,
     DetailPage,
     CategoryPage,
-    SettingPage,
-    ManagePage
+    ManagePage,
+    LaptopPage,
+    ProjectorPage,
+    PrinterPage
   ],
   providers: [
     StatusBar,

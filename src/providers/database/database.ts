@@ -8,26 +8,20 @@ import 'firebase/firestore';
 
 @Injectable()
 export class DatabaseProvider {
+  // Defines an object for handling interfacing with the Cloud Firestore
   private _DB: any;
 
 
   constructor(public http: HttpClient) {
+    // Initialise access to the firestore
     this._DB = firebase.firestore();
+
   }
 
-  /**
-    * Create the database collection and defines an initial document
-    * Note the use of merge : true flag within the returned promise  - this
-    * is needed to ensure that the collection is not repeatedly recreated should
-    * this method be called again (we DON'T want to overwrite our documents!)
-    *
-    * @public
-    * @method createAndPopulateDocument
-    * @param  collectionObj    {String}           The database collection we want to create
-    * @param  docID            {String}           The document ID
-    * @param  dataObj          {Any}              The document key/values to be added
-    * @return {Promise}
-    */
+  //  createAndPopulateDocument
+  //  collectionObj    {String}           The database collection we want to create
+  //  docID            {String}           The document ID
+  //  dataObj          {Any}              The document key/values to be added
 
   createAndPopulateDocument(collectionObj: string,
     docID: string,
@@ -39,6 +33,8 @@ export class DatabaseProvider {
         .set(dataObj, { merge: true })
         .then((data: any) => {
           resolve(data);
+          console.log(collectionObj, docID, dataObj);
+
         })
         .catch((error: any) => {
           reject(error);
@@ -47,14 +43,9 @@ export class DatabaseProvider {
 
   }
 
-  /**
-    * Return documents from specific database collection
-    *
-    * @public
-    * @method getDocuments
-    * @param  collectionObj    {String}           The database collection we want to retrieve records from
-    * @return {Promise}
-    */
+
+  //  getDocuments
+  //  collectionObj: The database collection we want to retrieve records from
   getDocuments(collectionObj: string): Promise<any> {
     return new Promise((resolve, reject) => {
       this._DB.collection(collectionObj)
@@ -63,8 +54,6 @@ export class DatabaseProvider {
 
           // Declare an array which we'll use to store retrieved documents
           let obj: any = [];
-
-
           // Iterate through each document, retrieve the values for each field
           // and then assign these to a key in an object that is pushed into the
           // obj array
@@ -94,15 +83,10 @@ export class DatabaseProvider {
     });
   }
 
-  /**
-      * Add a new document to a selected database collection
-      *
-      * @public
-      * @method addDocument
-      * @param  collectionObj    {String}           The database collection we want to add a new document to
-      * @param  docObj           {Any}              The key/value object we want to add
-      * @return {Promise}
-      */
+  // addDocument
+  // collectionObj:The database collection we want to add a new document to
+  // docObj : The key/value object we want to add
+  // {Promise}
   addDocument(collectionObj: string,
     dataObj: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -115,16 +99,9 @@ export class DatabaseProvider {
         });
     });
   }
-
-  /**
-    * Delete an existing document from a selected database collection
-    *
-    * @public
-    * @method deleteDocument
-    * @param  collectionObj    {String}           The database collection we want to delete a document from
-    * @param  docObj           {Any}              The document we wish to delete
-    * @return {Promise}
-    */
+  // deleteDocument
+  // collectionObj: The database collection we want to delete a document from
+  // docObj: The document we wish to delete
   deleteDocument(collectionObj: string,
     docID: string): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -141,16 +118,12 @@ export class DatabaseProvider {
     });
   }
 
-  /**
-    * Update an existing document within a selected database collection
-    *
-    * @public
-    * @method updateDocument
-    * @param  collectionObj    {String}           The database collection to be used
-    * @param  docID            {String}           The document ID
-    * @param  dataObj          {Any}              The document key/values to be updated
-    * @return {Promise}
-    */
+
+  // updateDocument
+  // collectionObj: The database collection to be used
+  // docID: The document ID
+  // dataObj: The document key/values to be updated
+
   updateDocument(collectionObj: string,
     docID: string,
     dataObj: any): Promise<any> {

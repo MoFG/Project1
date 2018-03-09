@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Top Laptop 2018</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-row class="row-item">
+
+        <ion-col col-6 class="ioncol-thumbnail">
+          <ion-thumbnail item-start>
+            <img src="{{item.thumbnail}}" class="thumb" />
+          </ion-thumbnail>
+        </ion-col>
+
+        <ion-col col-6>
+          <h2 class="name">{{item.model}}</h2>
+          <p class="cate">Category: {{item.category}}</p>
+          <p class="state">State: {{item.state}}</p>
+        </ion-col>
+
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>

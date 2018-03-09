@@ -30,11 +30,10 @@ export class ManagePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private _FB: FormBuilder, private _DB: DatabaseProvider,
     private _ALERT: AlertController) {
     this.form = _FB.group({
-      // 'id': ['', Validators.required],
-      'model': ['', Validators.required],
+      'model': ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9 ]*'),Validators.required])],
       'categoryId': ['', Validators.required],
       'category': ['', Validators.required],
-      'quantity': ['', Validators.required],
+      'quantity': ['', Validators.compose([Validators.pattern('^[0-9]*'),Validators.maxLength(4),Validators.required])],
       'picture': ['', Validators.required],
       'thumbnail': ['', Validators.required],
       'state': ['', Validators.required],
