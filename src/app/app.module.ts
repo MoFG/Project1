@@ -1,37 +1,37 @@
-import { PrinterPage } from './../pages/printer/printer';
-import { ProjectorPage } from './../pages/projector/projector';
-import { LaptopPage } from './../pages/laptop/laptop';
-import { enviroment } from './../enviroments/enviroment';
-import { HttpClientModule } from '@angular/common/http';
-import { DetailPage } from './../pages/detail/detail';
-import { PropertyPage } from './../pages/property/property';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
-import { LoginPage } from './../pages/login/login';
-import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-import { HttpModule } from '@angular/http';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireModule } from 'angularfire2';
+import { HomePage } from '../pages/home/home';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { LaptopPage } from '../pages/laptop/laptop';
 import { CategoryPage } from '../pages/category/category';
-import { DatabaseProvider } from '../providers/database/database';
+import { DetailPage } from '../pages/detail/detail';
+import { LoginPage } from '../pages/login/login';
 import { ManagePage } from '../pages/manage/manage';
+import { PrinterPage } from '../pages/printer/printer';
+import { ProjectorPage } from '../pages/projector/projector';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AuthServiceProvider } from "../providers/auth-service/auth-service";
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from 'angularfire2';
+import { enviroment } from '../enviroments/enviroment';
+import { HttpModule } from '@angular/http';
+import { DatabaseProvider } from '../providers/database/database';
+import { PropertyPage } from '../pages/property/property';
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage,
-    PropertyPage,
-    DetailPage,
-    CategoryPage,
-    ManagePage,
+    HomePage,
     LaptopPage,
-    ProjectorPage,
-    PrinterPage
+    CategoryPage,
+    DetailPage,
+    LoginPage,
+    ManagePage,
+    PrinterPage,
+    ProjectorPage
   ],
   imports: [
     BrowserModule,
@@ -44,21 +44,21 @@ import { ManagePage } from '../pages/manage/manage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage,
-    PropertyPage,
-    DetailPage,
-    CategoryPage,
-    ManagePage,
+    HomePage,
     LaptopPage,
-    ProjectorPage,
-    PrinterPage
+    CategoryPage,
+    DetailPage,
+    LoginPage,
+    ManagePage,
+    PrinterPage,
+    ProjectorPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     DatabaseProvider
   ]
 })
-export class AppModule { }
+export class AppModule {}

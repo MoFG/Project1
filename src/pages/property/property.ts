@@ -4,10 +4,7 @@ import { DatabaseProvider } from './../../providers/database/database';
 import { DetailPage } from "./../detail/detail";
 import { Component, ViewChild } from "@angular/core";
 import { IonicPage, NavController, AlertController } from "ionic-angular";
-import {
-  FirebaseListObservable,
-  AngularFireDatabase
-} from "angularfire2/database";
+import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database-deprecated";
 import * as $ from "jquery";
 import { AsyncPipe } from "@angular/common";
 import { LoginPage } from "../login/login";
@@ -95,7 +92,7 @@ export class PropertyPage {
       });
   }
 
-  // Retrieve all documents from the specified collection 
+  // Retrieve all documents from the specified collection
   // getDocuments method of the DatabaseProvider
   retrieveCollection(): void {
     this._DB.getDocuments(this._COLL)
@@ -158,7 +155,7 @@ export class PropertyPage {
     });
     alert.present();
   }
-  
+
   displayAlert(title: string,
     message: string): void {
     let alert: any = this._ALERT.create({

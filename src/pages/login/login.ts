@@ -1,8 +1,7 @@
-
-import { PropertyPage } from './../property/property';
 import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Loading,LoadingController,AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 
 @Component({
@@ -13,7 +12,7 @@ export class LoginPage {
   loading: Loading;
   registerCredentials = {emai: '', password:''};
 
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthServiceProvider,
     private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
   }
@@ -21,8 +20,8 @@ export class LoginPage {
     this.showLoading();
     this.auth.login(this.registerCredentials).subscribe(allowed =>{
       if(allowed){
-        //login success -> Property Page (asset list)
-        this.navCtrl.setRoot(PropertyPage);
+        //login success -> Home Page (asset list)
+        this.navCtrl.setRoot(HomePage);
       }else{
         this.showError('Access Denied!')
       }

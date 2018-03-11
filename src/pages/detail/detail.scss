@@ -5,24 +5,25 @@ page-detail {
   }
   h2.card-title {
     font-size: 25px;
-    color: #2d3436;
-    font-weight: bold;
+    color: #000;
+    font-weight: 900;
   }
   p.discription {
     font-size: 16px;
-    color: #636e72;
+    color: #000;
     text-overflow: ellipsis;
     overflow: hidden;
   }
-  h3.iconitem-text{
+  h3.iconitem-text {
     font-size: 16px;
-    color: #2d3436;
+    color: #000;
+    font-weight: 900;
   }
   ion-note.iconitem-end {
     color: #1e90ff;
     font-weight: bold;
   }
-  .iconitem .eye{
+  .iconitem .eye {
     font-size: 2em;
     color: #2f3542;
   }
@@ -72,11 +73,12 @@ page-detail {
     z-index: 10;
     background: #fff;
   }
-  .list-ios>.item-block:last-child,
-  .list-ios>.item-wrapper:last-child .item-block {
+  .list-ios > .item-block:last-child,
+  .list-ios > .item-wrapper:last-child .item-block {
     border: none;
   }
-  ion-item button.btnClear, button.btnOk{
+  ion-item button.btnClear,
+  button.btnOk {
     font-size: 20px;
     width: 70px;
     height: 40px;
@@ -85,25 +87,48 @@ page-detail {
     background: #00b894;
   }
 
-  .createForm.showForm{
+  .createForm.showForm {
     visibility: visible;
     transition: 0.4s;
     transform: scale(1);
   }
-  .wrapper{
+  .wrapper {
     width: 100%;
     height: 830px;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 9;
-    background:#636e72;
+    background: #636e72;
     opacity: 0.5;
     visibility: hidden;
     transition: 0.4s;
   }
-  .wrapper.showWrapper{
+  .wrapper.showWrapper {
     visibility: visible;
     transition: 0.4s;
+  }
+  ion-card img {
+    padding: 1em 1em;
+  }
+  .card-ios {
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 0 0;
+    background:#DFE4EA;
+  }
+  .scroll-content{
+    background:#DFE4EA;
+  }
+  .list-ios > .item-block{
+    background:#DFE4EA;
+  }
+  ion-fab[top][edge]{
+    top: 0;
+  }
+  .fab-ios{
+    background:#FF0000;
+  }
+  .fab ion-icon{
+    color: #fff;
   }
 }

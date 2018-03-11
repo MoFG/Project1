@@ -25678,10 +25678,6 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-* {
-  font-family: 'segoe ui light';
-}
-
 page-category .ioncol-item .ioncol-picture {
   height: 200px;
   width: 100%;
@@ -25824,20 +25820,21 @@ page-detail .content {
 
 page-detail h2.card-title {
   font-size: 25px;
-  color: #2d3436;
-  font-weight: bold;
+  color: #000;
+  font-weight: 900;
 }
 
 page-detail p.discription {
   font-size: 16px;
-  color: #636e72;
+  color: #000;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
 page-detail h3.iconitem-text {
   font-size: 16px;
-  color: #2d3436;
+  color: #000;
+  font-weight: 900;
 }
 
 page-detail ion-note.iconitem-end {
@@ -25914,7 +25911,8 @@ page-detail .list-ios > .item-wrapper:last-child .item-block {
   border: none;
 }
 
-page-detail ion-item button.btnClear, page-detail button.btnOk {
+page-detail ion-item button.btnClear,
+page-detail button.btnOk {
   font-size: 20px;
   width: 70px;
   height: 40px;
@@ -25949,6 +25947,268 @@ page-detail .wrapper.showWrapper {
   visibility: visible;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+
+page-detail ion-card img {
+  padding: 1em 1em;
+}
+
+page-detail .card-ios {
+  border: 1px solid #ffffff;
+  -webkit-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
+  background: #DFE4EA;
+}
+
+page-detail .scroll-content {
+  background: #DFE4EA;
+}
+
+page-detail .list-ios > .item-block {
+  background: #DFE4EA;
+}
+
+page-detail ion-fab[top][edge] {
+  top: 0;
+}
+
+page-detail .fab-ios {
+  background: #FF0000;
+}
+
+page-detail .fab ion-icon {
+  color: #fff;
+}
+
+page-home .btnBack {
+  background: #f8f8f8;
+}
+
+page-home .content {
+  background: #dfe4ea;
+}
+
+page-home p.state {
+  color: #488AFF;
+  font-weight: bold;
+}
+
+page-home h2.name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #2f3542;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+page-home p.cate {
+  margin-bottom: 5px;
+}
+
+page-home ion-searchbar.search {
+  width: 100%;
+  border-radius: 0.3em;
+  margin-bottom: 0.6em;
+}
+
+page-home .btnMenu {
+  background: #f8f8f8;
+}
+
+page-home .btnMenu:hover {
+  color: #00b894;
+  background: #f8f8f8;
+}
+
+page-home .back-button.show-back-button {
+  display: none;
+}
+
+page-home .ionrow-topcontent {
+  text-align: center;
+}
+
+page-home ion-content .btnadd {
+  width: 40px;
+  height: 40px;
+  background: red;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  position: fixed;
+  bottom: 5%;
+  right: 10%;
+}
+
+page-home button.btnDetail {
+  color: #fff;
+  background: #1e90ff;
+  border: 0;
+  padding: 5px 10px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+page-home button.btnupdate {
+  background: #2ed573;
+}
+
+page-home button.btndel {
+  background: #ff3838;
+}
+
+page-home .ioncol-list {
+  font-size: 20px;
+  color: gray;
+}
+
+page-home .ioncol-icon {
+  font-size: 26px;
+  margin-right: 2em;
+  width: 30px;
+  color: #1e90ff;
+}
+
+page-home .btnList {
+  background: #fff;
+  border: none;
+}
+
+page-home .ioncol-list:hover .assets {
+  color: #000;
+  font-weight: bold;
+}
+
+page-home .assets {
+  color: #2d3436;
+}
+
+page-home .back-button.show-back-button {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+page-home .list-ios .item-block .item-inner {
+  border: 0;
+}
+
+page-home .list-ios > .item-block:first-child,
+page-home .list-ios > .item-block:last-child {
+  border: 0;
+}
+
+page-home button.button-item {
+  font-size: 18px;
+  background: none;
+}
+
+page-home .item-md .item-button {
+  font-size: 18px;
+  background: none;
+}
+
+page-home .item-ios .item-button {
+  background: none;
+  font-size: 18px;
+}
+
+page-home .label-ios {
+  border-bottom: 1px solid #636e72;
+}
+
+page-home .button-item:hover .button {
+  color: #000;
+  font-weight: bold;
+}
+
+page-home ion-item button.btnClear,
+page-home button.btnOk {
+  font-size: 20px;
+  width: 70px;
+  text-align: center;
+  background: #1e90ff;
+  font-size: 16px;
+  border-radius: 5px;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px;
+}
+
+page-home .input-wrapper ion-label {
+  border: 0;
+  margin: 0;
+}
+
+page-home h3.ion-title {
+  text-align: center;
+}
+
+page-home .ionlist-input {
+  text-align: center;
+}
+
+page-home ion-item.ionitem-form {
+  text-align: center;
+}
+
+page-home .ionicon-add {
+  font-size: 3em;
+  color: #fff;
+}
+
+page-home .btnDetail,
+page-home .iconupdate,
+page-home .icondel {
+  width: 30px;
+  text-align: center;
+  color: #2f3542;
+  border-radius: 5px;
+  float: left;
+  background: transparent;
+  font-size: 2em;
+  margin-left: 50px;
+  font-size: 2em;
+}
+
+page-home .ioncol-thumbnail {
+  text-align: center;
+}
+
+page-home .btndel {
+  margin-left: 15px;
+}
+
+page-home .item-ios ion-thumbnail ion-img,
+page-home .item-ios ion-thumbnail img {
+  width: 56px;
+  height: 56px;
+}
+
+page-home .row-item {
+  border-bottom: 1px solid #fff;
+  background: #DFE4EA;
+}
+
+page-home ion-list ion-item.item-ios {
+  padding: 0;
+}
+
+page-home .item-ios.item-block .item-inner {
+  padding-right: 0;
+}
+
+page-home .item-ios ion-avatar[item-left], page-home .item-ios ion-thumbnail[item-left], page-home .item-ios ion-avatar[item-start], page-home .item-ios ion-thumbnail[item-start] {
+  margin: 0;
+}
+
+page-home .list-ios {
+  margin: 0;
+}
+
+page-home .list-ios > .item-block:first-child, page-home .list-ios > .item-block:last-child {
+  background: #DFE4EA;
 }
 
 * {
@@ -26029,284 +26289,6 @@ page-manage ion-item ion-label {
   color: #1e90ff;
 }
 
-page-property .btnBack {
-  background: #f8f8f8;
-}
-
-page-property .content {
-  border-bottom: 2px solid #00b894;
-}
-
-page-property p.state {
-  color: #1e90ff;
-  font-weight: bold;
-}
-
-page-property h2.name {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  color: #2f3542;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-page-property p.cate {
-  margin-bottom: 5px;
-}
-
-page-property ion-searchbar.search {
-  width: 100%;
-  border-radius: 0.3em;
-  margin-bottom: 0.6em;
-}
-
-page-property .btnMenu {
-  background: #f8f8f8;
-}
-
-page-property .btnMenu:hover {
-  color: #00b894;
-  background: #f8f8f8;
-}
-
-page-property .back-button.show-back-button {
-  display: none;
-}
-
-page-property .ionrow-topcontent {
+page-manage .submit-button {
   text-align: center;
-}
-
-page-property .btnadd {
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  text-align: center;
-  float: right;
-  bottom: 5%;
-  line-height: 40px;
-  right: 8%;
-  background: #1e90ff;
-  border-radius: 50%;
-}
-
-page-property button.btnDetail {
-  color: #fff;
-  background: #1e90ff;
-  border: 0;
-  padding: 5px 10px;
-  width: 60px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-}
-
-page-property button.btnupdate {
-  background: #2ed573;
-}
-
-page-property button.btndel {
-  background: #ff3838;
-}
-
-page-property ion-card.card-wallpaper {
-  width: 96%;
-  margin-top: 15%;
-  background: #00c6ff;
-  background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00c6ff));
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-}
-
-page-property h2.username,
-page-property p.useremail {
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-page-property .userinfo p.useremail {
-  font-size: 15px;
-  color: #ced6e0;
-}
-
-page-property ion-card .info {
-  position: relative;
-  width: 150px;
-  height: 180px;
-}
-
-page-property img.avatar {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: 7%;
-  left: 5%;
-  z-index: 2;
-}
-
-page-property .userinfo {
-  position: absolute;
-  bottom: 6%;
-  left: 8%;
-}
-
-page-property .ioncol-list {
-  font-size: 20px;
-  color: gray;
-}
-
-page-property .ioncol-icon {
-  font-size: 26px;
-  margin-right: 2em;
-  width: 30px;
-  color: #1e90ff;
-}
-
-page-property .btnList {
-  background: #fff;
-  border: none;
-}
-
-page-property .ioncol-list:hover .assets {
-  color: #000;
-  font-weight: bold;
-}
-
-page-property .assets {
-  color: #2d3436;
-}
-
-page-property .back-button.show-back-button {
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-page-property .list-ios .item-block .item-inner {
-  border: 0;
-}
-
-page-property .list-ios > .item-block:first-child,
-page-property .list-ios > .item-block:last-child {
-  border: 0;
-}
-
-page-property button.button-item {
-  font-size: 18px;
-  background: none;
-}
-
-page-property .item-md .item-button {
-  font-size: 18px;
-  background: none;
-}
-
-page-property .item-ios .item-button {
-  background: none;
-  font-size: 18px;
-}
-
-page-property .label-ios {
-  border-bottom: 1px solid #636e72;
-}
-
-page-property .propertymenu {
-  position: fixed;
-  top: 0%;
-  left: -102%;
-  z-index: 20;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
-  visibility: hidden;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-}
-
-page-property .propertymenu.showMenu {
-  opacity: 1;
-  visibility: visible;
-  top: 0%;
-  left: 0%;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #fff;
-}
-
-page-property .button-item:hover .button {
-  color: #000;
-  font-weight: bold;
-}
-
-page-property ion-item button.btnClear,
-page-property button.btnOk {
-  font-size: 20px;
-  width: 70px;
-  text-align: center;
-  background: #1e90ff;
-  font-size: 16px;
-  border-radius: 5px;
-  height: 30px;
-  line-height: 30px;
-  margin: 10px;
-}
-
-page-property .input-wrapper ion-label {
-  border: 0;
-  margin: 0;
-}
-
-page-property h3.ion-title {
-  text-align: center;
-}
-
-page-property .ionlist-input {
-  text-align: center;
-}
-
-page-property ion-item.ionitem-form {
-  text-align: center;
-}
-
-page-property .ionicon-add {
-  font-size: 3em;
-}
-
-page-property .btnDetail,
-page-property .iconupdate,
-page-property .icondel {
-  width: 30px;
-  text-align: center;
-  color: #2f3542;
-  border-radius: 5px;
-  float: left;
-  background: transparent;
-  font-size: 2em;
-  margin-left: 50px;
-  font-size: 2em;
-}
-
-page-property .ioncol-thumbnail {
-  text-align: center;
-}
-
-page-property .thumb {
-  margin-left: 10px;
-}
-
-page-property .btndel {
-  margin-left: 15px;
-}
-
-page-property .item-ios ion-thumbnail ion-img,
-page-property .item-ios ion-thumbnail img {
-  width: 80px;
-  height: 80px;
-}
-
-page-property .row-item {
-  border-bottom: 1px solid #ced6e0;
 }

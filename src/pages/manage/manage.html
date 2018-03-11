@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>{{title}}</ion-title>
   </ion-navbar>
 
@@ -61,8 +61,8 @@
       <ion-input type="text" formControlName="description" [(ngModel)]="description"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <button ion-button block color="primary" text-center padding-top padding-bottom [disabled]="!form.valid">
+    <ion-item class="submit-button">
+      <button ion-button color="primary" small text-center padding-top padding-bottom [disabled]="!form.valid">
         <div *ngIf="!isEditable">
           Add a new document
         </div>
