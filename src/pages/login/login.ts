@@ -1,7 +1,7 @@
+import { HomePage } from './../home/home';
 import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Loading,LoadingController,AlertController } from 'ionic-angular';
-import { HomePage } from '../home/home';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { HomePage } from '../home/home';
 export class LoginPage {
   loading: Loading;
   registerCredentials = {emai: '', password:''};
-
+  home: HomePage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthServiceProvider,
     private alertCtrl: AlertController, private loadingCtrl: LoadingController) {

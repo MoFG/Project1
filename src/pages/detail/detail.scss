@@ -114,13 +114,13 @@ page-detail {
   .card-ios {
     border: 1px solid #ffffff;
     box-shadow: 0 0 0 0;
-    background:#DFE4EA;
+    background:#f1f2f6;
   }
   .scroll-content{
-    background:#DFE4EA;
+    background:#f1f2f6;
   }
   .list-ios > .item-block{
-    background:#DFE4EA;
+    background:#f1f2f6;
   }
   ion-fab[top][edge]{
     top: 0;
@@ -130,5 +130,12 @@ page-detail {
   }
   .fab ion-icon{
     color: #fff;
+  }
+  .list-ios > .item-block:first-child{
+    border: 0;
+  }
+  ion-card.card.card-ios{
+    margin: 0;
+    width: 100%;
   }
 }

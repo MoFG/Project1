@@ -5,49 +5,68 @@
     </button>
     <ion-title>Asset List</ion-title>
   </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="assetlist">
+
+      <ion-segment-button value="assets">
+        Assets
+      </ion-segment-button>
+
+      <ion-segment-button value="requests">
+        Requests
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
 </ion-header>
 
 <ion-content padding>
-  <ion-row class="ionrow-topcontent">
-    <ion-searchbar class="search" (ionInput)="getItems($event)"></ion-searchbar>
-  </ion-row>
+  <div [ngSwitch]="assetlist">
+    <ion-row class="ionrow-topcontent">
+      <ion-searchbar class="search" (ionInput)="getItems($event)"></ion-searchbar>
+    </ion-row>
 
-  <!-- Asset list get in Firebase -->
-  <ion-list class="list-asset">
+    <!-- Asset list get in Firebase -->
+    <ion-list class="list-asset" *ngSwitchCase="'assets'">
 
-    <ion-item *ngFor="let item of filterItems">
-      <ion-row class="row-item" (click)="goDetail(item)">
+      <ion-item *ngFor="let item of filterItems">
+        <ion-row class="row-item" (click)="goDetail(item)">
 
-        <ion-col col-3 class="ioncol-thumbnail">
-          <ion-thumbnail item-start class="ionthumbnail">
-            <img src="{{item.thumbnail}}" class="thumb" />
-          </ion-thumbnail>
-        </ion-col>
+          <ion-col col-3 class="ioncol-thumbnail">
+            <ion-thumbnail item-start class="ionthumbnail">
+              <img src="{{item.thumbnail}}" class="thumb" />
+            </ion-thumbnail>
+          </ion-col>
 
-        <ion-col col-9>
-          <h2 class="name">{{item.model}}</h2>
-          <p class="cate">Category: {{item.category}}</p>
-          <p class="state">State: {{item.state}}</p>
-        </ion-col>
+          <ion-col col-9>
+            <h2 class="name">{{item.model}}</h2>
+            <p class="cate">Category: {{item.category}}</p>
+            <p class="state">State: {{item.state}}</p>
+            <ion-icon (click)="sendRequest()" class="icon-request" ios="ios-call-outline" md="md-call-outline"></ion-icon>
+          </ion-col>
 
-        <!-- <ion-col col-4>
-          <ion-row>
-            <ion-icon (click)="goDetail(item)" ios="ios-arrow-dropright-outline" md="md-arrow-dropright-outline" class="btnDetail"></ion-icon>
-          </ion-row>
-          <ion-row>
-            <ion-icon ios="ios-create-outline" md="md-create-outline" (click)="updateDocument(item)" class="iconupdate"></ion-icon>
-          </ion-row>
-          <ion-row>
-            <ion-icon class="icondel" ios="ios-trash-outline" md="md-trash-outline" (click)="deleteDocument(item)"></ion-icon>
-          </ion-row>
-        </ion-col> -->
+        </ion-row>
+      </ion-item>
 
-      </ion-row>
-    </ion-item>
+    </ion-list>
 
-  </ion-list>
+    <!-- Request list -->
+    <ion-list class="list-request" *ngSwitchCase="'requests'">
+      <ion-item>
+        <h3>Request 1</h3>
+        <h3>Request 2</h3>
+        <h3>Request 3</h3>
+        <h3>Request 4</h3>
+        <h3>Request 5</h3>
+      </ion-item>
+    </ion-list>
 
-  <div class="btnadd">
-    <ion-icon class="ionicon-add" ios="ios-add-outline" md="md-add-outline" (click)="addDocument()"></ion-icon>
+
+
+    <div class="btnadd">
+      <ion-icon class="ionicon-add" ios="ios-add-outline" md="md-add-outline" (click)="addDocument()"></ion-icon>
+    </div>
   </div>
 </ion-content>

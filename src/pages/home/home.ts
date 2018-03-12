@@ -1,3 +1,5 @@
+
+import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
 import { ActionSheetController } from "ionic-angular/components/action-sheet/action-sheet-controller";
 import { ManagePage } from "./../manage/manage";
 import { DatabaseProvider } from "./../../providers/database/database";
@@ -16,10 +18,12 @@ import {
 import * as $ from "jquery";
 import { AsyncPipe } from "@angular/common";
 import { LoginPage } from "../login/login";
-import firebase from "firebase";
+import firebase, { auth } from "firebase";
 import { CategoryPage } from "../category/category";
 import { ToastController } from "ionic-angular/components/toast/toast-controller";
-
+import { FormBuilder } from '@angular/forms';
+import { Http, Headers} from '@angular/http';
+import 'rxjs/add/operator/map';
 @Component({
   selector: "page-home",
   templateUrl: "home.html"
@@ -30,14 +34,19 @@ export class HomePage {
   private _CONTENT: any; // Used to store/provide the initial document data for the database collection
   public items: any;
   filterItems: any; //Used to find items
+  assetlist: string = "assets";
 
   constructor(
     public navCtrl: NavController,
     private _DB: DatabaseProvider,
     private _ALERT: AlertController,
     public actionCtrl: ActionSheetController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public auth: AuthServiceProvider,
+    public http: Http
   ) {
+    this.checkRole();
+
     this._CONTENT = {
       id: "",
       categoryId: "",
@@ -50,6 +59,38 @@ export class HomePage {
       logo: "",
       description: ""
     };
+
+  }
+
+  // Demo send request: Doing
+  sendRequest() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let data = JSON.stringify({ username: "user1" });
+    this.http.post('http://localhost:8100/server/server.php',data)
+    .map(res => res.json()).subscribe(res => {
+      alert("success " + res);
+    },(err) =>{
+      alert("failed");
+    });
+  }
+
+  // check role login
+  checkRole() {
+    let account = this.auth.getUserInfo();
+    if (account.role == false) {
+      console.log('role = ' + account.role);
+      //Disable function add
+      this.xFunction();
+    } else {
+      //to do...
+    }
+  }
+
+  xFunction() {
+    $(document).ready(function () {
+      $('.btnadd').addClass('hide');
+    });
   }
 
   //Function search items

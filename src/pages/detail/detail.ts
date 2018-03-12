@@ -8,6 +8,7 @@ import firebase from 'firebase';
 import { HomePage } from '../home/home';
 import { ManagePage } from '../manage/manage';
 import { DatabaseProvider } from '../../providers/database/database';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @Component({
   selector: 'page-detail',
@@ -21,7 +22,23 @@ export class DetailPage {
   private _COLL: string = "items"; // Defines the name of the database collection
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController,
-    public afd: AngularFireDatabase,private _DB: DatabaseProvider, private _ALERT: AlertController) {
+    public afd: AngularFireDatabase,private _DB: DatabaseProvider, private _ALERT: AlertController,
+    public auth: AuthServiceProvider) {
+      this.checkRole();
+  }
+
+  // check role login
+  checkRole(){
+    let access = this.auth.getUserInfo();
+    if(access.role == false){
+      this.xFunction();
+    }
+  }
+
+  xFunction() {
+    $(document).ready(function () {
+      $('.ionfab').addClass('hide');
+    });
   }
 
   goDetail(item: any) {

@@ -20,6 +20,10 @@ import { enviroment } from '../enviroments/enviroment';
 import { HttpModule } from '@angular/http';
 import { DatabaseProvider } from '../providers/database/database';
 import { PropertyPage } from '../pages/property/property';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { PropertyPage } from '../pages/property/property';
     BrowserModule,
     HttpModule,
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     HttpClientModule,
     AngularFireModule.initializeApp(enviroment.firebase),
     IonicModule.forRoot(MyApp)
@@ -58,7 +64,9 @@ import { PropertyPage } from '../pages/property/property';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    DatabaseProvider
+    DatabaseProvider,
+    Transfer,
+    Camera
   ]
 })
 export class AppModule {}

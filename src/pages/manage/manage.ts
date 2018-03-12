@@ -1,8 +1,11 @@
+
 import { AlertController } from 'ionic-angular';
 import { DatabaseProvider } from './../../providers/database/database';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
 
 @IonicPage({
   name: "manage-page"
@@ -28,12 +31,12 @@ export class ManagePage {
   private _COLL: string = "items";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _FB: FormBuilder, private _DB: DatabaseProvider,
-    private _ALERT: AlertController) {
+    private _ALERT: AlertController, private transfer: Transfer, private camera: Camera) {
     this.form = _FB.group({
-      'model': ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9 ]*'),Validators.required])],
+      'model': ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9 ]*'), Validators.required])],
       'categoryId': ['', Validators.required],
       'category': ['', Validators.required],
-      'quantity': ['', Validators.compose([Validators.pattern('^[0-9]*'),Validators.maxLength(4),Validators.required])],
+      'quantity': ['', Validators.compose([Validators.pattern('^[0-9]*'), Validators.maxLength(4), Validators.required])],
       'picture': ['', Validators.required],
       'thumbnail': ['', Validators.required],
       'state': ['', Validators.required],
@@ -57,6 +60,31 @@ export class ManagePage {
     }
   }
 
+  // Function upload file: Doing
+  upload() {
+    let options = {
+      quality: 100
+    };
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      const fileTransfer: TransferObject = this.transfer.create();
+      let options1: FileUploadOptions = {
+        fileKey: 'file',
+        fileName: 'name.jpg',
+        headers: {}
+      }
+      fileTransfer.upload(imageData, 'http://localhost/ionic/server2.php', options1)
+        .then((data) => {
+          // success
+          alert("success");
+        }, (err) => {
+          // error
+          alert("error" + JSON.stringify(err));
+        });
+    });
+  }
 
   saveDocument(val: any): void {
     let model: string = this.form.controls["model"].value,

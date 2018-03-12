@@ -46,6 +46,7 @@
     <ion-item>
       <ion-label floating>Asset Thumbnail</ion-label>
       <ion-input type="text" formControlName="thumbnail" [(ngModel)]="thumbnail"></ion-input>
+      <button item-start (click)="upload()" ion-button >Take Pic & Upload </button>
     </ion-item>
 
     <ion-item>
@@ -64,11 +65,11 @@
     <ion-item class="submit-button">
       <button ion-button color="primary" small text-center padding-top padding-bottom [disabled]="!form.valid">
         <div *ngIf="!isEditable">
-          Add a new document
+          Add
         </div>
 
         <div *ngIf="isEditable">
-          Update this document
+          Update
         </div>
       </button>
     </ion-item>
