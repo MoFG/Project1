@@ -11,8 +11,15 @@ ion-item ion-label{
 .submit-button.item-ios.item-block .item-inner{
   border-bottom: 0;
 }
-.item-ios{
+.item-ios {
   padding-left: 0;
+  background: #f1f2f6;
 }
-
+ion-content.content.content-ios {
+  background: #f1f2f6;
+}
+ion-label.ionlabel {
+  color: #000;
+  font-weight: 900;
+}
 }

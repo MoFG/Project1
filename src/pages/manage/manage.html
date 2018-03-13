@@ -11,12 +11,12 @@
   <form [formGroup]="form" (ngSubmit)="saveDocument(form.value)">
 
     <ion-item>
-      <ion-label floating>Asset Name</ion-label>
+      <ion-label class="ionlabel" floating>Asset Name</ion-label>
       <ion-input type="text" formControlName="model" [(ngModel)]="model"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Category ID</ion-label>
+      <ion-label class="ionlabel" floating>Category ID</ion-label>
       <ion-select formControlName="categoryId" [(ngModel)]="categoryId">
         <ion-option value="LT01">LT01</ion-option>
         <ion-option value="MA01">MA01</ion-option>
@@ -25,7 +25,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Category</ion-label>
+      <ion-label class="ionlabel" floating>Category</ion-label>
       <ion-select formControlName="category" [(ngModel)]="category">
         <ion-option value="Laptop">Laptop</ion-option>
         <ion-option value="Camera">Camera</ion-option>
@@ -34,23 +34,23 @@
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Asset Quantity</ion-label>
+      <ion-label class="ionlabel" floating>Asset Quantity</ion-label>
       <ion-input type="text" formControlName="quantity" [(ngModel)]="quantity"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Asset Picture</ion-label>
+      <ion-label class="ionlabel" floating>Asset Picture</ion-label>
       <ion-input type="text" formControlName="picture" [(ngModel)]="picture"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Asset Thumbnail</ion-label>
+      <ion-label class="ionlabel" floating>Asset Thumbnail</ion-label>
       <ion-input type="text" formControlName="thumbnail" [(ngModel)]="thumbnail"></ion-input>
-      <button item-start (click)="upload()" ion-button >Take Pic & Upload </button>
+      <!-- <button item-start (click)="upload()" ion-button >Take Pic & Upload </button> -->
     </ion-item>
 
     <ion-item>
-      <ion-label floating>State</ion-label>
+      <ion-label class="ionlabel" floating>State</ion-label>
       <ion-select formControlName="state" [(ngModel)]="state">
         <ion-option value="open">Open</ion-option>
         <ion-option value="close">Close</ion-option>
@@ -58,7 +58,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Description</ion-label>
+      <ion-label class="ionlabel" floating>Description</ion-label>
       <ion-input type="text" formControlName="description" [(ngModel)]="description"></ion-input>
     </ion-item>
 

@@ -16,7 +16,7 @@
     </ion-card-content>
 
     <ion-list class="ionlist">
-
+        <ion-icon (click)="openModal(item)" class="icon-request" ios="ios-call-outline" md="md-call-outline"></ion-icon>
       <ion-item class="iconitem">
         <ion-icon class="eye" ios="ios-eye-outline" md="md-eye" item-start></ion-icon>
         <h3 item-start class="iconitem-text">State</h3>
@@ -31,7 +31,6 @@
 
     </ion-list>
   </ion-card>
-
 
   <ion-fab top right edge class="ionfab">
     <button ion-fab color="vibrant" mini>

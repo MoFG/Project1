@@ -44,7 +44,6 @@
             <h2 class="name">{{item.model}}</h2>
             <p class="cate">Category: {{item.category}}</p>
             <p class="state">State: {{item.state}}</p>
-            <ion-icon (click)="sendRequest()" class="icon-request" ios="ios-call-outline" md="md-call-outline"></ion-icon>
           </ion-col>
 
         </ion-row>
@@ -54,13 +53,32 @@
 
     <!-- Request list -->
     <ion-list class="list-request" *ngSwitchCase="'requests'">
-      <ion-item>
-        <h3>Request 1</h3>
-        <h3>Request 2</h3>
-        <h3>Request 3</h3>
-        <h3>Request 4</h3>
-        <h3>Request 5</h3>
+
+      <ion-item *ngFor="let request of requests">
+        <ion-row class="row-item">
+          <ion-col col-10>
+            <ion-avatar>
+              <img src="{{request.thumbnail}}" alt="">
+            </ion-avatar>
+            <div class="info">
+              <h2 class="name">{{request.model}}</h2>
+              <p class="description">{{request.description}}</p>
+              <p class="state">{{request.state}}</p>
+            </div>
+          </ion-col>
+          <ion-col col-2>
+            <div class="buttons">
+              <div class="btndenied">
+                <ion-icon (click)="denied()" ios="ios-checkmark-outline" md="md-checkmark-outline" class="denied"></ion-icon>
+              </div>
+              <div class="btnaccept">
+                <ion-icon (click)="accept()" ios="ios-checkmark-outline" md="md-checkmark-outline" class="accept"></ion-icon>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
       </ion-item>
+      
     </ion-list>
 
 

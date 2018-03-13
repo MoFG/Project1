@@ -60,7 +60,7 @@ export class ManagePage {
     }
   }
 
-  // Function upload file: Doing
+  // Function upload file: Doing...
   upload() {
     let options = {
       quality: 100

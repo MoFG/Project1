@@ -25989,6 +25989,24 @@ page-detail ion-card.card.card-ios {
   width: 100%;
 }
 
+page-detail ion-icon.icon.icon-ios.ion-ios-call-outline {
+  margin: 0;
+  padding: 0;
+  float: right;
+  font-size: 20px;
+  margin-top: -2em;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  background: #EA2027;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+
 page-home .btnBack {
   background: #f8f8f8;
 }
@@ -26195,11 +26213,6 @@ page-home .item-ios ion-thumbnail img {
   height: 56px;
 }
 
-page-home .row-item {
-  border-bottom: 1px solid #fff;
-  background: #f1f2f6;
-}
-
 page-home ion-list ion-item.item-ios {
   padding: 0;
 }
@@ -26220,19 +26233,67 @@ page-home .list-ios > .item-block:first-child, page-home .list-ios > .item-block
   background: #DFE4EA;
 }
 
-page-home ion-icon.icon.icon-ios.ion-ios-call-outline {
-  margin: 0;
+page-home ion-avatar {
+  width: 15%;
+  float: left;
+}
+
+page-home ion-col.col {
+  padding-top: 0.3em;
+}
+
+page-home ion-col[col-2] {
   padding: 0;
-  float: right;
-  font-size: 20px;
-  margin-top: -2em;
-  width: 25px;
-  height: 25px;
+}
+
+page-home .info {
+  float: left;
+}
+
+page-home ion-col[col-10] {
+  padding: 0;
+}
+
+page-home .row-item {
+  border-bottom: 1px solid #fff;
+  background: #f1f2f6;
+  padding-bottom: 0.3em;
+}
+
+page-home .btndenied, page-home .btnaccept {
+  width: 30px;
+  height: 20px;
   text-align: center;
-  line-height: 25px;
+  line-height: 20px;
+  background: #EA2027;
   color: #fff;
+  border-radius: 5px;
+  float: right;
+  margin-right: 0.1em;
+}
+
+page-home .btndenied {
+  margin-bottom: 0.3em;
+}
+
+page-home .btnaccept {
   background: #105fea;
-  border-radius: 50%;
+}
+
+page-home .info h2.name {
+  margin-bottom: 0;
+}
+
+page-home .btndenied:hover {
+  color: #EA2027;
+  background: #fff;
+  font-weight: 900;
+}
+
+page-home .btnaccept:hover {
+  color: #105fea;
+  background: #fff;
+  font-weight: 900;
 }
 
 * {
@@ -26327,4 +26388,14 @@ page-manage .submit-button.item-ios.item-block .item-inner {
 
 page-manage .item-ios {
   padding-left: 0;
+  background: #f1f2f6;
+}
+
+page-manage ion-content.content.content-ios {
+  background: #f1f2f6;
+}
+
+page-manage ion-label.ionlabel {
+  color: #000;
+  font-weight: 900;
 }

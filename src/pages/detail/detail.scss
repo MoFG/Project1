@@ -138,4 +138,21 @@ page-detail {
     margin: 0;
     width: 100%;
   }
+  ion-icon.icon.icon-ios.ion-ios-call-outline {
+    margin: 0;
+    padding: 0;
+    float: right;
+    font-size: 20px;
+    margin-top: -2em;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    background: #EA2027;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
 }

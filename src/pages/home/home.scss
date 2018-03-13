@@ -167,10 +167,6 @@ page-home {
     width: 56px;
     height: 56px;
   }
-  .row-item {
-    border-bottom: 1px solid #fff;
-    background: #f1f2f6;
-  }
   // ---------------------------
   ion-list ion-item.item-ios{
     padding:0;
@@ -187,18 +183,55 @@ page-home {
   .list-ios > .item-block:first-child,.list-ios > .item-block:last-child{
     background:#DFE4EA;
   }
-  ion-icon.icon.icon-ios.ion-ios-call-outline {
-    margin: 0;
-    padding: 0;
-    float: right;
-    font-size: 20px;
-    margin-top: -2em;
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    line-height: 25px;
-    color: #fff;
-    background: #105fea;
-    border-radius: 50%;
+ion-avatar {
+  width: 15%;
+    float: left;
+}
+ion-col.col {
+  padding-top: 0.3em;
+}
+ion-col[col-2] {
+  padding: 0;
+}
+.info {
+  float: left;
+}
+ion-col[col-10]{
+  padding: 0;
+}
+.row-item {
+  border-bottom: 1px solid #fff;
+  background: #f1f2f6;
+  padding-bottom: 0.3em;
+}
+.btndenied, .btnaccept {
+  width: 30px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background: #EA2027;
+  color: #fff;
+  border-radius: 5px;
+  float: right;
+  margin-right: 0.1em;
+}
+.btndenied {
+  margin-bottom: 0.3em;
+}
+.btnaccept{
+  background: #105fea;
+}
+.info h2.name{
+  margin-bottom: 0;
+}
+.btndenied:hover{
+  color: #EA2027;
+  background:#fff;
+  font-weight: 900;
+}
+.btnaccept:hover{
+  color:#105fea ;
+  background:#fff;
+  font-weight: 900;
 }
 }

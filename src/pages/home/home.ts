@@ -9,7 +9,9 @@ import {
   IonicPage,
   NavController,
   AlertController,
-  ItemSliding
+  ItemSliding,
+  ModalController,
+  NavParams
 } from "ionic-angular";
 import {
   AngularFireDatabase,
@@ -22,20 +24,28 @@ import firebase, { auth } from "firebase";
 import { CategoryPage } from "../category/category";
 import { ToastController } from "ionic-angular/components/toast/toast-controller";
 import { FormBuilder } from '@angular/forms';
-import { Http, Headers} from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 @Component({
   selector: "page-home",
   templateUrl: "home.html"
 })
 export class HomePage {
-  private _COLL: string = "items"; // Defines the name of the database collection
+  private _COLL: string; // Defines the name of the database collection
   private _DOC: string = ""; // Defines the initial document ID for the database collection
   private _CONTENT: any; // Used to store/provide the initial document data for the database collection
   public items: any;
+  public requests: any;
   filterItems: any; //Used to find items
   assetlist: string = "assets";
+  public docID: string = '';
+  public model: string = '';
+  public state: string = '';
+  public description: string = '';
+  public thumbnail: string = '';
+  public form: any;
 
+  private _RCONTENT: any;
   constructor(
     public navCtrl: NavController,
     private _DB: DatabaseProvider,
@@ -43,7 +53,8 @@ export class HomePage {
     public actionCtrl: ActionSheetController,
     private toastCtrl: ToastController,
     public auth: AuthServiceProvider,
-    public http: Http
+    public http: Http,
+    public navParams: NavParams
   ) {
     this.checkRole();
 
@@ -60,19 +71,31 @@ export class HomePage {
       description: ""
     };
 
+    this._RCONTENT = {
+      id: "",
+      model: "",
+      thumbnail: "",
+      description: ""
+    };
+
+  }
+  
+  denied() {
+    console.log('Denied !');
   }
 
-  // Demo send request: Doing
-  sendRequest() {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let data = JSON.stringify({ username: "user1" });
-    this.http.post('http://localhost:8100/server/server.php',data)
-    .map(res => res.json()).subscribe(res => {
-      alert("success " + res);
-    },(err) =>{
-      alert("failed");
+  accept() {
+    console.log('Accepted!');
+  }
+
+  displayAlert(title: string,
+    message: string): void {
+    let alert: any = this._ALERT.create({
+      title: title,
+      subTitle: message,
+      buttons: ['Got it!']
     });
+    alert.present();
   }
 
   // check role login
@@ -82,8 +105,9 @@ export class HomePage {
       console.log('role = ' + account.role);
       //Disable function add
       this.xFunction();
-    } else {
+    } else{
       //to do...
+
     }
   }
 
@@ -123,6 +147,7 @@ export class HomePage {
   // Call retrieveCollection() to show list item
   ionViewDidEnter() {
     this.retrieveCollection();
+    this.retrieveRequest();
   }
 
   generateCollectionAndDocument(): void {
@@ -139,6 +164,7 @@ export class HomePage {
   // Retrieve all documents from the specified collection
   // getDocuments method of the DatabaseProvider
   retrieveCollection(): void {
+    this._COLL = "items";
     this._DB
       .getDocuments(this._COLL)
       .then(data => {
@@ -163,5 +189,16 @@ export class HomePage {
     this.navCtrl.push(ManagePage);
   }
 
+  // REQUEST
+  retrieveRequest(): void {
+    this._COLL = "requests";
+    this._DB
+      .getDocuments(this._COLL)
+      .then(data => {
+        console.log(data);
+        this.requests = data;
+      })
+      .catch();
+  }
 
 }
