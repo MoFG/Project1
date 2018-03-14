@@ -1,6 +1,6 @@
 page-detail {
   .content {
-    border-bottom: 2px solid #00b894;
+    border-bottom: 2px solid #1e90ff;
     overflow: hidden;
   }
   h2.card-title {
@@ -73,8 +73,8 @@ page-detail {
     z-index: 10;
     background: #fff;
   }
-  .list-ios > .item-block:last-child,
-  .list-ios > .item-wrapper:last-child .item-block {
+  .list-ios>.item-block:last-child,
+  .list-ios>.item-wrapper:last-child .item-block {
     border: none;
   }
   ion-item button.btnClear,
@@ -86,7 +86,6 @@ page-detail {
     line-height: 40px;
     background: #00b894;
   }
-
   .createForm.showForm {
     visibility: visible;
     transition: 0.4s;
@@ -114,27 +113,27 @@ page-detail {
   .card-ios {
     border: 1px solid #ffffff;
     box-shadow: 0 0 0 0;
-    background:#f1f2f6;
+    background: #f1f2f6;
   }
-  .scroll-content{
-    background:#f1f2f6;
+  .scroll-content {
+    background: #f1f2f6;
   }
-  .list-ios > .item-block{
-    background:#f1f2f6;
+  .list-ios>.item-block {
+    background: #f1f2f6;
   }
-  ion-fab[top][edge]{
+  ion-fab[top][edge] {
     top: 0;
   }
-  .fab-ios{
-    background:#FF0000;
+  .fab-ios {
+    background: #FF0000;
   }
-  .fab ion-icon{
+  .fab ion-icon {
     color: #fff;
   }
-  .list-ios > .item-block:first-child{
+  .list-ios>.item-block:first-child {
     border: 0;
   }
-  ion-card.card.card-ios{
+  ion-card.card.card-ios {
     margin: 0;
     width: 100%;
   }
@@ -154,5 +153,5 @@ page-detail {
     position: absolute;
     top: 10%;
     right: 10%;
-}
+  }
 }

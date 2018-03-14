@@ -25678,6 +25678,10 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-category .cate-content {
+  border-bottom: 2px solid #1e90ff;
+}
+
 page-category .ioncol-item .ioncol-picture {
   height: 200px;
   width: 100%;
@@ -25814,7 +25818,7 @@ page-category .ionrow:hover {
 }
 
 page-detail .content {
-  border-bottom: 2px solid #00b894;
+  border-bottom: 2px solid #1e90ff;
   overflow: hidden;
 }
 
@@ -26013,6 +26017,7 @@ page-home .btnBack {
 
 page-home .content {
   background: #f1f2f6;
+  border-bottom: 2px solid #1e90ff;
 }
 
 page-home p.state {
@@ -26063,8 +26068,8 @@ page-home ion-content .btnadd {
   text-align: center;
   line-height: 40px;
   position: fixed;
-  bottom: 5%;
-  right: 10%;
+  bottom: 2%;
+  right: 4%;
 }
 
 page-home button.btnDetail {
@@ -26297,7 +26302,7 @@ page-home .btnaccept:hover {
 }
 
 * {
-  font-family: segoe ui light;
+  font-family: 'segoe ui light';
 }
 
 page-login .icon {
@@ -26310,22 +26315,20 @@ page-login [col-12] {
 }
 
 page-login .content {
-  background: #1c92d2;
-  background: -webkit-gradient(linear, left top, right top, from(#f2fcfe), to(#1c92d2));
-  background: linear-gradient(to right, #f2fcfe, #1c92d2);
+  border-bottom: 2px solid #1e90ff;
+  background: #f1f2f6;
 }
 
 page-login h3.title {
   font-size: 50px;
-  color: #fff;
+  color: #1e90ff;
+  font-family: segoe ui light;
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
 page-login .back-button.show-back-button {
   display: none;
-}
-
-page-login .content {
-  border-bottom: 2px solid #2ed573;
 }
 
 page-login .ionrow-title {
@@ -26366,8 +26369,12 @@ page-login .list-ios > .item-wrapper:last-child .item-block {
 }
 
 page-login button.submit-btn {
-  background: #2ed573;
+  background: #1e90ff;
   border-radius: 20px;
+}
+
+page-manage .content {
+  border-bottom: 2px solid #1e90ff;
 }
 
 page-manage ion-item ion-label {

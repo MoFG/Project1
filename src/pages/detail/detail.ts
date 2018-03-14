@@ -1,3 +1,4 @@
+
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheet, AlertController } from 'ionic-angular';
@@ -19,15 +20,14 @@ export class DetailPage {
   private _DOC: string = "";
   private _CONTENT: any;
   public items: any;
-
   private _COLL: string = "items"; // Defines the name of the database collection
+  private _RCOLL: string = "requests";
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController,
     public afd: AngularFireDatabase, private _DB: DatabaseProvider, private _ALERT: AlertController,
     public auth: AuthServiceProvider) {
 
     this.checkRole();
-
   }
 
   // check role login
@@ -39,12 +39,13 @@ export class DetailPage {
       this.yFunction();
     }
   }
-
+  // Disable function edit, delete
   xFunction() {
     $(document).ready(function () {
       $('.ionfab').addClass('hide');
     });
   }
+  // Disable function send request
   yFunction() {
     $(document).ready(function () {
       $('.icon-request').addClass('hide');
@@ -67,7 +68,7 @@ export class DetailPage {
       {
         text: 'Agree',
         handler: () => {
-          // do something
+          // do something 
           console.log('Agree clicked!', { item: item });
           
         }
@@ -110,6 +111,15 @@ export class DetailPage {
       })
       .catch();
   }
+
+  //Form send request
+  // sendRequest(obj): void{
+  //   let params: any = {
+  //     collection: this._RCOLL,
+  //     item: obj
+  //   };
+  //   this.navCtrl.push(ModalPage, {record:params, isEdited: true});
+  // }
 
   // Update item
   updateDocument(obj): void {

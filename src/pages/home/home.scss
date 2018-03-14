@@ -4,6 +4,7 @@ page-home {
   }
   .content {
     background: #f1f2f6;
+    border-bottom: 2px solid #1e90ff;
   }
   p.state {
     color: #488AFF;
@@ -45,8 +46,8 @@ page-home {
     text-align: center;
     line-height: 40px;
     position: fixed;
-    bottom: 5%;
-    right: 10%;
+    bottom: 2%;
+    right: 4%;
   }
   button.btnDetail {
     color: #fff;

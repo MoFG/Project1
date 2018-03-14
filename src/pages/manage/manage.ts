@@ -20,8 +20,8 @@ export class ManagePage {
   public model: string = '';
   public categoryId: string = '';
   public category: string = '';
+  public userId: string = '';
   public quantity: string = '';
-  public picture: string = '';
   public thumbnail: string = '';
   public state: string = '';
   public description: string = '';
@@ -35,9 +35,8 @@ export class ManagePage {
     this.form = _FB.group({
       'model': ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9 ]*'), Validators.required])],
       'categoryId': ['', Validators.required],
-      'category': ['', Validators.required],
+      // 'category': ['', Validators.required],
       'quantity': ['', Validators.compose([Validators.pattern('^[0-9]*'), Validators.maxLength(4), Validators.required])],
-      'picture': ['', Validators.required],
       'thumbnail': ['', Validators.required],
       'state': ['', Validators.required],
       'description': ['', Validators.required]
@@ -48,15 +47,14 @@ export class ManagePage {
 
       this.model = record.item.model;
       this.categoryId = record.item.categoryId;
-      this.category = record.item.category;
+      // this.category = record.item.category;
       this.quantity = record.item.quantity;
-      this.picture = record.item.picture;
       this.thumbnail = record.item.thumbnail;
       this.state = record.item.state;
       this.description = record.item.description;
       this.docID = record.item.id;
       this.isEditable = true;
-      this.title = 'Update this document';
+      this.title = 'Update';
     }
   }
 
@@ -89,13 +87,11 @@ export class ManagePage {
   saveDocument(val: any): void {
     let model: string = this.form.controls["model"].value,
       categoryId: string = this.form.controls["categoryId"].value,
-      category: string = this.form.controls["category"].value,
+      // category: string = this.form.controls["category"].value,
       quantity: string = this.form.controls["quantity"].value,
-      picture: string = this.form.controls["picture"].value,
       thumbnail: string = this.form.controls["thumbnail"].value,
       state: string = this.form.controls["state"].value,
       description: string = this.form.controls["description"].value;
-
 
     // If we are editing an existing record then handle this scenario
     if (this.isEditable) {
@@ -107,18 +103,17 @@ export class ManagePage {
         {
           model: model,
           categoryId: categoryId,
-          category: category,
+          // category: category,
           quantity: quantity,
-          picture: picture,
           thumbnail: thumbnail,
           state: state,
           description: description
         })
         .then((data) => {
-          this.displayAlert('Success', 'The document ' + model + ' was successfully updated');
+          this.displayAlert('Success', 'The asset ' + model + ' was successfully updated');
         })
         .catch((error) => {
-          this.displayAlert('Updating document failed', error.message);
+          this.displayAlert('Updating failed', error.message);
         });
     }
 
@@ -131,9 +126,8 @@ export class ManagePage {
         {
           model: model,
           categoryId: categoryId,
-          category: category,
+          // category: category,
           quantity: quantity,
-          picture: picture,
           thumbnail: thumbnail,
           state: state,
           description: description
@@ -165,7 +159,6 @@ export class ManagePage {
     this.categoryId = '';
     this.category = '';
     this.quantity = '';
-    this.picture = '';
     this.thumbnail = '';
     this.state = '';
     this.description = '';

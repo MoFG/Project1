@@ -42,7 +42,7 @@
 
           <ion-col col-9>
             <h2 class="name">{{item.model}}</h2>
-            <p class="cate">Category: {{item.category}}</p>
+            <p class="cate">Category: {{item.categoryId == 'LT01' ?'Laptop':'' || item.categoryId == 'MC01' ?'Projector' :'' || item.categoryId == 'MA01' ?'Camera' :''}}</p>
             <p class="state">State: {{item.state}}</p>
           </ion-col>
 
