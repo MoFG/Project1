@@ -26282,7 +26282,7 @@ page-home .btndenied {
 }
 
 page-home .btnaccept {
-  background: #105fea;
+  background: #2ed573;
 }
 
 page-home .info h2.name {
@@ -26299,6 +26299,10 @@ page-home .btnaccept:hover {
   color: #105fea;
   background: #fff;
   font-weight: 900;
+}
+
+page-home .info h2.name {
+  font-size: 18px;
 }
 
 * {

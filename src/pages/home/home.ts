@@ -79,13 +79,43 @@ export class HomePage {
     };
 
   }
-  
+
   denied() {
-    console.log('Denied !');
+    let conFirm = this._ALERT.create({
+      title: 'CONFIRM',
+      message: 'Do you really want to denied ?',
+      buttons: [{
+        text: 'No',
+        handler: data => {
+          console.log('No clicked!');
+        }
+      }, {
+        text: 'Yes',
+        handler: () => {
+          console.log('Denied!');
+        }
+      }]
+    });
+    conFirm.present();
   }
 
   accept() {
-    console.log('Accepted!');
+    let conFirm = this._ALERT.create({
+      title: 'CONFIRM',
+      message: 'Do you really want to accept ?',
+      buttons: [{
+        text: 'No',
+        handler: data => {
+          console.log('No clicked!');
+        }
+      }, {
+        text: 'Yes',
+        handler: () => {
+          console.log('Accepted!');
+        }
+      }]
+    });
+    conFirm.present();
   }
 
   displayAlert(title: string,
@@ -103,9 +133,10 @@ export class HomePage {
     let account = this.auth.getUserInfo();
     if (account.role == false) {
       console.log('role = ' + account.role);
+
       //Disable function add
       this.xFunction();
-    } else{
+    } else {
       //to do...
 
     }

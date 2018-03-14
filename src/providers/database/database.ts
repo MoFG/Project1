@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from 'angularfire2/database';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
@@ -12,11 +13,12 @@ export class DatabaseProvider {
   private _DB: any;
 
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public af: AngularFireDatabase) {
     // Initialise access to the firestore
     this._DB = firebase.firestore();
 
   }
+
 
   //  createAndPopulateDocument
   //  collectionObj    {String}           The database collection we want to create
@@ -63,9 +65,9 @@ export class DatabaseProvider {
                 id: doc.id,
                 categoryId: doc.data().categoryId,
                 model: doc.data().model,
-                category: doc.data().category,
+                // category: doc.data().category,
                 quantity: doc.data().quantity,
-                picture: doc.data().picture,
+                // picture: doc.data().picture,
                 thumbnail: doc.data().thumbnail,
                 state: doc.data().state,
                 description: doc.data().description

@@ -22,6 +22,13 @@ export class DetailPage {
   public items: any;
   private _COLL: string = "items"; // Defines the name of the database collection
   private _RCOLL: string = "requests";
+
+  public model: string = '';
+  public categoryId: string = '';
+  public thumbnail: string = '';
+  public state: string = '';
+  public description: string = '';
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController,
     public afd: AngularFireDatabase, private _DB: DatabaseProvider, private _ALERT: AlertController,
@@ -51,7 +58,7 @@ export class DetailPage {
       $('.icon-request').addClass('hide');
     });
   }
-  
+
   //doing........
   openModal(item: any) {
     this._COLL = "requests";
@@ -70,7 +77,12 @@ export class DetailPage {
         handler: () => {
           // do something 
           console.log('Agree clicked!', { item: item });
-          
+          this._DB.addDocument(this._COLL, item).then(data => {
+            console.log(data);
+          })
+            .catch((error: any) => {
+              console.log(error);
+            })
         }
       }
       ]
