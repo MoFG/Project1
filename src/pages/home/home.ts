@@ -44,7 +44,6 @@ export class HomePage {
   public description: string = '';
   public thumbnail: string = '';
   public form: any;
-
   private _RCONTENT: any;
   constructor(
     public navCtrl: NavController,
@@ -88,13 +87,13 @@ export class HomePage {
       buttons: [{
         text: 'No',
         handler: data => {
-          console.log('No clicked!', {request:request});
+          console.log('No clicked!', { request: request });
         }
       }, {
         text: 'Yes',
         handler: () => {
           console.log('Denied!');
-          this._DB.deleteDocument(this._COLL,request.id).then((data:any) => {
+          this._DB.deleteDocument(this._COLL, request.id).then((data: any) => {
             console.log(data);
             this.retrieveRequest();
           }).catch((error: any) => {
@@ -121,8 +120,7 @@ export class HomePage {
       }, {
         text: 'Yes',
         handler: () => {
-          console.log('Accepted!');
-          console.log({request:request});
+          console.log('Accepted!', { request: request });
 
         }
       }]
@@ -155,6 +153,7 @@ export class HomePage {
   xFunction() {
     $(document).ready(function () {
       $('.btnadd').addClass('hide');
+      $('.requestlist').addClass('hide');
     });
   }
 
@@ -185,6 +184,7 @@ export class HomePage {
   goLogin() {
     this.navCtrl.push(LoginPage);
   }
+  
   // Call retrieveCollection() to show list item
   ionViewDidEnter() {
     this.retrieveCollection();

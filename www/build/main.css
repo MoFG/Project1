@@ -26319,6 +26319,65 @@ page-home .buttons {
   height: 100%;
 }
 
+page-laptop .content {
+  background: #f1f2f6;
+}
+
+page-laptop .listitem {
+  background: #f1f2f6;
+}
+
+page-laptop .list-ios > .item-block {
+  border-top: 0;
+  background: #f1f2f6;
+}
+
+page-laptop .item-ios {
+  padding-left: 0;
+}
+
+page-laptop .item-ios.item-block .item-inner {
+  padding-right: 0;
+}
+
+page-laptop .item-ios [item-left],
+page-laptop .item-ios [item-start] {
+  margin: 0;
+}
+
+page-laptop .item-ios ion-avatar[item-left],
+page-laptop .item-ios ion-thumbnail[item-left],
+page-laptop .item-ios ion-avatar[item-start],
+page-laptop .item-ios ion-thumbnail[item-start] {
+  margin: 0;
+}
+
+page-laptop .list-ios > .item-block:first-child {
+  border-top: 0;
+}
+
+page-laptop h2.name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #2f3542;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+page-laptop p.state {
+  color: #488AFF;
+  font-weight: bold;
+}
+
+page-laptop .item-ios p.cate {
+  overflow: inherit;
+  font-size: 1.4rem;
+  line-height: normal;
+  text-overflow: inherit;
+  color: #8e9093;
+  margin: 0 0 2px;
+}
+
 * {
   font-family: 'segoe ui light';
 }

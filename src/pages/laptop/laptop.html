@@ -10,20 +10,20 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-list>
+<ion-content padding class="content">
+  <ion-list class="listitem">
     <ion-item *ngFor="let item of items">
       <ion-row class="row-item">
 
-        <ion-col col-6 class="ioncol-thumbnail">
+        <ion-col col-3 class="ioncol-thumbnail">
           <ion-thumbnail item-start>
             <img src="{{item.thumbnail}}" class="thumb" />
           </ion-thumbnail>
         </ion-col>
 
-        <ion-col col-6>
+        <ion-col col-9>
           <h2 class="name">{{item.model}}</h2>
-          <p class="cate">Category: {{item.category}}</p>
+          <p class="cate">Category: {{item.categoryId == 'LT01' ?'Laptop':'' || item.categoryId == 'MC01' ?'Projector' :'' || item.categoryId == 'MA01' ?'Camera' :''}}</p>
           <p class="state">State: {{item.state}}</p>
         </ion-col>
 

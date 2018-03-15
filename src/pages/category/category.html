@@ -13,7 +13,7 @@
 <ion-content padding class="cate-content">
 
   <ion-row class="ionrow">
-    <ion-col col-12 class="ioncol-item" (click)="goCateLaptop()">
+    <ion-col col-12 class="ioncol-item" (click)="goProducts(laptop)">
       <div class="ioncol-picture">
         <img src="/assets/imgs/mac.png" alt="">
         <div class="ioncol-text">
@@ -26,30 +26,8 @@
     </ion-col>
   </ion-row>
 
-  <!-- Binding data -->
-  <!-- <ion-list *ngFor="let item of filterItems" class="filter-list">
-    <ion-item>
-      <ion-row>
-
-        <ion-col col-4 class="ioncol-thumbnail">
-          <ion-thumbnail item-start>
-            <img src="{{item.thumbnail}}" class="thumb" />
-          </ion-thumbnail>
-        </ion-col>
-
-        <ion-col col-8>
-            <h2 class="name">{{item.model}}</h2>
-          <p class="cate">Category: {{item.category}}</p>
-          <p class="description">Infomation: {{item.description}}</p>
-        </ion-col>
-
-      </ion-row>
-    </ion-item>
-  </ion-list> -->
-  <!-- end -->
-
   <ion-row class="ionrow">
-    <ion-col col-12 class="ioncol-item item2" (click)="goCateProjector()">
+    <ion-col col-12 class="ioncol-item item2" (click)="goProducts(canon)">
       <div class="ioncol-picture">
         <img src="/assets/imgs/projector.png" alt="">
         <div class="ioncol-text">
@@ -63,7 +41,7 @@
   </ion-row>
 
   <ion-row class="ionrow">
-    <ion-col col-12 class="ioncol-item item3" (click)="goCateprint()">
+    <ion-col col-12 class="ioncol-item item3" (click)="goProducts(sony)">
       <div class="ioncol-picture">
         <img src="/assets/imgs/printer10.png" alt="">
         <div class="ioncol-text">

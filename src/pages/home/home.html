@@ -53,6 +53,7 @@
     </ion-list>
 
     <!-- Request list -->
+    <div class="requestlist">
     <ion-list class="list-request" *ngSwitchCase="'requests'">
 
       <ion-item *ngFor="let request of requests">
@@ -67,7 +68,7 @@
           <ion-col col-8>
             <div class="info">
               <h2 class="name">{{request.model}}</h2>
-              <p class="state">{{request.state == 'available' ?'wait':''}}{{demo}}</p>
+              <p class="state">{{request.state == 'available' ?'wait':''}}</p>
             </div>
           </ion-col>
 
@@ -86,7 +87,7 @@
       </ion-item>
 
     </ion-list>
-
+  </div>
     <div class="btnadd">
       <ion-icon class="ionicon-add" ios="ios-add-outline" md="md-add-outline" (click)="addDocument()"></ion-icon>
     </div>

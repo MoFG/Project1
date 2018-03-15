@@ -77,6 +77,8 @@ export class DetailPage {
         handler: () => {
           // do something 
           console.log('Agree clicked!', { item: item });
+          let info = this.auth.getUserInfo().name;
+          console.log(info);
           this._DB.addDocument(this._COLL, item).then(data => {
             console.log(data);
           })
@@ -123,15 +125,6 @@ export class DetailPage {
       })
       .catch();
   }
-
-  //Form send request
-  // sendRequest(obj): void{
-  //   let params: any = {
-  //     collection: this._RCOLL,
-  //     item: obj
-  //   };
-  //   this.navCtrl.push(ModalPage, {record:params, isEdited: true});
-  // }
 
   // Update item
   updateDocument(obj): void {

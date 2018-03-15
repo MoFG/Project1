@@ -1,3 +1,50 @@
 page-laptop {
-
+    .content {
+        background: #f1f2f6;
+    }
+    .listitem {
+        background: #f1f2f6;
+    }
+    .list-ios>.item-block {
+        border-top: 0;
+        background: #f1f2f6;
+    }
+    .item-ios {
+        padding-left: 0;
+    }
+    .item-ios.item-block .item-inner {
+        padding-right: 0;
+    }
+    .item-ios [item-left],
+    .item-ios [item-start] {
+        margin: 0;
+    }
+    .item-ios ion-avatar[item-left],
+    .item-ios ion-thumbnail[item-left],
+    .item-ios ion-avatar[item-start],
+    .item-ios ion-thumbnail[item-start] {
+        margin: 0;
+    }
+    .list-ios>.item-block:first-child {
+        border-top: 0;
+    }
+    h2.name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: #2f3542;
+        font-weight: 900;
+        margin-bottom: 5px;
+    }
+    p.state {
+        color: #488AFF;
+        font-weight: bold;
+    }
+    .item-ios p.cate {
+        overflow: inherit;
+        font-size: 1.4rem;
+        line-height: normal;
+        text-overflow: inherit;
+        color: #8e9093;
+        margin: 0 0 2px;
+    }
 }

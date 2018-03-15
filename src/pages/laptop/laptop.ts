@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DatabaseProvider } from '../../providers/database/database';
 
 @Component({
   selector: 'page-laptop',
@@ -7,11 +8,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LaptopPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private _COLL: string;
+  public items: Array<any>;
+  categoryId: string;
+  public cateLap: string = 'LT01';
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _DB: DatabaseProvider, ) {
+    this.categoryId = this.navParams.get('cateId');
+    // console.log("dsadadasdasdasdas",this.categoryId)
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LaptopPage');
+    this.retrieveCollection();
   }
-
+  retrieveCollection(): void {
+    let i: number;
+    // let itemList: Array<any>;
+    this._COLL = "items";
+    this._DB
+      .getDocuments(this._COLL)
+      .then(data => {
+        this.items = data.filter(ele => ele.categoryId == this.categoryId);
+      })
+      .catch();
+  }
 }

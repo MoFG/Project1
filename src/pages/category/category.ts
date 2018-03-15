@@ -12,6 +12,9 @@ import { IonicPage, NavController, NavParams, AlertController, ActionSheetContro
   templateUrl: 'category.html',
 })
 export class CategoryPage {
+  laptop='LT01';
+  canon='MA01';
+  sony='MC01';
   private _COLL: string = "items";    // Defines the name of the database collection
   private _DOC: string = "";          // Defines the initial document ID for the database collection
   private _CONTENT: any;              // Used to store/provide the initial document data for the database collection
@@ -31,19 +34,6 @@ export class CategoryPage {
       description: ""
     };
   }
-
-
-  //Function search items
-  // getItems(input: any) {
-  //   let searchKeyword = input.target.value;
-  //   if (searchKeyword != null) {
-  //     this.filterItems = this.items.filter(item =>
-  //       item.model.toLowerCase().indexOf(searchKeyword.toLowerCase()) > -1
-  //     );
-  //   } else {
-  //     this.filterItems = this.items;
-  //   }
-  // }
 
   ionViewDidEnter() {
     this.retrieveCollection();
@@ -76,15 +66,8 @@ export class CategoryPage {
       .catch();
   }
   //Go to page Laptop
-  goCateLaptop() {
-    this.navCtrl.push(LaptopPage);
+  goProducts(cateId) {
+    this.navCtrl.push(LaptopPage,{cateId});
   }
-  //Go to page Projector
-  goCateProjector() {
-    this.navCtrl.push(ProjectorPage);
-  }
-  //Go to page Print
-  goCateprint() {
-    this.navCtrl.push(PrinterPage);
-  }
+  
 }
