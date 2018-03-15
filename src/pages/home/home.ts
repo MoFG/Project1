@@ -77,29 +77,39 @@ export class HomePage {
       thumbnail: "",
       description: ""
     };
-
   }
 
-  denied() {
+  // Admin denied require user
+  denied(request): void {
+    this._COLL = "requests";
     let conFirm = this._ALERT.create({
       title: 'CONFIRM',
       message: 'Do you really want to denied ?',
       buttons: [{
         text: 'No',
         handler: data => {
-          console.log('No clicked!');
+          console.log('No clicked!', {request:request});
         }
       }, {
         text: 'Yes',
         handler: () => {
           console.log('Denied!');
+          this._DB.deleteDocument(this._COLL,request.id).then((data:any) => {
+            console.log(data);
+            this.retrieveRequest();
+          }).catch((error: any) => {
+            console.log(error);
+          });
         }
       }]
     });
     conFirm.present();
   }
 
-  accept() {
+
+  //  Admin accept require user
+  //  Doing......
+  accept(request): void {
     let conFirm = this._ALERT.create({
       title: 'CONFIRM',
       message: 'Do you really want to accept ?',
@@ -112,12 +122,15 @@ export class HomePage {
         text: 'Yes',
         handler: () => {
           console.log('Accepted!');
+          console.log({request:request});
+
         }
       }]
     });
     conFirm.present();
   }
 
+  //  Alert function
   displayAlert(title: string,
     message: string): void {
     let alert: any = this._ALERT.create({
@@ -133,12 +146,9 @@ export class HomePage {
     let account = this.auth.getUserInfo();
     if (account.role == false) {
       console.log('role = ' + account.role);
-
-      //Disable function add
-      this.xFunction();
+      this.xFunction(); //Disable function add
     } else {
       //to do...
-
     }
   }
 

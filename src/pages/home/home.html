@@ -67,28 +67,25 @@
           <ion-col col-8>
             <div class="info">
               <h2 class="name">{{request.model}}</h2>
-              <!-- <p class="description">{{request.description}}</p> -->
-              <p class="state">{{request.state == 'available' ?'wait':''}}</p>
+              <p class="state">{{request.state == 'available' ?'wait':''}}{{demo}}</p>
             </div>
           </ion-col>
 
-          <ion-col col-2>
+          <ion-col col-2 class="ioncol-button">
             <div class="buttons">
               <div class="btndenied">
-                <ion-icon (click)="denied()" ios="ios-close-outline" md="md-close-outline" class="denied"></ion-icon>
+                <ion-icon (click)="denied(request)" ios="ios-close-outline" md="md-close-outline" class="denied"></ion-icon>
               </div>
               <div class="btnaccept">
-                <ion-icon (click)="accept()" ios="ios-checkmark-outline" md="md-checkmark-outline" class="accept"></ion-icon>
+                <ion-icon (click)="accept(request)" ios="ios-checkmark-outline" md="md-checkmark-outline" class="accept"></ion-icon>
               </div>
             </div>
           </ion-col>
+
         </ion-row>
       </ion-item>
 
     </ion-list>
-
-    <!-- class disable -->
-    <div class="wrap"></div>
 
     <div class="btnadd">
       <ion-icon class="ionicon-add" ios="ios-add-outline" md="md-add-outline" (click)="addDocument()"></ion-icon>

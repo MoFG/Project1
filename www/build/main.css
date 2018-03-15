@@ -25678,6 +25678,10 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+  border-bottom: 0;
+}
+
 page-category .cate-content {
   border-bottom: 2px solid #1e90ff;
 }
@@ -26226,7 +26230,10 @@ page-home .item-ios.item-block .item-inner {
   padding-right: 0;
 }
 
-page-home .item-ios ion-avatar[item-left], page-home .item-ios ion-thumbnail[item-left], page-home .item-ios ion-avatar[item-start], page-home .item-ios ion-thumbnail[item-start] {
+page-home .item-ios ion-avatar[item-left],
+page-home .item-ios ion-thumbnail[item-left],
+page-home .item-ios ion-avatar[item-start],
+page-home .item-ios ion-thumbnail[item-start] {
   margin: 0;
 }
 
@@ -26234,7 +26241,8 @@ page-home .list-ios {
   margin: 0;
 }
 
-page-home .list-ios > .item-block:first-child, page-home .list-ios > .item-block:last-child {
+page-home .list-ios > .item-block:first-child,
+page-home .list-ios > .item-block:last-child {
   background: #DFE4EA;
 }
 
@@ -26265,7 +26273,8 @@ page-home .row-item {
   padding-bottom: 0.3em;
 }
 
-page-home .btndenied, page-home .btnaccept {
+page-home .btndenied,
+page-home .btnaccept {
   width: 30px;
   height: 20px;
   text-align: center;
@@ -26303,6 +26312,11 @@ page-home .btnaccept:hover {
 
 page-home .info h2.name {
   font-size: 18px;
+}
+
+page-home .buttons {
+  width: 100%;
+  height: 100%;
 }
 
 * {
