@@ -1,44 +1,36 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
 
-// Font path is used to include ionicons,
-// roboto, and noto sans fonts
 $font-path: "../assets/fonts";
-
-
-// The app direction is used to include
-// rtl styles in your app. For more info, please see:
-// http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
-
-
 @import "ionic.globals";
 
-
-// Shared Variables
-// --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
-
-
-
-// Named Color Variables
-// --------------------------------------------------
-// Named colors makes it easy to reuse colors on various components.
-// It's highly recommended to change the default colors
-// to match your app's branding. Ionic uses a Sass map of
-// colors so you can add, rename and remove colors as needed.
-// The "primary" color is the only required color in the map.
-
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:      #488aff,
+  fblue:        #1e90ff,
+  blue2:        #105fea,
+
+  secondary:    #32db64,
+  btn-accept:   #2ed573,
+  hover:        #00b894,
+
+  btn-red:      #FF0000,
+  danger:       #f53d3d,
+  btn-del:      #ff3838,
+  red1:         #EA2027,
+
+  content-color:#f1f2f6,
+  light:        #f4f4f4,
+  btn-back:     #f8f8f8,
+  white1:       #DFE4EA,
+  white2:       #ecf0f1,
+
+  dark:         #222,
+  gray1:        #2d3436,
+  fname:        #2f3542,
+  txt-color:    #8e9093,
+  gray2:        #636e72,
+  gray3:        #535c68,
+  gray4:        #2c3e50,
+  gray5:        #747d8c
 );
 
 

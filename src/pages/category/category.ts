@@ -1,8 +1,5 @@
-import { PrinterPage } from './../printer/printer';
-import { ProjectorPage } from './../projector/projector';
 import { LaptopPage } from './../laptop/laptop';
 import { DatabaseProvider } from './../../providers/database/database';
-import { PropertyPage } from './../property/property';
 import { DetailPage } from './../detail/detail';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ActionSheetController } from 'ionic-angular';
@@ -44,17 +41,17 @@ export class CategoryPage {
       this._DOC,
       this._CONTENT)
       .then((data: any) => {
-        console.dir(data);
+        // console.dir(data);
       })
       .catch((error: any) => {
-        console.dir(error);
+        // console.dir(error);
       });
   }
 
   retrieveCollection(): void {
     this._DB.getDocuments(this._COLL)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.length === 0) {
           this.generateCollectionAndDocument();
         }

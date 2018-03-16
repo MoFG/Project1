@@ -1,7 +1,11 @@
-*{
+* {
   font-family: 'segoe ui light';
 }
+
 page-login {
+  ion-col img {
+    width: 25%;
+  }
   .icon {
     font-size: 100px;
     margin-bottom: 1em;
@@ -10,12 +14,12 @@ page-login {
     text-align: center;
   }
   .content {
-    border-bottom: 2px solid #1e90ff;
-    background: #f1f2f6;
+    border-bottom: 2px solid color($colors, fblue);
+    background: color($colors, content-color);
   }
   h3.title {
     font-size: 50px;
-    color: #1e90ff;
+    color: color($colors, fblue);
     font-family: segoe ui light;
     margin-top: 0em;
     margin-bottom: 0em;
@@ -27,8 +31,9 @@ page-login {
     margin-bottom: 22%;
     margin-top: 3%;
   }
-  .item-pass, .item-email {
-    background: #fff;
+  .item-pass,
+  .item-email {
+    background: white;
     border-radius: 20px;
     margin-bottom: 10px;
   }
@@ -36,7 +41,7 @@ page-login {
     border: 0;
   }
   .text-input-ios::placeholder {
-    color: #000;
+    color: black;
   }
   .list-ios>.item-block:first-child,
   .list-ios>.item-block:last-child,
@@ -44,7 +49,32 @@ page-login {
     border: 0;
   }
   button.submit-btn {
-    background: #1e90ff;
+    background: color($colors, fblue);
     border-radius: 20px;
+  }
+  @media(min-width: 768px) {
+    * {}
+    h3.title {
+      font-size: 5em;
+    }
+    input {
+      font-size: 1.5em;
+    }
+    .toolbar-title.toolbar-title-ios {
+      font-size: 1.5em;
+    }
+    button.submit-btn {
+      font-size: 1.5em;
+      width: 200px;
+      left: 50%;
+      margin-left: -100px;
+      margin-top: -1em;
+    }
+    ion-item.item-email, ion-item.item-pass{
+      width: 600px;
+      left: 50%;
+      margin-left: -300px;
+    }
+
   }
 }

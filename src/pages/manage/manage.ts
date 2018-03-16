@@ -58,31 +58,6 @@ export class ManagePage {
     }
   }
 
-  // Function upload file: Doing...
-  upload() {
-    let options = {
-      quality: 100
-    };
-
-    this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      const fileTransfer: TransferObject = this.transfer.create();
-      let options1: FileUploadOptions = {
-        fileKey: 'file',
-        fileName: 'name.jpg',
-        headers: {}
-      }
-      fileTransfer.upload(imageData, 'http://localhost/ionic/server2.php', options1)
-        .then((data) => {
-          // success
-          alert("success");
-        }, (err) => {
-          // error
-          alert("error" + JSON.stringify(err));
-        });
-    });
-  }
 
   saveDocument(val: any): void {
     let model: string = this.form.controls["model"].value,

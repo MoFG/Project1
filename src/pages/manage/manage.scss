@@ -1,9 +1,9 @@
 page-manage {
   .content {
-    border-bottom: 2px solid #1e90ff;
+    border-bottom: 2px solid color($colors,fblue);
   }
   ion-item ion-label {
-    color: #1e90ff;
+    color: color($colors,fblue);
   }
   .submit-button {
     text-align: center;
@@ -16,13 +16,13 @@ page-manage {
   }
   .item-ios {
     padding-left: 0;
-    background: #f1f2f6;
+    background: color($colors,content-color);
   }
   ion-content.content.content-ios {
-    background: #f1f2f6;
+    background: color($colors,content-color);
   }
   ion-label.ionlabel {
-    color: #000;
+    color: black;
     font-weight: 900;
   }
 }

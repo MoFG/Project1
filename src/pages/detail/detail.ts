@@ -69,21 +69,21 @@ export class DetailPage {
         text: 'Disagree',
         handler: () => {
           //do something
-          console.log('Disagree clicked!');
+          // console.log('Disagree clicked!');
         }
       },
       {
         text: 'Agree',
         handler: () => {
           // do something 
-          console.log('Agree clicked!', { item: item });
+          // console.log('Agree clicked!', { item: item });
           let info = this.auth.getUserInfo().name;
-          console.log(info);
+          // console.log(info);
           this._DB.addDocument(this._COLL, item).then(data => {
-            console.log(data);
+            // console.log(data);
           })
             .catch((error: any) => {
-              console.log(error);
+              // console.log(error);
             })
         }
       }
@@ -97,10 +97,10 @@ export class DetailPage {
       this._DOC,
       this._CONTENT)
       .then((data: any) => {
-        console.dir(data);
+        // console.dir(data);
       })
       .catch((error: any) => {
-        console.dir(error);
+        // console.dir(error);
       });
   }
 
@@ -109,7 +109,7 @@ export class DetailPage {
   retrieveCollection(): void {
     this._DB.getDocuments(this._COLL)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         // IF we don't have any documents then the collection doesn't exist
         // so we create it!
         if (data.length === 0) {
@@ -143,7 +143,7 @@ export class DetailPage {
       buttons: [{
         text: 'No',
         handler: data => {
-          console.log('NO clicked!');
+          // console.log('NO clicked!');
         }
       }, {
         text: 'Yes',

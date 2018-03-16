@@ -87,17 +87,17 @@ export class HomePage {
       buttons: [{
         text: 'No',
         handler: data => {
-          console.log('No clicked!', { request: request });
+
         }
       }, {
         text: 'Yes',
         handler: () => {
-          console.log('Denied!');
+
           this._DB.deleteDocument(this._COLL, request.id).then((data: any) => {
-            console.log(data);
+
             this.retrieveRequest();
           }).catch((error: any) => {
-            console.log(error);
+
           });
         }
       }]
@@ -109,18 +109,23 @@ export class HomePage {
   //  Admin accept require user
   //  Doing......
   accept(request): void {
+    this._COLL = "requests";
     let conFirm = this._ALERT.create({
       title: 'CONFIRM',
       message: 'Do you really want to accept ?',
       buttons: [{
         text: 'No',
         handler: data => {
-          console.log('No clicked!');
+
         }
       }, {
         text: 'Yes',
         handler: () => {
-          console.log('Accepted!', { request: request });
+          this._DB.deleteDocument(this._COLL, request.id).then((data) => {
+            this.retrieveRequest();
+          }).catch((error:any) => {
+
+          });
 
         }
       }]
@@ -143,7 +148,7 @@ export class HomePage {
   checkRole() {
     let account = this.auth.getUserInfo();
     if (account.role == false) {
-      console.log('role = ' + account.role);
+      // console.log('role = ' + account.role);
       this.xFunction(); //Disable function add
     } else {
       //to do...
@@ -173,7 +178,7 @@ export class HomePage {
   //  Go detail of item
   goDetail(item: any) {
     this.navCtrl.push(DetailPage, { item: item });
-    console.log(item);
+    // console.log(item);
   }
   //  Go category page
   goCategory() {
@@ -184,7 +189,7 @@ export class HomePage {
   goLogin() {
     this.navCtrl.push(LoginPage);
   }
-  
+
   // Call retrieveCollection() to show list item
   ionViewDidEnter() {
     this.retrieveCollection();
@@ -195,10 +200,10 @@ export class HomePage {
     this._DB
       .createAndPopulateDocument(this._COLL, this._DOC, this._CONTENT)
       .then((data: any) => {
-        console.dir(data);
+        // console.dir(data);
       })
       .catch((error: any) => {
-        console.dir(error);
+        // console.dir(error);
       });
   }
 
@@ -209,7 +214,7 @@ export class HomePage {
     this._DB
       .getDocuments(this._COLL)
       .then(data => {
-        console.log(data);
+        // console.log(data);
         // IF we don't have any documents then the collection doesn't exist
         // so we create it!
         if (data.length === 0) {
@@ -236,7 +241,7 @@ export class HomePage {
     this._DB
       .getDocuments(this._COLL)
       .then(data => {
-        console.log(data);
+        // console.log(data);
         this.requests = data;
       })
       .catch();

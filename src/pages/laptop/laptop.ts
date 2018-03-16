@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
+import { DetailPage } from '../detail/detail';
 
 @Component({
   selector: 'page-laptop',
@@ -30,5 +31,11 @@ export class LaptopPage {
         this.items = data.filter(ele => ele.categoryId == this.categoryId);
       })
       .catch();
+  }
+  
+  //  Go detail of item
+  goDetail(item: any) {
+    this.navCtrl.push(DetailPage, { item: item });
+    // console.log(item);
   }
 }

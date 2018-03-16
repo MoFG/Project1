@@ -1,7 +1,9 @@
+import { AngularFireDatabase } from 'angularfire2/database';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/observable';
 import 'rxjs/add/operator/map';
+
 
 
 export class User{
@@ -53,5 +55,7 @@ export class AuthServiceProvider {
   //     observer.complete();
   //   });
   // }
+
+
 
 }

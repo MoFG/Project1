@@ -1,6 +1,6 @@
 page-category {
     .cate-content{
-        border-bottom: 2px solid #1e90ff;
+        border-bottom: 2px solid color($colors,fblue);
     }
     .ioncol-item .ioncol-picture {
         height: 200px;
@@ -34,13 +34,13 @@ page-category {
     h3.ioncol-title {
         font-size: 4em;
         font-weight: bold;
-        color: #535c68;
+        color: color($colors,gray3);
     }
-    .line {
-        width: 35%;
-        background: #2ed573;
-        height: 1px;
-    }
+    // .line {
+    //     width: 35%;
+    //     background: color($colors,btn-accept);
+    //     height: 1px;
+    // }
     .ioncol-item {
         position: relative;
         width: 100%;
@@ -60,18 +60,20 @@ page-category {
         opacity: 0;
     }
     p.text {
-        color: #2c3e50;
+        color: color($colors,gray4);
         font-size: 18px;
         font-weight: bold;
         margin-top: 0.3em;
+        border-top: 1px solid color($colors,hover);
+        display: inline-block;
     }
     ion-row.ionrow {
-        background: #ecf0f1;
+        background: color($colors,white2);
         margin-bottom: 1em;
         transition: 0.2s;
     }
     .ionrow:hover{
-        background:#747d8c;
+        background:color($colors,gray5);
         transition: 0.2s;
     }
     @keyframes animation {
@@ -82,4 +84,31 @@ page-category {
         from {left: 100%;opacity: 0}
         to {left: 55%;opacity: 1}
     }
+
+
+    @media(min-width:768px){
+        *{}
+        .ioncol-text{
+            margin-left: 15%;
+            margin-top: 5%;
+        }
+        .ioncol-item.item2 .ioncol-text{
+            margin-left: 5%;
+        }
+        .ioncol-picture img{
+            margin-right: 15%;
+            margin-top: 5%;
+        }
+        .ioncol-item.item2 img{
+            left: 8%;
+        }
+        .ioncol-item{
+            height: 300px;
+        }
+
+    }
+
+
+
+
 }

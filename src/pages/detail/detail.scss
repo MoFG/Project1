@@ -1,31 +1,31 @@
 page-detail {
   .content {
-    border-bottom: 2px solid #1e90ff;
+    border-bottom: 2px solid color($colors, fblue);
     overflow: hidden;
   }
   h2.card-title {
     font-size: 25px;
-    color: #000;
+    color: black;
     font-weight: 900;
   }
   p.discription {
     font-size: 16px;
-    color: #000;
+    color: black;
     text-overflow: ellipsis;
     overflow: hidden;
   }
   h3.iconitem-text {
     font-size: 16px;
-    color: #000;
+    color: black;
     font-weight: 900;
   }
   ion-note.iconitem-end {
-    color: #1e90ff;
+    color: color($colors, fblue);
     font-weight: bold;
   }
   .iconitem .eye {
     font-size: 2em;
-    color: #2f3542;
+    color: color($colors, fname);
   }
   .item-ios .item-button {
     font-size: 1.7rem;
@@ -58,7 +58,7 @@ page-detail {
     text-align: center;
   }
   .createForm {
-    border: 2px solid #2d3436;
+    border: 2px solid color($colors, gray1);
     border-radius: 2rem;
     position: absolute;
     top: 50%;
@@ -71,7 +71,7 @@ page-detail {
     transition: 0.4s;
     transform: scale(0);
     z-index: 10;
-    background: #fff;
+    background: white;
   }
   .list-ios>.item-block:last-child,
   .list-ios>.item-wrapper:last-child .item-block {
@@ -84,7 +84,7 @@ page-detail {
     height: 40px;
     text-align: center;
     line-height: 40px;
-    background: #00b894;
+    background: color($colors, hover);
   }
   .createForm.showForm {
     visibility: visible;
@@ -98,7 +98,7 @@ page-detail {
     top: 0;
     left: 0;
     z-index: 9;
-    background: #636e72;
+    background: color($colors, gray2);
     opacity: 0.5;
     visibility: hidden;
     transition: 0.4s;
@@ -111,24 +111,24 @@ page-detail {
     padding: 1em 1em;
   }
   .card-ios {
-    border: 1px solid #ffffff;
+    border: 1px solid color($colors, content-color);
     box-shadow: 0 0 0 0;
-    background: #f1f2f6;
+    background: color($colors, content-color);
   }
   .scroll-content {
-    background: #f1f2f6;
+    background: color($colors, content-color);
   }
   .list-ios>.item-block {
-    background: #f1f2f6;
+    background: color($colors, content-color);
   }
   ion-fab[top][edge] {
     top: 0;
   }
   .fab-ios {
-    background: #FF0000;
+    background: color($colors, btn-red)
   }
   .fab ion-icon {
-    color: #fff;
+    color: white;
   }
   .list-ios>.item-block:first-child {
     border: 0;
@@ -147,11 +147,22 @@ page-detail {
     height: 30px;
     text-align: center;
     line-height: 30px;
-    color: #fff;
-    background: #EA2027;
+    color: white;
+    background: color($colors, red1);
     border-radius: 50%;
     position: absolute;
     top: 10%;
     right: 10%;
+  }
+  ion-card.card.card-ios img {
+    width: 100%;
+    margin-left: 0;
+  }
+  @media(min-width:768px) {
+    * {}
+    ion-card.card.card-ios img {
+      width: 500px;
+      margin-left: 134px;
+    }
   }
 }

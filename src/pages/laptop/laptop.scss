@@ -1,13 +1,13 @@
 page-laptop {
     .content {
-        background: #f1f2f6;
+        background: color($colors,content-color)
     }
     .listitem {
-        background: #f1f2f6;
+        background: color($colors,content-color)
     }
     .list-ios>.item-block {
         border-top: 0;
-        background: #f1f2f6;
+        background: color($colors,content-color)
     }
     .item-ios {
         padding-left: 0;
@@ -31,12 +31,12 @@ page-laptop {
     h2.name {
         text-overflow: ellipsis;
         overflow: hidden;
-        color: #2f3542;
+        color: color($colors,fname);
         font-weight: 900;
         margin-bottom: 5px;
     }
     p.state {
-        color: #488AFF;
+        color: color($colors,primary);
         font-weight: bold;
     }
     .item-ios p.cate {
@@ -44,7 +44,30 @@ page-laptop {
         font-size: 1.4rem;
         line-height: normal;
         text-overflow: inherit;
-        color: #8e9093;
+        color: color($colors,txt-color);
         margin: 0 0 2px;
     }
+
+
+    @media(min-width:768px){
+        .item-ios ion-thumbnail{
+            min-width: 100px;
+            min-height:100px;
+        }
+        .item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img{
+            width: 100px;
+            height: 100px;
+        }
+        .item-ios h2{
+            font-size: 1.5em;
+        }
+        .item-ios p.cate{
+            font-size: 1.2em;
+        }
+        p.state{
+            font-size:1.2em;
+        }
+    }
+
+
 }

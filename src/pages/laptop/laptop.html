@@ -13,7 +13,7 @@
 <ion-content padding class="content">
   <ion-list class="listitem">
     <ion-item *ngFor="let item of items">
-      <ion-row class="row-item">
+      <ion-row class="row-item" (click)="goDetail(item)">
 
         <ion-col col-3 class="ioncol-thumbnail">
           <ion-thumbnail item-start>

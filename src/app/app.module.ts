@@ -10,8 +10,6 @@ import { CategoryPage } from '../pages/category/category';
 import { DetailPage } from '../pages/detail/detail';
 import { LoginPage } from '../pages/login/login';
 import { ManagePage } from '../pages/manage/manage';
-import { PrinterPage } from '../pages/printer/printer';
-import { ProjectorPage } from '../pages/projector/projector';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +17,6 @@ import { AngularFireModule } from 'angularfire2';
 import { enviroment } from '../enviroments/enviroment';
 import { HttpModule } from '@angular/http';
 import { DatabaseProvider } from '../providers/database/database';
-import { PropertyPage } from '../pages/property/property';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -33,9 +30,7 @@ import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/trans
     CategoryPage,
     DetailPage,
     LoginPage,
-    ManagePage,
-    PrinterPage,
-    ProjectorPage
+    ManagePage
   ],
   imports: [
     BrowserModule,
@@ -55,9 +50,8 @@ import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/trans
     CategoryPage,
     DetailPage,
     LoginPage,
-    ManagePage,
-    PrinterPage,
-    ProjectorPage
+    ManagePage
+
   ],
   providers: [
     StatusBar,
