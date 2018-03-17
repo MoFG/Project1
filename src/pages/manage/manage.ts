@@ -1,4 +1,5 @@
-
+import { AngularFireStorageModule, AngularFireStorageReference, AngularFireUploadTask } from 'angularfire2/storage';
+import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
 import { DatabaseProvider } from './../../providers/database/database';
 import { Component } from '@angular/core';
@@ -57,7 +58,6 @@ export class ManagePage {
       this.title = 'Update';
     }
   }
-
 
   saveDocument(val: any): void {
     let model: string = this.form.controls["model"].value,

@@ -71,31 +71,6 @@ var ManagePage = (function () {
             this.title = 'Update';
         }
     }
-    // Function upload file: Doing...
-    ManagePage.prototype.upload = function () {
-        var _this = this;
-        var options = {
-            quality: 100
-        };
-        this.camera.getPicture(options).then(function (imageData) {
-            // imageData is either a base64 encoded string or a file URI
-            // If it's base64:
-            var fileTransfer = _this.transfer.create();
-            var options1 = {
-                fileKey: 'file',
-                fileName: 'name.jpg',
-                headers: {}
-            };
-            fileTransfer.upload(imageData, 'http://localhost/ionic/server2.php', options1)
-                .then(function (data) {
-                // success
-                alert("success");
-            }, function (err) {
-                // error
-                alert("error" + JSON.stringify(err));
-            });
-        });
-    };
     ManagePage.prototype.saveDocument = function (val) {
         var _this = this;
         var model = this.form.controls["model"].value, categoryId = this.form.controls["categoryId"].value, 
@@ -161,7 +136,7 @@ var ManagePage = (function () {
     };
     ManagePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-manage',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\manage\manage.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>{{title}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="content">\n\n  <form [formGroup]="form" (ngSubmit)="saveDocument(form.value)">\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Asset Name</ion-label>\n\n      <ion-input type="text" formControlName="model" [(ngModel)]="model"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Category ID</ion-label>\n\n      <ion-select formControlName="categoryId" [(ngModel)]="categoryId">\n\n        <ion-option value="LT01">LT01</ion-option>\n\n        <ion-option value="MA01">MA01</ion-option>\n\n        <ion-option value="MC01">MC01</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n\n\n    <!-- <ion-item>\n\n      <ion-label class="ionlabel" floating>Category</ion-label>\n\n      <ion-select formControlName="category" [(ngModel)]="category">\n\n        <ion-option value="Laptop">Laptop</ion-option>\n\n        <ion-option value="Camera">Camera</ion-option>\n\n        <ion-option value="Projector">Projector</ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Asset Quantity</ion-label>\n\n      <ion-input type="text" formControlName="quantity" [(ngModel)]="quantity"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Asset Thumbnail</ion-label>\n\n      <ion-input type="text" formControlName="thumbnail" [(ngModel)]="thumbnail"></ion-input>\n\n      <!-- <button item-start (click)="upload()" ion-button >Take Pic & Upload </button> -->\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>State</ion-label>\n\n      <ion-select formControlName="state" [(ngModel)]="state">\n\n        <ion-option value="available">Available</ion-option>\n\n        <ion-option value="wait">Waiting</ion-option>\n\n        <ion-option value="close">Close</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Description</ion-label>\n\n      <ion-input type="text" formControlName="description" [(ngModel)]="description"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="submit-button">\n\n      <button ion-button color="primary" small text-center padding-top padding-bottom [disabled]="!form.valid">\n\n        <div *ngIf="!isEditable">\n\n          Add\n\n        </div>\n\n\n\n        <div *ngIf="isEditable">\n\n          Update\n\n        </div>\n\n      </button>\n\n    </ion-item>\n\n\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\manage\manage.html"*/,
+            selector: 'page-manage',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\manage\manage.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>{{title}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="content">\n\n  <form [formGroup]="form" (ngSubmit)="saveDocument(form.value)">\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Asset Name</ion-label>\n\n      <ion-input type="text" formControlName="model" [(ngModel)]="model"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Category ID</ion-label>\n\n      <ion-select formControlName="categoryId" [(ngModel)]="categoryId">\n\n        <ion-option value="LT01">LT01</ion-option>\n\n        <ion-option value="MA01">MA01</ion-option>\n\n        <ion-option value="MC01">MC01</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n\n\n    <!-- <ion-item>\n\n      <ion-label class="ionlabel" floating>Category</ion-label>\n\n      <ion-select formControlName="category" [(ngModel)]="category">\n\n        <ion-option value="Laptop">Laptop</ion-option>\n\n        <ion-option value="Camera">Camera</ion-option>\n\n        <ion-option value="Projector">Projector</ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Asset Quantity</ion-label>\n\n      <ion-input type="text" formControlName="quantity" [(ngModel)]="quantity"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Asset Thumbnail</ion-label>\n\n      <ion-input type="text" formControlName="thumbnail" [(ngModel)]="thumbnail"></ion-input>\n\n      <!-- <button item-start (click)="upload()" ion-button >Take Pic & Upload </button> -->\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>State</ion-label>\n\n      <ion-select formControlName="state" [(ngModel)]="state">\n\n        <ion-option value="available">Available</ion-option>\n\n        <ion-option value="wait">Waiting</ion-option>\n\n        <ion-option value="close">Close</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label class="ionlabel" floating>Description</ion-label>\n\n      <ion-input type="text" formControlName="description" [(ngModel)]="description"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="submit-button">\n\n      <button ion-button color="primary" small text-center padding-top padding-bottom [disabled]="!form.valid">\n\n        <div *ngIf="!isEditable">\n\n          Add\n\n        </div>\n\n\n\n        <div *ngIf="isEditable">\n\n          Update\n\n        </div>\n\n      </button>\n\n    </ion-item>\n\n\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\manage\manage.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1__providers_database_database__["a" /* DatabaseProvider */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_transfer__["a" /* Transfer */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */]])
@@ -262,17 +237,13 @@ var HomePage = (function () {
             buttons: [{
                     text: 'No',
                     handler: function (data) {
-                        console.log('No clicked!', { request: request });
                     }
                 }, {
                     text: 'Yes',
                     handler: function () {
-                        console.log('Denied!');
                         _this._DB.deleteDocument(_this._COLL, request.id).then(function (data) {
-                            console.log(data);
                             _this.retrieveRequest();
                         }).catch(function (error) {
-                            console.log(error);
                         });
                     }
                 }]
@@ -282,18 +253,22 @@ var HomePage = (function () {
     //  Admin accept require user
     //  Doing......
     HomePage.prototype.accept = function (request) {
+        var _this = this;
+        this._COLL = "requests";
         var conFirm = this._ALERT.create({
             title: 'CONFIRM',
             message: 'Do you really want to accept ?',
             buttons: [{
                     text: 'No',
                     handler: function (data) {
-                        console.log('No clicked!');
                     }
                 }, {
                     text: 'Yes',
                     handler: function () {
-                        console.log('Accepted!', { request: request });
+                        _this._DB.deleteDocument(_this._COLL, request.id).then(function (data) {
+                            _this.retrieveRequest();
+                        }).catch(function (error) {
+                        });
                     }
                 }]
         });
@@ -312,7 +287,7 @@ var HomePage = (function () {
     HomePage.prototype.checkRole = function () {
         var account = this.auth.getUserInfo();
         if (account.role == false) {
-            console.log('role = ' + account.role);
+            // console.log('role = ' + account.role);
             this.xFunction(); //Disable function add
         }
         else {
@@ -340,7 +315,7 @@ var HomePage = (function () {
     //  Go detail of item
     HomePage.prototype.goDetail = function (item) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__detail_detail__["a" /* DetailPage */], { item: item });
-        console.log(item);
+        // console.log(item);
     };
     //  Go category page
     HomePage.prototype.goCategory = function () {
@@ -359,10 +334,10 @@ var HomePage = (function () {
         this._DB
             .createAndPopulateDocument(this._COLL, this._DOC, this._CONTENT)
             .then(function (data) {
-            console.dir(data);
+            // console.dir(data);
         })
             .catch(function (error) {
-            console.dir(error);
+            // console.dir(error);
         });
     };
     // Retrieve all documents from the specified collection
@@ -373,7 +348,7 @@ var HomePage = (function () {
         this._DB
             .getDocuments(this._COLL)
             .then(function (data) {
-            console.log(data);
+            // console.log(data);
             // IF we don't have any documents then the collection doesn't exist
             // so we create it!
             if (data.length === 0) {
@@ -400,7 +375,7 @@ var HomePage = (function () {
         this._DB
             .getDocuments(this._COLL)
             .then(function (data) {
-            console.log(data);
+            // console.log(data);
             _this.requests = data;
         })
             .catch();
@@ -512,21 +487,21 @@ var DetailPage = (function () {
                     text: 'Disagree',
                     handler: function () {
                         //do something
-                        console.log('Disagree clicked!');
+                        // console.log('Disagree clicked!');
                     }
                 },
                 {
                     text: 'Agree',
                     handler: function () {
                         // do something 
-                        console.log('Agree clicked!', { item: item });
+                        // console.log('Agree clicked!', { item: item });
                         var info = _this.auth.getUserInfo().name;
-                        console.log(info);
+                        // console.log(info);
                         _this._DB.addDocument(_this._COLL, item).then(function (data) {
-                            console.log(data);
+                            // console.log(data);
                         })
                             .catch(function (error) {
-                            console.log(error);
+                            // console.log(error);
                         });
                     }
                 }
@@ -537,10 +512,10 @@ var DetailPage = (function () {
     DetailPage.prototype.generateCollectionAndDocument = function () {
         this._DB.createAndPopulateDocument(this._COLL, this._DOC, this._CONTENT)
             .then(function (data) {
-            console.dir(data);
+            // console.dir(data);
         })
             .catch(function (error) {
-            console.dir(error);
+            // console.dir(error);
         });
     };
     // Retrieve all documents from the specified collection
@@ -549,7 +524,7 @@ var DetailPage = (function () {
         var _this = this;
         this._DB.getDocuments(this._COLL)
             .then(function (data) {
-            console.log(data);
+            // console.log(data);
             // IF we don't have any documents then the collection doesn't exist
             // so we create it!
             if (data.length === 0) {
@@ -578,7 +553,7 @@ var DetailPage = (function () {
             buttons: [{
                     text: 'No',
                     handler: function (data) {
-                        console.log('NO clicked!');
+                        // console.log('NO clicked!');
                     }
                 }, {
                     text: 'Yes',
@@ -690,7 +665,7 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\login\login.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="content">\n\n  <form (ngSubmit)="login()" #loginForm="ngForm">\n\n  <ion-grid>\n\n\n\n    <ion-row class="ionrow-title">\n\n      <ion-col col-12>\n\n        <img src="/assets/icon/logo.png" alt="">\n\n          <h3 class="title">uAsset</h3>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col>\n\n          <ion-list insert>\n\n            <ion-item class="item-email">\n\n              <ion-input class="txtEmail" type="text" placeholder="Username" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item class="item-pass">\n\n              <ion-input class="txtPass" type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col col-12 class="signup-col">\n\n        <button ion-button full class="submit-btn" type="submit" >Login</button>\n\n      </ion-col>\n\n      <ion-col col-12 class="signup-col">\n\n        <button ion-button full class="submit-btn">Login With Google</button>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-grid>\n\n</form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\login\login.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="content">\n\n  <form (ngSubmit)="login()" #loginForm="ngForm">\n\n  <ion-grid>\n\n\n\n    <ion-row class="ionrow-title">\n\n      <ion-col col-12>\n\n        <img src="/assets/icon/logo.png" alt="">\n\n          <h3 class="title">uAsset</h3>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col>\n\n          <ion-list insert>\n\n            <ion-item class="item-email">\n\n              <ion-input class="txtEmail" type="text" placeholder="Username" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item class="item-pass">\n\n              <ion-input class="txtPass" type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col col-12 class="signup-col">\n\n        <button ion-button full class="submit-btn" type="submit" >Login</button>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-grid>\n\n</form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\skynguyen79\Desktop\git\Project1\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1__providers_auth_service_auth_service__["a" /* AuthServiceProvider */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]])
@@ -753,17 +728,17 @@ var CategoryPage = (function () {
     CategoryPage.prototype.generateCollectionAndDocument = function () {
         this._DB.createAndPopulateDocument(this._COLL, this._DOC, this._CONTENT)
             .then(function (data) {
-            console.dir(data);
+            // console.dir(data);
         })
             .catch(function (error) {
-            console.dir(error);
+            // console.dir(error);
         });
     };
     CategoryPage.prototype.retrieveCollection = function () {
         var _this = this;
         this._DB.getDocuments(this._COLL)
             .then(function (data) {
-            console.log(data);
+            // console.log(data);
             if (data.length === 0) {
                 _this.generateCollectionAndDocument();
             }
@@ -882,7 +857,7 @@ var LaptopPage = (function () {
     //  Go detail of item
     LaptopPage.prototype.goDetail = function (item) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__detail_detail__["a" /* DetailPage */], { item: item });
-        console.log(item);
+        // console.log(item);
     };
     LaptopPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
